@@ -1,26 +1,23 @@
-$font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-$gold: #fee6c6;
-$blue: #717cff;
-$black: #081f32;
-$grey: #6e798c;
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
-
-* {
-  &,
-  &:before,
-  &:after {
-    box-sizing: border-box;
-  }
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-body {
+/*body {
   max-width: 52em;
   padding: 0 1em;
   margin: 0 auto;
   font-family: 'Open Sans';
   line-height: 2;
+}*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  color: #393b47;
 }
 
 a {
@@ -28,63 +25,48 @@ a {
   text-decoration: none;
 }
 
-nav {
-  display: flex;
-  a,
-  button {
-    padding: 1em 0;
-    border: 0;
-    &:not(:last-child) {
-      margin-right: 1em;
-    }
-    &:first-child {
-      margin-right: auto;
-    }
-  }
-}
-
-h1,
+/*h1,
 h2,
 h3,
 p {
   margin: 0;
   line-height: inherit;
-  &:not(:last-child) {
-    margin-bottom: 1rem;
-  }
 }
+*/
+h1 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: 0.01em;
+  font-family: Open Sans;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 39px;
+  letter-spacing: 0.01em;
+  font-family: Open Sans;
+}
+
+a {
+  font-family: Open Sans;
+}
+
+/*
+h1:not(:last-child),
+h2:not(:last-child),
+h3:not(:last-child),
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}*/
 
 img {
   width: 100%;
   max-width: 100%;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input:not([type='checkbox']),
-input:not([type='radio']),
-input:not([type='range']),
-textarea,
-select,
-button,
-.btn {
-  padding: 1em;
-  border: 1px solid $grey;
-  border-radius: 0;
-  margin-bottom: 1em;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-}
-
-textarea {
-  min-height: 8em;
-  resize: vertical;
-}
-
-label {
-  margin-bottom: 0.5em;
+.light-font {
+  font-weight: 200;
+  letter-spacing: 0em;
 }

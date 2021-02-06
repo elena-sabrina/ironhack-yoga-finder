@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 *,
 *:before,
 *:after {
   box-sizing: border-box;
 }
 
-/* ---------- GENERAL --------------*/
 /*body {
   max-width: 52em;
   padding: 0 1em;
@@ -13,7 +13,6 @@
   font-family: 'Open Sans';
   line-height: 2;
 }*/
-
 body {
   margin: 0;
   padding: 0;
@@ -61,7 +60,6 @@ h3:not(:last-child),
 p:not(:last-child) {
   margin-bottom: 1rem;
 }*/
-
 img {
   width: 100%;
   max-width: 100%;
@@ -71,7 +69,6 @@ img {
   font-weight: 200;
   letter-spacing: 0em;
 }
-/* ---------- FORM --------------*/
 
 form {
   display: flex;
@@ -85,7 +82,6 @@ form {
   border: 0.3px solid #cecece;
   box-sizing: border-box;
   border-radius: 15px;
-
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -133,32 +129,28 @@ input:focus {
 }
 
 /*input:not([type='checkbox']),
-input:not([type='radio']),
-input:not([type='range']),
-textarea,
-select,
-button,
-.btn {
-  padding: 1em;
-  border: 1px solid #e6e6e6;
-  border-radius: 0;
-  margin-bottom: 1em;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-}*/
-
+  input:not([type='radio']),
+  input:not([type='range']),
+  textarea,
+  select,
+  button,
+  .btn {
+    padding: 1em;
+    border: 1px solid #e6e6e6;
+    border-radius: 0;
+    margin-bottom: 1em;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+  }*/
 textarea {
   min-height: 8em;
   resize: vertical;
 }
 
 /*label {
-  margin-bottom: 0.5em;
-}*/
-
-/* ---------- NAV --------------*/
-
+    margin-bottom: 0.5em;
+  }*/
 #line {
   width: 25px;
   height: 1.5px;
@@ -169,29 +161,29 @@ textarea {
 nav {
   position: relative;
 }
+
 /*
-#hamburger {
-  position: absolute;
-  cursor: pointer;
-}
-
-#nav-links {
-  position: fixed;
-  background: blue;
-  height: 100vh;
-  width: 100%;
-  flex-direction: column;
-  z-index: 1;
-  clip-path: circle(10px at 0% -1%);
-  -webkit-clip-path: circle(10px at 0% -1%);
-  transition: all 1s ease-out;
-}
-#nav-links.open {
-  clip-path: circle(800px at 50% -1%);
-  -webkit-clip-path: circle(800px at 50% -1%);
-}
-*/
-
+  #hamburger {
+    position: absolute;
+    cursor: pointer;
+  }
+  
+  #nav-links {
+    position: fixed;
+    background: blue;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    z-index: 1;
+    clip-path: circle(10px at 0% -1%);
+    -webkit-clip-path: circle(10px at 0% -1%);
+    transition: all 1s ease-out;
+  }
+  #nav-links.open {
+    clip-path: circle(800px at 50% -1%);
+    -webkit-clip-path: circle(800px at 50% -1%);
+  }
+  */
 #nav-links ul {
   display: flex;
   flex-direction: row;
@@ -204,8 +196,7 @@ nav {
   display: flex;
   background-color: white;
   margin: 0px;
-  box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14),
-    0px 8px 16px rgba(4, 7, 31, 0.14);
+  box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14), 0px 8px 16px rgba(4, 7, 31, 0.14);
 }
 
 nav a,
@@ -224,25 +215,88 @@ nav a:first-child,
 nav button:first-child {
   margin-right: auto;
 }
-/* ---------- AUTHENTICATION --------------*/
-
-/* ---------- PROFILE --------------*/
 
 aside {
   height: 100vh;
   width: 200px;
   background-color: green;
 }
-/* ---------- SEARCH --------------*/
 
+/* ---------- SEARCH --------------*/
 #google-map {
   width: 100%;
   height: 25em;
 }
 
-/* ---------- CLASSDETAIL --------------*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
-/* ---------- HOME --------------*/
+/*body {
+  max-width: 52em;
+  padding: 0 1em;
+  margin: 0 auto;
+  font-family: 'Open Sans';
+  line-height: 2;
+}*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans';
+  color: #393b47;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*h1,
+h2,
+h3,
+p {
+  margin: 0;
+  line-height: inherit;
+}
+*/
+h1 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 60px;
+  letter-spacing: 0.01em;
+  font-family: Open Sans;
+}
+
+p {
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 39px;
+  letter-spacing: 0.01em;
+  font-family: Open Sans;
+}
+
+a {
+  font-family: Open Sans;
+}
+
+/*
+h1:not(:last-child),
+h2:not(:last-child),
+h3:not(:last-child),
+p:not(:last-child) {
+  margin-bottom: 1rem;
+}*/
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.light-font {
+  font-weight: 200;
+  letter-spacing: 0em;
+}
 
 .hero {
   margin: 0px;
@@ -252,6 +306,7 @@ aside {
 .background-blue {
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
+
 .background-blue h1,
 h2,
 h3,
@@ -292,7 +347,6 @@ h3 p {
   cursor: pointer;
   outline: none;
   border: none;
-
   width: 300px;
   height: 50px;
   border-radius: 30px;
@@ -306,14 +360,12 @@ h3 p {
 
 .primary-button {
   background-color: white;
-  box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14),
-    0px 8px 16px rgba(4, 7, 31, 0.14);
+  box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14), 0px 8px 16px rgba(4, 7, 31, 0.14);
 }
 
 .secondary-button {
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
-  box-shadow: 0px 4px 8px rgba(177, 177, 177, 0.14),
-    0px 8px 16px rgba(177, 177, 177, 0.14);
+  box-shadow: 0px 4px 8px rgba(177, 177, 177, 0.14), 0px 8px 16px rgba(177, 177, 177, 0.14);
   color: white;
 }
 
@@ -323,4 +375,11 @@ h3 p {
   justify-content: center;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/* ---------- FORM --------------*/
+/* ---------- NAV --------------*/
+/* ---------- AUTHENTICATION --------------*/
+/* ---------- PROFILE --------------*/
+/* ---------- CLASSDETAIL --------------*/
+/* ---------- HOME --------------*/
+
+/*# sourceMappingURL=style.css.map */
