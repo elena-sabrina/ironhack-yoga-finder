@@ -11,6 +11,13 @@ const router = new Router();
 //STORAGE CLOUDINARY
 const uploadMiddleware = require('./../middleware/file-upload');
 
+//MATERIAL IO
+//npm install @material/textfield
+import {MDCTextField} from '@material/textfield';
+const textField = new MDCTextField(document.querySelector('.mdc-text-field'));
+
+
+
 //ROUTES
 
 router.get('/sign-up', (req, res, next) => {

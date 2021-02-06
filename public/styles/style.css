@@ -1,3 +1,17 @@
+
+/*MATERIAL IO*/
+@use "@material/floating-label/mdc-floating-label";
+@use "@material/line-ripple/mdc-line-ripple";
+@use "@material/notched-outline/mdc-notched-outline";
+@use "@material/textfield";
+
+@include textfield.core-styles;
+
+
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 *,
 *:before,
@@ -80,11 +94,35 @@ form {
   width: 50vh;
 }
 
+label {
+  text-align: left;
+  margin: 15px;
+  font-size: 5px;
+  display: flex: 
+  flex-direction: row;
+}
+
+.form-styling {
+  background: #ffffff;
+  border: 0.3px solid #cecece;
+  box-sizing: border-box;
+  border-radius: 15px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+}
+
 .form-button {
   width: auto;
 }
 
-input:not([type='checkbox']),
+/*input:not([type='checkbox']),
 input:not([type='radio']),
 input:not([type='range']),
 textarea,
@@ -98,7 +136,7 @@ button,
   font: inherit;
   color: inherit;
   background-color: transparent;
-}
+}*/
 
 textarea {
   min-height: 8em;
