@@ -4,25 +4,43 @@
     <form method="POST">
       <div class="form-styling">
         <label for="input-name">Class Name</label>
-        <input type="name" id="input-name" name="name" placeholder="" />
-      </div>
-      <div class="form-styling">
-        <label for="input-teacher">Teacher</label>
-        <input type="teacher" id="input-teacher" name="teacher" placeholder="{{user.name}}" />
-      </div>
-      <div class="form-styling">
-          <label for="input-place">Place</label>
-          <input type="place" id="input-place" name="place" placeholder="" />
-      </div>
-      <div class="form-styling">
-        <label for="input-location">Location</label>
-        <input type="url" id="input-location" name="location" placeholder="http://">
+        <input type="text" id="input-name" name="name" placeholder="" />
       </div>
       <div class="form-styling">
         <label for="input-image"Add an image></label>
         <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
       </div>
+      <div class="form-styling">
+        <label for="input-level">Type</label>
+        <select id="input-level" name="level">
+            <option value="Choose class level" selected disabled>Category</option> <!-- Display empty placeholder value-->
+            <option value="beginner">beginner</option>
+            <option value="advanced">advanced</option>
+            <option value="proficient">proficient</option>
+            <option value="any">any</option>
+        </select>
+      </div>
+      <div class="form-styling">
+        <label for="input-type">Level</label>
+        <select id="input-type" name="level">
+            <option value="Choose yoga type" selected disabled>Category</option> <!-- Display empty placeholder value-->
+            <option value="Hatha">Hatha</option>
+            <option value="Vinyasa">Vinyasa</option>
+            <option value="Yin">Yin</option>
+            <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-styling">
+        <label for="input-startdate">Date & Time</label>
+        <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
     
+        <label for="input-enddate"></label>
+        <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
+      </div>
+      <div class="form-styling">
+        <label for="input-location">Location</label>
+        <input type="url" id="input-location" name="location" placeholder="http://">
+      </div>
           
       <div class="center">
         <button class="secondary-button button-styling">create class</button>

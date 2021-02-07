@@ -7,16 +7,29 @@ const classSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
+  image: {
+    type: String
+  },
   teacher: {
     type: String,
     trim: true
   },
-  place: {
+  location: {
     type: String,
     trim: true
   },
-  image: {
-    type: String
+  level: {
+    type: String,
+    enum: ['beginner', 'advanced', 'proficient', 'any'],
+    default: 'any'
+  },
+  type: {
+    type: String,
+    enum: ['Hatha', 'Vinyasa', 'Yin', 'Other'],
+    default: 'Other'
+  },
+  date: {
+    type: Date
   }
 });
 
