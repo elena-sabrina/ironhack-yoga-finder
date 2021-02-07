@@ -216,16 +216,27 @@ nav button:first-child {
   margin-right: auto;
 }
 
-aside {
-  height: 100vh;
-  width: 200px;
-  background-color: green;
+/*aside {
+    height: 100vh;
+    width: 200px;
+    background-color: green;
+  }*/
+/* ---------- SEARCH --------------*/
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-/* ---------- SEARCH --------------*/
-#google-map {
-  width: 100%;
-  height: 25em;
+.yoga-classes-list {
+  flex: 1;
+  padding: 16px 0 0 100px;
+}
+
+.maps-box {
+  flex: 2;
+  background-color: lightblue;
+  height: 100vh;
 }
 
 *,

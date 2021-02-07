@@ -1,19 +1,20 @@
 {{! Temporary styiling}}
-<aside>
-    <div class="hero background-white">
-        <div class="hero-box ">
-            <h1>Yoga Classes All / Search </h1>
-            {{#each classes}}
-                <div>
-                    <h3>{{ name }}</h3>
-                    <p>{{ teacher }}</p>
-                    <p>{{ place }}</p>  
-                </div>  
-            {{/each}}
-    
-            <div id="google-map"></div>
-        </div>
+<div class="split-screen .background-white">
+    <div class="yoga-classes-list">
+        <h2>Yoga Classes All / Search </h2>
+        {{#each classes}}
+            <div class="yoga-class-preview">
+                <h3>{{ name }}</h3>
+                <p>{{ teacher }}</p>
+                <p>{{ place }}</p>  
+            </div>  
+        {{/each}} 
     </div>
-</aside>
-<h2>tbd</h2>
+    <aside class="maps-box">
+        <h2>Google Maps</h2>
+        <div id="google-map"></div>
+    </aside>
+</div>
+
+
 

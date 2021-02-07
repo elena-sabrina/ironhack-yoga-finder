@@ -1,0 +1,16 @@
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.yoga-classes-list {
+  flex: 1;
+  padding: 16px 0 0 100px;
+}
+
+.maps-box {
+  flex: 2;
+  background-color: lightblue;
+  height: 100vh;
+}

@@ -3,20 +3,24 @@
     <h1>Creat Yoga Class</h1>
     <form method="POST">
       <div class="form-styling">
-        <label for="input-name">Name</label>
+        <label for="input-name">Class Name</label>
         <input type="name" id="input-name" name="name" placeholder="" />
       </div>
       <div class="form-styling">
-      <label for="input-techer">Teacher</label>
-      <input type="teacher" id="input-teacher" name="teacher" placeholder="" />
+        <label for="input-teacher">Teacher</label>
+        <input type="teacher" id="input-teacher" name="teacher" placeholder="{{user.name}}" />
       </div>
       <div class="form-styling">
-      <label for="input-place">Place</label>
-      <input type="place" id="input-place" name="place" placeholder="" />
+          <label for="input-place">Place</label>
+          <input type="place" id="input-place" name="place" placeholder="" />
       </div>
       <div class="form-styling">
-      <label for="input-image"Add an image></label>
-      <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
+        <label for="input-location">Location</label>
+        <input type="url" id="input-location" name="location" placeholder="http://">
+      </div>
+      <div class="form-styling">
+        <label for="input-image"Add an image></label>
+        <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
       </div>
     
           
