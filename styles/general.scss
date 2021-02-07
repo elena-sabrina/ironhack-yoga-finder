@@ -79,8 +79,31 @@ img {
 
 .split-screen-left {
   flex: 1.25;
-  padding: 25px;
+  background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
+  h2 {
+    color: #fee6c6;
+  }
+
+  .split-screen-upper-left {
+    padding: 25px;
+  }
+  .split-screen-lower-left {
+    padding: 25px;
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: 4px -4px 7px rgba(64, 65, 75, 0.14),
+      6px 2px 17px 11px rgba(64, 65, 75, 0.14);
+  }
+  //z-index: 1;
 }
+
+/*.sidebar-upper-blue {
+  background-color: blue;
+  z-index: 1;
+}
+.sidebar-lower-white {
+  background-color: white;
+  z-index: 2;
+}*/
 
 .split-screen-right {
   flex: 2;

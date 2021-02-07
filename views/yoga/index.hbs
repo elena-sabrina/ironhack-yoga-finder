@@ -1,23 +1,38 @@
-<div class="split-screen .background-white">
+<div class="split-screen ">
     <div class="split-screen-left">
-        <h2>Yoga Classes All / Search </h2>
-        {{#each classes}}
-        <a href="/yoga/{{_id}}">
-            <div class="yoga-class-preview">
-                <div class="preview-box-left">
-                    <h3>{{ name }}</h3>
-                    <p> Location </p> 
-                    <p>{{ place }}</p> 
-                </div>
-                <div class="preview-box-right">
-                    <p> Time </p>
-                    <p> Level </p>
-                    <p>{{ teacher }}</p>
-                </div>   
-            </div>  
-        </a>
-        {{/each}} 
+        <div class=" split-screen-upper-left"> 
+            <h2>Find the Class </br>
+            <span class="light-font"> that fits best for you.</span></h2>
+        </div>
+        <div class="background-white split-screen-lower-left">
+            <div class="search">
+                <img src="/images/search.png" alt="search-icon">
+                <form action="">
+                    <label for="site-search"></label>
+                    <input type="search" id="site-search" name="q" placeholder="search classes">     
+                </form>
+                <img src="/images/filter.png" alt="filter-cion">
+            </div>
+            {{#each classes}}
+            <a href="/yoga/{{_id}}" >
+                <div class="yoga-class-preview ">
+                    <div class="preview-box-left">
+                        <h3>{{ name }}</h3>
+                        <p> at YinSide Yoga Bali {{ place }}</p> 
+                        <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
+                    </div>
+                    <div class="preview-box-right">
+                        <p> Time </p>
+                        <p> Level </p>
+                        <p>{{ teacher }}</p>
+                    </div>   
+                </div>  
+            </a>
+            {{/each}}
+        </div>
     </div>
+
+
     <aside class="split-screen-right"></aside>
         <div id="google-map"></div>
     </aside>
