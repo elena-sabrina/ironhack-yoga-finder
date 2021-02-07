@@ -1,6 +1,6 @@
 {{! Temporary styiling}}
-<div class="hero background-white">
-    <div class="hero-box ">
+<div class="split-screen .background-white">
+    <div class="split-screen-left">
         <h1>Profile</h1>
         {{#if user.picture}}
          <img src="{{user.picture}}" alt="{{user.name}}"/>
@@ -13,6 +13,6 @@
             <a href="/yoga/create">Create a Yoga class</a>
         </button>
     </div>
+    <aside class="split-screen-right"></aside>
 </div>
 
-    

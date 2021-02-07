@@ -1,20 +1,24 @@
-{{! Temporary styiling}}
 <div class="split-screen .background-white">
-    <div class="yoga-classes-list">
+    <div class="split-screen-left">
         <h2>Yoga Classes All / Search </h2>
         {{#each classes}}
+        <a href="/yoga/{{_id}}">
             <div class="yoga-class-preview">
-                <h3>{{ name }}</h3>
-                <p>{{ teacher }}</p>
-                <p>{{ place }}</p>  
+                <div class="preview-box-left">
+                    <h3>{{ name }}</h3>
+                    <p> Location </p> 
+                    <p>{{ place }}</p> 
+                </div>
+                <div class="preview-box-right">
+                    <p> Time </p>
+                    <p> Level </p>
+                    <p>{{ teacher }}</p>
+                </div>   
             </div>  
+        </a>
         {{/each}} 
     </div>
-    <aside class="maps-box">
-        <h2>Google Maps</h2>
+    <aside class="split-screen-right"></aside>
         <div id="google-map"></div>
     </aside>
 </div>
-
-
-

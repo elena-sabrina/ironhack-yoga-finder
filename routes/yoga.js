@@ -55,6 +55,28 @@ router.post(
   }
 );
 
+//Display one class
+
+router.get('/:id', (req, res, next) => {
+  const id = req.params.id;
+  Class.findById(id)
+    .then((classes) => {
+      if (classes === null) {
+        const error = new Error('Class does not exist.');
+        error.status = 404;
+        next(error);
+      } else {
+        res.render('yoga/detailpage', { classes: classes });
+      }
+    })
+    .catch((error) => {
+      if (error.kind === 'ObjectId') {
+        error.status = 404;
+      }
+      next(error);
+    });
+});
+
 // MAP MAP MAP
 
 function initMap() {

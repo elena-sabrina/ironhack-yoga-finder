@@ -1,16 +1,34 @@
-.split-screen {
+
+
+.yoga-class-preview {
+  box-shadow: 3px 5px 20px rgba(182, 182, 182, 0.15);
+  border-radius: 10px;
+  align-items: center;
+  height: 100px;
+  padding: 15px;
+  h3 {
+    color: #3f414e;
+    font-size: 18px;
+    line-height: 18px;
+    margin: 0px;
+  }
+  p {
+    color: #949494;
+    font-size: 11px;
+    line-height: 14px;
+    margin: 0px;
+  }
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-}
 
-.yoga-classes-list {
-  flex: 1;
-  padding: 16px 0 0 100px;
-}
-
-.maps-box {
-  flex: 2;
-  background-color: lightblue;
-  height: 100vh;
+  .preview-box-left {
+    //background-color: rgb(255, 177, 177);
+    flex: 3;
+    height: 70px;
+  }
+  .preview-box-right {
+    //background-color: rgb(204, 250, 204);
+    flex: 1;
+    height: 70px;
+  }
 }

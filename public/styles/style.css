@@ -70,6 +70,23 @@ img {
   letter-spacing: 0em;
 }
 
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.split-screen-left {
+  flex: 1.25;
+  padding: 25px;
+}
+
+.split-screen-right {
+  flex: 2;
+  background-color: lightblue;
+  height: 100vh;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -222,21 +239,38 @@ nav button:first-child {
     background-color: green;
   }*/
 /* ---------- SEARCH --------------*/
-.split-screen {
+.yoga-class-preview {
+  box-shadow: 3px 5px 20px rgba(182, 182, 182, 0.15);
+  border-radius: 10px;
+  align-items: center;
+  height: 100px;
+  padding: 15px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
 }
 
-.yoga-classes-list {
+.yoga-class-preview h3 {
+  color: #3f414e;
+  font-size: 18px;
+  line-height: 18px;
+  margin: 0px;
+}
+
+.yoga-class-preview p {
+  color: #949494;
+  font-size: 11px;
+  line-height: 14px;
+  margin: 0px;
+}
+
+.yoga-class-preview .preview-box-left {
+  flex: 3;
+  height: 70px;
+}
+
+.yoga-class-preview .preview-box-right {
   flex: 1;
-  padding: 16px 0 0 100px;
-}
-
-.maps-box {
-  flex: 2;
-  background-color: lightblue;
-  height: 100vh;
+  height: 70px;
 }
 
 *,
@@ -307,6 +341,23 @@ img {
 .light-font {
   font-weight: 200;
   letter-spacing: 0em;
+}
+
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.split-screen-left {
+  flex: 1.25;
+  padding: 25px;
+}
+
+.split-screen-right {
+  flex: 2;
+  background-color: lightblue;
+  height: 100vh;
 }
 
 .hero {

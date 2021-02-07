@@ -70,3 +70,20 @@ img {
   font-weight: 200;
   letter-spacing: 0em;
 }
+
+.split-screen {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.split-screen-left {
+  flex: 1.25;
+  padding: 25px;
+}
+
+.split-screen-right {
+  flex: 2;
+  background-color: lightblue;
+  height: 100vh;
+}
