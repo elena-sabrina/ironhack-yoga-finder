@@ -323,6 +323,11 @@ nav button:first-child {
   height: 70px;
 }
 
+.google-map {
+  width: 25em;
+  height: 25em;
+}
+
 *,
 *:before,
 *:after {

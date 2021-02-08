@@ -39,15 +39,20 @@ router.post(
     }
     const classes = new Class({
       name: data.name,
-      teacher: data.teacher,
-      place: data.place,
-      image: image
+      image: data.image,
+      //teacher: data.teacher,
+      location: {
+        coordinates: [data.longitude, data.latitude]
+      }
+      /*level: data.level,
+      category: data.category,
+      date: data.date*/
     });
     classes
       .save()
       .then((classes) => {
         console.log('Class created');
-        res.render('yoga/create');
+        res.render('yoga/${class._id}');
       })
       .catch((error) => {
         next(error);
@@ -66,7 +71,7 @@ router.get('/:id', (req, res, next) => {
         error.status = 404;
         next(error);
       } else {
-        res.render('yoga/detailpage', { classes: classes });
+        res.render('yoga/detailpage', { classes });
       }
     })
     .catch((error) => {
@@ -76,77 +81,5 @@ router.get('/:id', (req, res, next) => {
       next(error);
     });
 });
-
-// MAP MAP MAP
-
-function initMap() {
-  const mapElement = document.getElementById('google-map');
-
-  let map = new google.maps.Map(mapElement, {
-    center: { lat: 38.7134585, lng: -9.1457345 },
-    zoom: 13
-  });
-
-  const marker = new google.maps.Marker({
-    position: { lat: 38.7154585, lng: -9.1407345 },
-    map: map
-  });
-
-  marker.addListener('click', (event) => {
-    alert('Welcome home!');
-  });
-
-  const addedMarkers = [];
-
-  map.addListener('click', (event) => {
-    const latitude = event.latLng.lat();
-    const longitude = event.latLng.lng();
-
-    const addedMarker = new google.maps.Marker({
-      position: {
-        lat: latitude,
-        lng: longitude
-      },
-      map: map
-    });
-
-    addedMarker.addListener('click', () => {
-      // Taking marker out of map
-      // when marker is clicked
-      addedMarker.setMap(null);
-    });
-
-    addedMarkers.push(addedMarker);
-  });
-
-  setInterval(() => {
-    for (const item of addedMarkers) {
-      item.setMap(null);
-    }
-  }, 10000);
-
-  const locationTrigger = document.getElementById('locate-user');
-
-  locationTrigger.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const coordinates = position.coords;
-        const latitude = coordinates.latitude;
-        const longitude = coordinates.longitude;
-        const locationMarker = new google.maps.Marker({
-          position: {
-            lat: latitude,
-            lng: longitude
-          },
-          map: map
-          // map
-        });
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  });
-}
 
 module.exports = router;

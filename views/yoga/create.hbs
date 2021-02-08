@@ -10,7 +10,16 @@
         <label for="input-image"Add an image></label>
         <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
       </div>
-      <div class="form-styling">
+
+     <div class="form-styling">
+        <label for="input-latitude">Latitude</label>
+        <input type="number" id="input-latitude" name="latitude" placeholder="latitude" min="-90" max="90" />
+
+        <label for="input-longitude">Longitude</label>
+        <input type="number" id="input-longitude" name="longitude" placeholder="longitude" min="-180" max="180" />
+      </div>
+      
+    <div class="form-styling">
         <label for="input-level">Type</label>
         <select id="input-level" name="level">
             <option value="Choose class level" selected disabled>Category</option> <!-- Display empty placeholder value-->
@@ -20,6 +29,7 @@
             <option value="any">any</option>
         </select>
       </div>
+
       <div class="form-styling">
         <label for="input-type">Level</label>
         <select id="input-type" name="level">
@@ -36,10 +46,6 @@
     
         <label for="input-enddate"></label>
         <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
-      </div>
-      <div class="form-styling">
-        <label for="input-location">Location</label>
-        <input type="url" id="input-location" name="location" placeholder="http://">
       </div>
           
       <div class="center">

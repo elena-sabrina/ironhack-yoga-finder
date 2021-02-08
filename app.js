@@ -17,7 +17,15 @@ const authenticationRouter = require('./routes/authentication');
 const yogaRouter = require('./routes/yoga');
 const profileRouter = require('./routes/profile');
 
+const hbs = require('hbs');
+//const hbsJson = require('hbs-json');
+
+hbs.registerPartials(__dirname + '/views/partials');
+//hbs.registerHelper('json', hbsJson);
+
 const app = express();
+
+//app.locals.googleMapsKey = process.env.GOOGLE_MAPS_KEY;
 
 //HAMBURGER
 /*

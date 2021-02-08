@@ -15,15 +15,25 @@ const classSchema = new mongoose.Schema({
     trim: true
   },
   location: {
-    type: String,
-    trim: true
+    coordinates: [
+      {
+        type: Number,
+        min: -180,
+        max: 180
+      }
+    ],
+    type: {
+      type: String,
+      default: 'Point',
+      required: true
+    }
   },
   level: {
     type: String,
     enum: ['beginner', 'advanced', 'proficient', 'any'],
     default: 'any'
   },
-  type: {
+  category: {
     type: String,
     enum: ['Hatha', 'Vinyasa', 'Yin', 'Other'],
     default: 'Other'

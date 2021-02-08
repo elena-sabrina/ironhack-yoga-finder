@@ -18,13 +18,14 @@
                 <div class="yoga-class-preview ">
                     <div class="preview-box-left">
                         <h3>{{ name }}</h3>
-                        <p> at YinSide Yoga Bali {{ place }}</p> 
+                        <p> at {{ location }}</p> 
                         <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
                     </div>
                     <div class="preview-box-right">
-                        <p> Time </p>
-                        <p> Level </p>
+                        <p> {{date }} </p>
+                        <p> {{ level }} </p>
                         <p>{{ teacher }}</p>
+                        <p>{{ category }}</p>
                     </div>   
                 </div>  
             </a>
@@ -35,5 +36,39 @@
 
     <aside class="split-screen-right"></aside>
         <div id="google-map"></div>
+{{!
+<script>
+  function createMap () {
+    const mapElement = document.getElementById('map');
+    const map = new google.maps.Map(mapElement, {
+      center: {
+        lat: 38,
+        lng: -9
+      },
+      zoom: 8
+    });
+    const restaurants = {{{ json restaurants }}
+    
+{{!
+
+    };
+    for (let restaurant of restaurants) {
+      const marker = new google.maps.Marker({
+        position: {
+          lat: restaurant.location.coordinates[1],
+          lng: restaurant.location.coordinates[0]
+        },
+        map: map
+      })
+      marker.addListener('click', () => {
+        window.location = `/restaurant/${restaurant._id}`;
+      });
+    }
+  }
+</script>
+
+{{> scriptgooglemaps}}
+
+
     </aside>
 </div>
