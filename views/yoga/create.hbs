@@ -1,11 +1,19 @@
 <div class="hero background-white">
   <div class="hero-box ">
     <h1>Creat Yoga Class</h1>
-    <form method="POST">
+    <form method="POST" action="">
+      
+
       <div class="form-styling">
         <label for="input-name">Class Name</label>
         <input type="text" id="input-name" name="name" placeholder="" />
       </div>
+
+      <div class="form-styling">    
+        <label for="input-teacher">Teacher</label>
+        <input id="input-teacher" type="text" name="teacher" placeholder="{{ user.name}}">
+      </div>
+
       <div class="form-styling">
         <label for="input-image"Add an image></label>
         <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
@@ -20,9 +28,9 @@
       </div>
       
     <div class="form-styling">
-        <label for="input-level">Type</label>
+        <label for="input-level">Level</label>
         <select id="input-level" name="level">
-            <option value="Choose class level" selected disabled>Category</option> <!-- Display empty placeholder value-->
+            <option value="Choose class level" selected disabled>Level</option> <!-- Display empty placeholder value-->
             <option value="beginner">beginner</option>
             <option value="advanced">advanced</option>
             <option value="proficient">proficient</option>
@@ -31,8 +39,8 @@
       </div>
 
       <div class="form-styling">
-        <label for="input-type">Level</label>
-        <select id="input-type" name="level">
+        <label for="input-category">Category</label>
+        <select id="input-category" name="category">
             <option value="Choose yoga type" selected disabled>Category</option> <!-- Display empty placeholder value-->
             <option value="Hatha">Hatha</option>
             <option value="Vinyasa">Vinyasa</option>

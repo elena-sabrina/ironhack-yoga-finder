@@ -40,19 +40,20 @@ router.post(
     const classes = new Class({
       name: data.name,
       image: data.image,
-      //teacher: data.teacher,
+      teacher: data.teacher,
       location: {
         coordinates: [data.longitude, data.latitude]
-      }
-      /*level: data.level,
+      },
+      level: data.level,
       category: data.category,
-      date: data.date*/
+      date: data.date
     });
     classes
       .save()
       .then((classes) => {
         console.log('Class created');
-        res.render('yoga/${class._id}');
+        res.render('yoga');
+        //res.render('yoga/${class._id}');
       })
       .catch((error) => {
         next(error);
