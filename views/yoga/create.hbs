@@ -1,4 +1,8 @@
+
 <div class="hero background-white">
+
+  
+
   <div class="hero-box ">
     <h1>Creat Yoga Class</h1>
     <form method="POST" action="">
@@ -62,3 +66,48 @@
     </form>
   </div>
 </div>
+
+<div id="google-map"></div>
+
+<script>
+  function initMap () {
+    
+    const mapElement = document.getElementById('google-map');
+    const latitudeInput = document.getElementById('input-latitude');
+    const longitudeInput = document.getElementById('input-longitude');
+
+
+    const map = new google.maps.Map (mapElement, {
+      center: {
+        lat: -8.8,
+        lng: 115.15
+      },
+      zoom: 12
+    });
+
+    map.addListener('click', (position) => {
+      const latitude = position.latLng.lat();
+      const longitude = position.latLng.lng();
+      latitudeInput.value = latitude;
+      longitudeInput.value = longitude;
+
+      const marker = new google.maps.Marker ({
+        position: {
+        lat: latitude,
+        lng: longitude
+      }, 
+    map 
+      }};
+    })
+  }
+
+
+
+
+
+  
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0DqXPpPxcJTpR7EvVNsWAUVTKLQZclUw&callback=initMap&libraries=&v=weekly" defer >
+
+
