@@ -30,13 +30,14 @@
                 </div>  
             </a>
             {{/each}}
-        </div>
-    </div>
+          </div>
+      </div>
+      
 
+            <div id="google-map">Hallo Map</div>
 
-    <aside class="split-screen-right">
-        <div id="google-map">Hallo Map</div>
-    </aside>
+</div>
+ 
 
 <script>
   function initGoogleMap () {
@@ -44,11 +45,12 @@
 
     const map = new google.maps.Map (mapElement, {
       center: {
-        lat: 38,
-        lng: -9
+        lat: -8.8,
+        lng: 115.15
       },
-      zoom: 8
+      zoom: 13
     });
+    const classes = {{{ json classes }}};
   }
 
 </script>
@@ -57,39 +59,7 @@
 
 
 
-{{!
-<script>
-  function createMap () {
-    const mapElement = document.getElementById('map');
-    const map = new google.maps.Map(mapElement, {
-      center: {
-        lat: 38,
-        lng: -9
-      },
-      zoom: 8
-    });
-    const restaurants = {{{ json restaurants }}
+
     
-{{!
-
-    };
-    for (let restaurant of restaurants) {
-      const marker = new google.maps.Marker({
-        position: {
-          lat: restaurant.location.coordinates[1],
-          lng: restaurant.location.coordinates[0]
-        },
-        map: map
-      })
-      marker.addListener('click', () => {
-        window.location = `/restaurant/${restaurant._id}`;
-      });
-    }
-  }
-</script>
-
-{{> scriptgooglemaps}}
 
 
-    </aside>
-</div>

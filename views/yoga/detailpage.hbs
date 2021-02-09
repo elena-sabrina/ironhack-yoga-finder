@@ -1,14 +1,39 @@
 {{! Temporary styiling}}
 <div class="split-screen .background-white">
     <div class="split-screen-left">
-        <h2> {{classes.name}} </h2>
-        <h3>{{ classes.name }}</h3>
-        <p> Location </p> 
-        <p>{{ classes.place }}</p> 
-        <p> Time </p>
-        <p> Level </p>
+
+        <div class=" split-screen-upper-left"> 
+            <h2> {{classes.name}} </h2>
+        </div>
+        <div class="background-white split-screen-lower-left">
+            {{#each classes}}
+                <div class="yoga-class-preview ">
+                    <h3>{{ classes.name }}</h3>
+                    <p> {{classes.location}} </p> 
+                    <p>{{ classes.place }}</p> 
+                </div>  
+            {{/each}}
+        </div>
+
+        
     </div>
-    <aside class="split-screen-right"></aside>
+
         <div id="google-map"></div>
-    </aside>
 </div>
+
+<script>
+  function initGoogleMap () {
+    const mapElement = document.getElementById('google-map');
+
+    const map = new google.maps.Map (mapElement, {
+      center: {
+        lat: -8.8,
+        lng: 115.15
+      },
+      zoom: 12
+    });
+  }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0DqXPpPxcJTpR7EvVNsWAUVTKLQZclUw&callback=initGoogleMap&libraries=&v=weekly" defer >

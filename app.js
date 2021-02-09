@@ -18,10 +18,10 @@ const yogaRouter = require('./routes/yoga');
 const profileRouter = require('./routes/profile');
 
 const hbs = require('hbs');
-//const hbsJson = require('hbs-json');
+const hbsJson = require('hbs-json');
 
 hbs.registerPartials(__dirname + '/views/partials');
-//hbs.registerHelper('json', hbsJson);
+hbs.registerHelper('json', hbsJson);
 
 const app = express();
 

@@ -324,8 +324,9 @@ nav button:first-child {
 }
 
 #google-map {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  height: 500px;
+  background-color: red;
 }
 
 *,
