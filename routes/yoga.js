@@ -63,7 +63,7 @@ router.post(
 
 //Display one class
 
-router.get('/:id', (req, res, next) => {
+router.get('/class:id', (req, res, next) => {
   const id = req.params.id;
   Class.findById(id)
     .then((classes) => {

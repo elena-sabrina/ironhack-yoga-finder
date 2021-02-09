@@ -2,7 +2,7 @@
     <div class="split-screen-left">
         <div class=" split-screen-upper-left"> 
             <h2>Find the Class </br>
-            <span class="light-font"> that fits best for you.</span></h2>
+            <span class="light-font"> that fits best to you.</span></h2>
         </div>
         <div class="background-white split-screen-lower-left">
             <div class="search">
@@ -14,7 +14,7 @@
                 <img src="/images/filter.png" alt="filter-cion">
             </div>
             {{#each classes}}
-            <a href="/yoga/{{_id}}" >
+            <a href="/yoga/class{{_id}}" >
                 <div class="yoga-class-preview ">
                     <div class="preview-box-left">
                         <h3>{{ name }}</h3>
@@ -40,7 +40,7 @@
  
 
 <script>
-  function initGoogleMap () {
+  function initMap () {
     const mapElement = document.getElementById('google-map');
 
     const map = new google.maps.Map (mapElement, {
@@ -53,6 +53,8 @@
 
     const classes = {{{ json classes }}};
 
+    console.log(classes);
+
     for (let classlisting of classes) {
       const marker = new google.maps.Marker({
         position: {
@@ -61,34 +63,21 @@
         },
         map:map
       })
+
+      marker.addListener('click', () => {
+        window.location = `/yoga/class${classlisting._id}`;
+      });
     }
-
-    const addedMarkers = [];
-    map.addListener('click', (event) => {
-      const latitude = event.latLng.lat();
-      const longitude = event.latLng.lng();
-
-      const addedMarker = new google.maps.Marker({
-        position: {
-          lat: latitude,
-          lng: longitude
-        },
-        map: map
-      });
-
-      addedMarker.addListener('click',() => {
-        addedMarker.setMap(null);
-      });
-
-      addedMarkers.push(addedMarker);
-
-  });
-
   }
 
+  //Change view on click
+
+
+
+  
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0DqXPpPxcJTpR7EvVNsWAUVTKLQZclUw&callback=initGoogleMap&libraries=&v=weekly" defer >
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0DqXPpPxcJTpR7EvVNsWAUVTKLQZclUw&callback=initMap&libraries=&v=weekly" defer >
 
 
 
