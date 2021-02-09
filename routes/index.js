@@ -11,4 +11,8 @@ router.get('/', (req, res, next) => {
   res.render('home', { title: 'Hello World!' });
 });
 
+router.get('/locate', (req, res, next) => {
+  res.render('notifications/locate');
+});
+
 module.exports = router;

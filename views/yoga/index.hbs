@@ -34,8 +34,29 @@
     </div>
 
 
-    <aside class="split-screen-right"></aside>
-        <div id="google-map"></div>
+    <aside class="split-screen-right">
+        <div id="google-map">Hallo Map</div>
+    </aside>
+
+<script>
+  function initGoogleMap () {
+    const mapElement = document.getElementById('google-map');
+
+    const map = new google.maps.Map (mapElement, {
+      center: {
+        lat: 38,
+        lng: -9
+      },
+      zoom: 8
+    });
+  }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0DqXPpPxcJTpR7EvVNsWAUVTKLQZclUw&callback=initGoogleMap&libraries=&v=weekly" defer >
+
+
+
 {{!
 <script>
   function createMap () {
