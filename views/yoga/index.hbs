@@ -48,9 +48,42 @@
         lat: -8.8,
         lng: 115.15
       },
-      zoom: 13
+      zoom: 12
     });
+
     const classes = {{{ json classes }}};
+
+    for (let classlisting of classes) {
+      const marker = new google.maps.Marker({
+        position: {
+          lat: classlisting.location.coordinates[1],
+          lng: classlisting.location.coordinates[0]
+        },
+        map:map
+      })
+    }
+
+    const addedMarkers = [];
+    map.addListener('click', (event) => {
+      const latitude = event.latLng.lat();
+      const longitude = event.latLng.lng();
+
+      const addedMarker = new google.maps.Marker({
+        position: {
+          lat: latitude,
+          lng: longitude
+        },
+        map: map
+      });
+
+      addedMarker.addListener('click',() => {
+        addedMarker.setMap(null);
+      });
+
+      addedMarkers.push(addedMarker);
+
+  });
+
   }
 
 </script>
