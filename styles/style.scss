@@ -9,10 +9,7 @@
 @import 'classdetail';
 @import 'home';
 
-
-
 /* ---------- FORM --------------*/
-
 
 /* ---------- NAV --------------*/
 
@@ -20,8 +17,22 @@
 
 /* ---------- PROFILE --------------*/
 
-
 /* ---------- CLASSDETAIL --------------*/
 
 /* ---------- HOME --------------*/
 
+/*
+.split-screen {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.split-left {
+  overlow-y: scroll;
+}
+
+.split-left,
+#google-maps {
+  width: 50 %;
+}
+*/

@@ -7,24 +7,31 @@
 
         <button id="locate-me" class="primary-button button-styling"> 
           {{!First action: locate-me. Second action href. Can I make that work?}}
-          <a href="/yoga/search">Sure locate me .</a>
+          {{!<a href="/yoga/search">Sure locate me .</a>}}
+          Sure locate me.
         </button>
 
         <form method="GET" action="/yoga/search">
-        <div class="center">
-          <button class="primary-button button-styling">Don't locate me. Use default location</button>
-        </div>
 
           <label for="input-latitude"></label>
-          <input id="input-latitude" type="number" name="latitude" required min="-90" max="90" step="any" value="-8.82914"/>
+          <input id="input-latitude" type="number" name="latitude" required min="-90" max="90" step="any" value="-8.83"/>
 
           <label for="input-longitude"></label>
-          <input id="input-longitude" type="number" name="longitude" required min="-180" max="180" step="any" value="115.08490"/>
+          <input id="input-longitude" type="number" name="longitude" required min="-180" max="180" step="any" value="115.09"/>
 
           <label for="input-longitude"></label>
           <input id="input-distance" type="hidden" name="distance" min="0" max="100000" step="1000"/>
 
-          
+{{!
+          <button> 
+            <a href="/yoga/search">Ok.</a>
+          </button>
+}}
+
+
+          <div class="center">
+            <button class="primary-button button-styling">Don't locate me. Use default location</button>
+          </div>
         </form>
         
     </div>
@@ -39,7 +46,7 @@
   const longitudeInput = document.getElementById('input-longitude');
 
   const getUserLocation = (options) => new Promise((resolve, reject) => navigator.geolocation.getCurrentPosition(resolve, reject, options));
-  console.log(getUserLocation);
+
 
   locateMeTrigger.addEventListener('click', () => {
     getUserLocation()
@@ -49,6 +56,7 @@
         //const { latitude, longitude } = location.coords;
         latitudeInput.value = latitude;
         longitudeInput.value = longitude;
+        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000`
       })
       .catch(error => {
         console.log('There was an error locating the user.');

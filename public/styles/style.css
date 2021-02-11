@@ -547,5 +547,20 @@ h3 p {
 /* ---------- PROFILE --------------*/
 /* ---------- CLASSDETAIL --------------*/
 /* ---------- HOME --------------*/
+/*
+.split-screen {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.split-left {
+  overlow-y: scroll;
+}
+
+.split-left,
+#google-maps {
+  width: 50 %;
+}
+*/
 
 /*# sourceMappingURL=style.css.map */

@@ -81,7 +81,7 @@ router.get('/search', (req, res, next) => {
       unique: true
     })
     .then((classes) => {
-      res.render('yoga/search', { classes });
+      res.render('yoga/search', { classes, latitude: latitude });
     })
     .catch((error) => {
       console.log(error);
@@ -108,7 +108,6 @@ router.get('/class:id', (req, res, next) => {
         next(error);
       } else {
         res.render('yoga/detailpage', { classes });
-    
       }
     })
     .catch((error) => {
