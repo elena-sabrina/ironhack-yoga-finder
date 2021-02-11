@@ -6,13 +6,17 @@
             <h2> {{classes.name}} </h2>
         </div>
         <div class="background-white split-screen-lower-left">
-            {{#each classes}}
+          
                 <div class="yoga-class-preview ">
                     <h3>{{ classes.name }}</h3>
-                    <p> {{classes.location}} </p> 
+                  
+                    <p> {{classes.location.coordinates.[1]}} </p> 
+                    <p> {{classes.location.coordinates.[0]}} </p> 
+
+
                     <p>{{ classes.place }}</p> 
                 </div>  
-            {{/each}}
+      
         </div>
 
         
@@ -21,9 +25,10 @@
         <div id="google-map"></div>
 </div>
 
-{{!<script>
+<script>
   function initMap () {
     const mapElement = document.getElementById('google-map');
+
 
     const map = new google.maps.Map (mapElement, {
       center: {
@@ -32,7 +37,10 @@
       },
       zoom: 12
     });
+    
+    
   }
 
+
+
 </script>
-}}

@@ -13,6 +13,10 @@ const uploadMiddleware = require('./../middleware/file-upload');
 //Display all classes
 
 router.get('/search', (req, res, next) => {
+  const { latitude, longitude, distance } = req.query;
+  console.log(latitude);
+  console.log(longitude);
+  console.log(distance);
   Class.find()
     .then((classes) => {
       res.render('yoga/search', { classes });
