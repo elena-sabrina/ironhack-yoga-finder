@@ -1,21 +1,37 @@
-<h1>We are gona locate you now</h1>
-
-<button id="locate-me">Ok locate me </button>
-
-<form method="GET" action="/yoga/search">
-  <label for="input-latitude">Latitude</label>
-  <input id="input-latitude" type="number" name="latitude" required min="-90" max="90" step="any" value="-8.82914"/>
-
-  <label for="input-longitude">Longitude</label>
-  <input id="input-longitude" type="number" name="longitude" required min="-180" max="180" step="any" value="115.08490"/>
-  
-  <label for="input-longitude">Distance</label>
-  <input id="input-distance" type="range" name="distance" min="0" max="100000" step="1000"/>
-
-  <button>Find Classes</button>
+<div class="hero background-blue">
+    <div class="hero-box">
+        <h1>We are going to locate you now
+          to find nearby classes. </h1>
 
 
-</form>
+
+        <button id="locate-me" class="primary-button button-styling"> 
+          {{!First action: locate-me. Second action href. Can I make that work?}}
+          <a href="/yoga/search">Sure locate me .</a>
+        </button>
+
+        <form method="GET" action="/yoga/search">
+        <div class="center">
+          <button class="primary-button button-styling">Don't locate me. Use default location</button>
+        </div>
+
+          <label for="input-latitude"></label>
+          <input id="input-latitude" type="number" name="latitude" required min="-90" max="90" step="any" value="-8.82914"/>
+
+          <label for="input-longitude"></label>
+          <input id="input-longitude" type="number" name="longitude" required min="-180" max="180" step="any" value="115.08490"/>
+
+          <label for="input-longitude"></label>
+          <input id="input-distance" type="hidden" name="distance" min="0" max="100000" step="1000"/>
+
+          
+        </form>
+        
+    </div>
+</div>
+
+
+
 
 <script>
   const locateMeTrigger = document.getElementById('locate-me');

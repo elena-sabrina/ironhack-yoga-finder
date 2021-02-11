@@ -12,7 +12,38 @@
         <button>
             <a href="/yoga/create">Create a Yoga class</a>
         </button>
+
+        <p>asdf</p>
+        <p>{{ title }}</p>
+
+
+  
     </div>
-    <aside class="split-screen-right"></aside>
+    <aside class="split-screen-right">
+
+        <h2>My upcoming classes</h2>
+
+        <a href="/yoga/class{{_id}}" >
+                <div class="yoga-class-preview ">
+                    <div class="preview-box-left">
+                        <h3>Name</h3>
+                        <p> at </p> 
+                        <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
+                    </div>
+                    <div class="preview-box-right">
+                        <p> Date </p>
+                        <p> Level </p>
+                        <p> Teacher </p>
+                        <p> Category</p>
+                    </div>   
+                </div>  
+            </a>
+
+        
+
+
+
+
+    </aside>
 </div>
 

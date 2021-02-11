@@ -108,6 +108,7 @@ router.get('/class:id', (req, res, next) => {
         next(error);
       } else {
         res.render('yoga/detailpage', { classes });
+    
       }
     })
     .catch((error) => {
