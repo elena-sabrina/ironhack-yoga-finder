@@ -7,14 +7,16 @@
         </div>
         <div class="background-white split-screen-lower-left">
           
-                <div class="yoga-class-preview ">
+              <div class="yoga-class-detail">
                     <h3>{{ classes.name }}</h3>
                   
-                    <p> {{classes.location.coordinates.[1]}} </p> 
-                    <p> {{classes.location.coordinates.[0]}} </p> 
+                    <p> Teacher: {{classes.teacher}} </p> 
+                    <p> Date: {{classes.date }} </p> 
+                    <p> Level: {{ classes.level }} </p>
+                    <p> Category: {{ classes.category }}</p>
 
 
-                    <p>{{ classes.place }}</p> 
+                    <p> Place {{ classes.place }}</p> 
                 </div>  
       
         </div>
@@ -42,7 +44,7 @@
         lat: classes.location.coordinates[1],
         lng: classes.location.coordinates[0]
       },
-      zoom: 14
+      zoom: 13
     })
 
     
