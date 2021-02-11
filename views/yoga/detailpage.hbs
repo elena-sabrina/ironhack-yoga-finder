@@ -27,34 +27,49 @@
 
 <script>
   function initMap () {
+    //Import database Info
+
+    const classes = {{{ json classes }}};
+
+    //Log via browser
+    console.log(classes);
+    console.log(classes.location.coordinates[1]);
+
+
     const mapElement = document.getElementById('google-map');
     const map = new google.maps.Map (mapElement, {
       center: {
-        lat: -8.8,
-        lng: 115.15
+        lat: classes.location.coordinates[1],
+        lng: classes.location.coordinates[0]
       },
-      zoom: 12
+      zoom: 8
     })
-/*
 
-    for (let classlisting of classes) {
-      const marker = new google.maps.Marker({
+    
+    const marker = new google.maps.Marker({
         position: {
-          lat: classlisting.location.coordinates[1],
-          lng: classlisting.location.coordinates[0]
+          lat: classes.location.coordinates[1],
+          lng: classes.location.coordinates[0]
         },
         map:map
       })
 
-      marker.addListener('click', () => {
-        window.location = `/yoga/class${classlisting._id}`;
-      });
-    }
-    
-    */
+    const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    const mylocationmarker = new google.maps.Marker({
+        position: {
+          lat: -8.8,
+          lng: 115.15
+        },
+        map:map,
+        icon: image,
+      })
+
+
   }
 
 
 </script>
 
 {{> scriptgooglemaps}}
+
