@@ -21,6 +21,7 @@ router.post(
   uploadMiddleware.single('image'),
   (req, res, next) => {
     const data = req.body;
+    console.log(data);
     let image;
     if (req.file) {
       image = req.file.path;
@@ -64,26 +65,26 @@ Class.find({
 )*/
 
 router.get('/search', (req, res, next) => {
-  const { latitude, longitude, distance } = req.query;
+  const latitude = req.query.latitude;
+  const longitude = req.query.latitude;
+  const distance = req.query.latitude;
+
+  console.log('log req.query via router/terminal:');
   console.log(req.query);
-  console.log(longitude);
-  console.log(distance);
-  //const radius = metersToDegrees(10);
-  //const radius = distance * -1;
-  const area = {
-    center: [115.0849, -8.82914],
-    radius: 10,
-    unique: true
-  };
 
   Class.find()
     .where('location')
     .within()
-    .circle(area)
+    .circle({
+      center: [longitude, latitude],
+      radius: 120,
+      unique: true
+    })
     .then((classes) => {
       res.render('yoga/search', { classes });
     })
     .catch((error) => {
+      console.log(error);
       next(error);
     });
 });

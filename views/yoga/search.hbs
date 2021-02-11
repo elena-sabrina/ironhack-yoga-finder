@@ -40,6 +40,8 @@
  
 
 <script>
+
+  //Talk to browser
   function initMap () {
     const mapElement = document.getElementById('google-map');
 
@@ -51,8 +53,11 @@
       zoom: 12
     });
 
+    //Import database Info
+
     const classes = {{{ json classes }}};
 
+    //Log via browser
     console.log(classes);
 
     for (let classlisting of classes) {
@@ -68,7 +73,17 @@
         window.location = `/yoga/class${classlisting._id}`;
       });
     }
-  }
+    const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    const mylocationmarker = new google.maps.Marker({
+        position: {
+          lat: -8.8,
+          lng: 115.15
+        },
+        map:map,
+        icon: image,
+      })
+}
 
   //Change view on click
 
