@@ -1,4 +1,4 @@
-'use strict';
+//'use strict';
 
 const express = require('express');
 const router = new express.Router();
@@ -9,22 +9,6 @@ const Class = require('./../models/class');
 
 //STORAGE CLOUDINARY
 const uploadMiddleware = require('./../middleware/file-upload');
-
-//Display all classes
-
-router.get('/search', (req, res, next) => {
-  const { latitude, longitude, distance } = req.query;
-  console.log(latitude);
-  console.log(longitude);
-  console.log(distance);
-  Class.find()
-    .then((classes) => {
-      res.render('yoga/search', { classes });
-    })
-    .catch((error) => {
-      next(error);
-    });
-});
 
 // Create new classes
 router.get('/create', routeGuard, (req, res, next) => {
@@ -65,10 +49,56 @@ router.post(
   }
 );
 
+//Display all classes
+
+/* LOCATION NEAR TRY FAILED
+Class.find({
+    location: {
+      $near: {
+        $geometry: { type: 'Point', coordinates: [115.0849, -8.82914] },
+        $minDistance: 1000,
+        $maxDistance: 5000
+      }
+    }
+  })
+)*/
+
+router.get('/search', (req, res, next) => {
+  const { latitude, longitude, distance } = req.query;
+  console.log(req.query);
+  console.log(longitude);
+  console.log(distance);
+  //const radius = metersToDegrees(10);
+  //const radius = distance * -1;
+  const area = {
+    center: [115.0849, -8.82914],
+    radius: 10,
+    unique: true
+  };
+
+  Class.find()
+    .where('location')
+    .within()
+    .circle(area)
+    .then((classes) => {
+      res.render('yoga/search', { classes });
+    })
+    .catch((error) => {
+      next(error);
+    });
+});
+
 //Display one class
 
 router.get('/class:id', (req, res, next) => {
   const id = req.params.id;
+  const body = req.body;
+  const query = req.query;
+  console.log('log detailpage consoles');
+  console.log(req.params.id);
+  console.log(req.body);
+  console.log(req.query);
+
   Class.findById(id)
     .then((classes) => {
       if (classes === null) {

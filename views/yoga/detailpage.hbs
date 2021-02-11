@@ -28,19 +28,33 @@
 <script>
   function initMap () {
     const mapElement = document.getElementById('google-map');
-
-
     const map = new google.maps.Map (mapElement, {
       center: {
         lat: -8.8,
         lng: 115.15
       },
       zoom: 12
-    });
+    })
+/*
+
+    for (let classlisting of classes) {
+      const marker = new google.maps.Marker({
+        position: {
+          lat: classlisting.location.coordinates[1],
+          lng: classlisting.location.coordinates[0]
+        },
+        map:map
+      })
+
+      marker.addListener('click', () => {
+        window.location = `/yoga/class${classlisting._id}`;
+      });
+    }
     
-    
+    */
   }
 
 
-
 </script>
+
+{{> scriptgooglemaps}}
