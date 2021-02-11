@@ -12,10 +12,10 @@ const uploadMiddleware = require('./../middleware/file-upload');
 
 //Display all classes
 
-router.get('/', (req, res, next) => {
+router.get('/search', (req, res, next) => {
   Class.find()
     .then((classes) => {
-      res.render('yoga/index', { classes });
+      res.render('yoga/search', { classes });
     })
     .catch((error) => {
       next(error);
@@ -52,7 +52,7 @@ router.post(
       .save()
       .then((classes) => {
         console.log('Class created');
-        res.render('yoga');
+        res.render('yoga/search');
         //res.render('yoga/${class._id}');
       })
       .catch((error) => {

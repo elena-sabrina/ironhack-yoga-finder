@@ -13,6 +13,9 @@
   <input id="input-distance" type="range" name="distance" min="0" max="100000" step="1000"/>
 
   <button>Ok</button>
+
+  
+
 </form>
 
 <script>
@@ -21,6 +24,9 @@
   const longitudeInput = document.getElementById('input-longitude');
 
   const getUserLocation = (options) => new Promise((resolve, reject) => navigator.geolocation.getCurrentPosition(resolve, reject, options));
+
+
+  
   locateMeTrigger.addEventListener('click', () => {
     getUserLocation()
       .then(location => {

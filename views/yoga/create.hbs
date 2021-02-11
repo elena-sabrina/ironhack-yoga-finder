@@ -25,10 +25,10 @@
 
      <div class="form-styling">
         <label for="input-latitude">Latitude</label>
-        <input type="number" id="input-latitude" name="latitude" placeholder="latitude" min="-90" max="90" />
+        <input type="number" id="input-latitude" name="latitude" placeholder="latitude" min="-90" max="90" step="any" />
 
         <label for="input-longitude">Longitude</label>
-        <input type="number" id="input-longitude" name="longitude" placeholder="longitude" min="-180" max="180" />
+        <input type="number" id="input-longitude" name="longitude" placeholder="longitude" min="-180" max="180" step="any"/>
       </div>
       
     <div class="form-styling">
@@ -67,47 +67,47 @@
   </div>
 </div>
 
+</div>
+
 <div id="google-map"></div>
 
 <script>
   function initMap () {
-    
     const mapElement = document.getElementById('google-map');
     const latitudeInput = document.getElementById('input-latitude');
     const longitudeInput = document.getElementById('input-longitude');
-
-
-    const map = new google.maps.Map (mapElement, {
+    const map = new google.maps.Map(mapElement, {
       center: {
         lat: -8.8,
         lng: 115.15
       },
       zoom: 12
     });
+    
+    let marker;
 
     map.addListener('click', (position) => {
       const latitude = position.latLng.lat();
       const longitude = position.latLng.lng();
-      latitudeInput.value = latitude;
-      longitudeInput.value = longitude;
 
-      const marker = new google.maps.Marker ({
+      latitudeInput.value = latitude.toFixed(5);
+      longitudeInput.value = longitude.toFixed(5);
+
+      if (marker) {
+        marker.setMap(null);
+      }
+      marker = new google.maps.Marker({
         position: {
-        lat: latitude,
-        lng: longitude
-      }, 
-    map 
-      }};
+          lat: latitude,
+          lng: longitude
+        },
+        map
+      });
     })
   }
-
-
-
-
-
-  
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0DqXPpPxcJTpR7EvVNsWAUVTKLQZclUw&callback=initMap&libraries=&v=weekly" defer >
+
+{{> scriptgooglemaps}}
 
 
