@@ -77,7 +77,7 @@ router.get('/search', (req, res, next) => {
     .within()
     .circle({
       center: [longitude, latitude],
-      radius: 120,
+      radius: 100000,
       unique: true
     })
     .then((classes) => {
