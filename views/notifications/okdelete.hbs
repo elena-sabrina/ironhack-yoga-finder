@@ -15,12 +15,13 @@
                 <p> {{ level }} </p>
                 <p>{{ teacher }}</p>
                 <p>{{ category }}</p>
+                <p>{{ userId }}/</p>
               
             </div>   
         </div>  
 
 
-        <form method= "POST" action="/yoga/class/{{classes._id}}/delete">
+        <form method= "POST" action="/yoga/class/{{userId}}/delete">
             <label for="delete-class" hidden>Delete Class</label>
             <button>Delete</button> 
         </form>
