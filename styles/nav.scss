@@ -27,23 +27,45 @@ nav {
   .hamburger {
     position: absolute;
     cursor: pointer;
-    background-color: red;
-    z-index: 2;
+    z-index: 3;
   }
   .nav-links {
+    background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
+    color: white;
     position: fixed;
-    background: blue;
     height: 100vh;
     width: 100%;
-    flex-direction: column;
-    z-index: 1;
     clip-path: circle(10px at 0% -1%);
     -webkit-clip-path: circle(10px at 0% -1%);
-    transition: all 1s ease-out;
+    transition: all 0.3s ease-out;
+    z-index: 2;
   }
   .nav-links.open {
-    clip-path: circle(800px at 50% -1%);
-    -webkit-clip-path: circle(800px at 50% -1%);
+    clip-path: circle(1000px at 50% -1%);
+    -webkit-clip-path: circle(1000px at 50% -1%);
+    pointer-events: all;
+    ul {
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      width: 80vh;
+      height: 80vh;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      align-content: space-between;
+      z-index: 2;
+      a {
+        font-size: 40px;
+        margin: 80px;
+      }
+    }
   }
 }
 
