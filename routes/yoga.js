@@ -75,6 +75,8 @@ router.get('/search', (req, res, next) => {
       radius: 100000,
       unique: true
     })
+    .sort({ date: 1 })
+    .sort({ location: -1 })
     .then((classes) => {
       console.log('location');
       console.log(latitude, longitude);
