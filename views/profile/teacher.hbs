@@ -1,44 +1,49 @@
 {{! Temporary styiling}}
 <div class="split-screen .background-white">
     <div class="split-screen-left">
-        <h1>Profile</h1>
-        {{#if user.picture}}
-         <img src="{{user.picture}}" alt="{{user.name}}"/>
-        {{/if}}
-        <p>This page should only be accessible to authenticated users.</p>
-        <span><strong>Name</strong>: {{user.name}}</span>
-        <br />
-        <span><strong>Email</strong>: {{user.email}}</span>
-        <button>
-            <a href="/yoga/create">Create a Yoga class</a>
-        </button>
+        <div class=" split-screen-upper-left"> 
+            <h2>Profile </br>
+        </div>
+        <div class="background-white split-screen-lower-left">
+      
+            {{#if user.picture}}
+             <img src="{{user.picture}}" alt="{{user.name}}"/>
+            {{/if}}
+    
+            <span><strong>Name</strong>: {{user.name}}</span>
+            <br />
+            <span><strong>Email</strong>: {{user.email}}</span>
+            <button>
+                <a href="/yoga/create">Create a Yoga class</a>
+            </button>
 
-        <p>asdf</p>
-        <p>{{ title }}</p>
-
-
+            <p>asdf</p>
+            <p>{{ title }}</p>
+        </div>
   
     </div>
     <aside class="split-screen-right">
 
         <h2>My upcoming classes</h2>
 
-        <a href="/yoga/class{{_id}}" >
+        {{#each classes}}
+            <a href="/yoga/class{{_id}}" >
                 <div class="yoga-class-preview ">
                     <div class="preview-box-left">
-                        <h3>Name</h3>
-                        <p> at </p> 
+                        <h3>{{ name }}</h3>
+                        <p> at {{ location }}</p> 
                         <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
                     </div>
                     <div class="preview-box-right">
-                        <p> Date </p>
-                        <p> Level </p>
-                        <p> Teacher </p>
-                        <p> Category</p>
+                        <p> {{date }} </p>
+                        <p> {{ level }} </p>
+                        <p>{{ teacher }}</p>
+                        <p>{{ category }}</p>
                     </div>   
                 </div>  
             </a>
-
+            {{/each}}
+        
         
 
 

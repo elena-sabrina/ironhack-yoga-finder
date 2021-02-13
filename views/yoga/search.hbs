@@ -1,3 +1,11 @@
+{{!
+<input id="input-latitude" type="number" name="latitude"  value="{{latitude}}
+{{!
+" />
+<input id="input-longitude" type="number" name="longitude" value="{{longitude}}
+{{!" />
+}}
+
 <div class="split-screen ">
     <div class="split-screen-left">
         <div class=" split-screen-upper-left"> 
@@ -41,6 +49,15 @@
 
 <script>
 
+  //Access latitude and longitude via inputs
+  //const latitudeInput = document.getElementById('input-latitude');
+  //const longitudeInput = document.getElementById('input-longitude');
+  
+  //latitudeInput.value = latitude;
+  //longitudeInput.value = longitude;
+
+  
+
   //Talk to browser
   function initMap () {
     const mapElement = document.getElementById('google-map');
@@ -57,8 +74,6 @@
 
     const classes = {{{ json classes }}};
 
-    //Log via browser
-    console.log(classes);
 
     for (let classlisting of classes) {
       const marker = new google.maps.Marker({
@@ -77,8 +92,8 @@
     "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
     const mylocationmarker = new google.maps.Marker({
         position: {
-          lat: -8.8,
-          lng: 115.15
+          lat: {{latitude}},
+          lng: {{longitude}}
         },
         map:map,
         icon: image,

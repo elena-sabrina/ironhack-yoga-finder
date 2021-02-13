@@ -21,7 +21,6 @@ router.post(
   uploadMiddleware.single('image'),
   (req, res, next) => {
     const data = req.body;
-    console.log(data);
     let image;
     if (req.file) {
       image = req.file.path;
@@ -40,7 +39,6 @@ router.post(
     classes
       .save()
       .then((classes) => {
-        console.log('Class created');
         res.render('yoga/search');
         //res.render('yoga/${class._id}');
       })
@@ -69,9 +67,6 @@ router.get('/search', (req, res, next) => {
   const longitude = req.query.latitude;
   const distance = req.query.latitude;
 
-  console.log('log req.query via router/terminal:');
-  console.log(req.query);
-
   Class.find()
     .where('location')
     .within()
@@ -81,7 +76,13 @@ router.get('/search', (req, res, next) => {
       unique: true
     })
     .then((classes) => {
-      res.render('yoga/search', { classes, latitude: latitude });
+      console.log('location');
+      console.log(latitude, longitude);
+      res.render('yoga/search', {
+        classes,
+        latitude: latitude,
+        longitude: longitude
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -93,12 +94,6 @@ router.get('/search', (req, res, next) => {
 
 router.get('/class:id', (req, res, next) => {
   const id = req.params.id;
-  const body = req.body;
-  const query = req.query;
-  console.log('log detailpage consoles');
-  console.log(req.params.id);
-  console.log(req.body);
-  console.log(req.query);
 
   Class.findById(id)
     .then((classes) => {

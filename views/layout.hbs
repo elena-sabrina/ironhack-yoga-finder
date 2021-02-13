@@ -8,12 +8,12 @@
   </head>
   <body>
     <nav>
-      <div id="hamburger">
-        <div id="line"></div>
-        <div id="line"></div>
-        <div id="line"></div>
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-      <div id="nav-links">
+      <div class="nav-links">
         <ul>
           <li><a href="/">Search</a></li>
           {{#if user}}
@@ -34,3 +34,29 @@
     <script src="/scripts/script.js"></script>
   </body>
 </html>
+
+
+
+//HAMBURGER
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  const links = document.querySelectorAll('.nav-links li');
+
+
+  hamburger.addEventListener('click', () => {
+   // console.log('Menu clicked!');
+    navLinks.classList.toggle('open');
+  });
+/*
+links.forEach(link => {
+  link.firstChild.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+});*/
+
+</script>
+
+
+

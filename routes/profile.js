@@ -12,7 +12,7 @@ router.get('/', routeGuard, (req, res, next) => {
     .then((classes) => {
       console.log('hello classes');
 
-      res.render('profile/teacher', { title: 'Hello World!' });
+      res.render('profile/teacher', { classes });
     })
     .catch((error) => {
       next(error);

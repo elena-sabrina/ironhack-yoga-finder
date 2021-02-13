@@ -74,10 +74,13 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .split-screen-left {
-  flex: 1.25;
+  max-width: 450px;
+  overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
 
@@ -105,8 +108,7 @@ img {
   z-index: 2;
 }*/
 .split-screen-right {
-  flex: 2;
-  background-color: lightblue;
+  padding: 25px;
   height: 100vh;
 }
 
@@ -191,40 +193,7 @@ textarea {
 /*label {
     margin-bottom: 0.5em;
   }*/
-#line {
-  width: 25px;
-  height: 1.5px;
-  background: black;
-  margin: 6px;
-}
-
-nav {
-  position: relative;
-}
-
-/*
-  #hamburger {
-    position: absolute;
-    cursor: pointer;
-  }
-  
-  #nav-links {
-    position: fixed;
-    background: blue;
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    z-index: 1;
-    clip-path: circle(10px at 0% -1%);
-    -webkit-clip-path: circle(10px at 0% -1%);
-    transition: all 1s ease-out;
-  }
-  #nav-links.open {
-    clip-path: circle(800px at 50% -1%);
-    -webkit-clip-path: circle(800px at 50% -1%);
-  }
-  */
-#nav-links ul {
+.nav-links ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -238,6 +207,41 @@ nav {
   margin: 0px;
   box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14), 0px 8px 16px rgba(4, 7, 31, 0.14);
 }
+
+@media screen and (min-width: 1px) {
+  .line {
+    width: 25px;
+    height: 1.5px;
+    background: black;
+    margin: 6px;
+  }
+  nav {
+    position: relative;
+  }
+  .hamburger {
+    position: absolute;
+    cursor: pointer;
+    background-color: red;
+    z-index: 2;
+  }
+  .nav-links {
+    position: fixed;
+    background: blue;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    z-index: 1;
+    clip-path: circle(10px at 0% -1%);
+    -webkit-clip-path: circle(10px at 0% -1%);
+    transition: all 1s ease-out;
+  }
+  .nav-links.open {
+    clip-path: circle(800px at 50% -1%);
+    -webkit-clip-path: circle(800px at 50% -1%);
+  }
+}
+
+/*
 
 nav a,
 nav button {
@@ -255,7 +259,7 @@ nav a:first-child,
 nav button:first-child {
   margin-right: auto;
 }
-
+*/
 /*aside {
     height: 100vh;
     width: 200px;
@@ -324,8 +328,8 @@ nav button:first-child {
 }
 
 #google-map {
-  width: 100%;
-  height: 300px;
+  width: 70%;
+  height: 100vh;
   background-color: red;
 }
 
@@ -428,10 +432,13 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .split-screen-left {
-  flex: 1.25;
+  max-width: 450px;
+  overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
 
@@ -459,8 +466,7 @@ img {
   z-index: 2;
 }*/
 .split-screen-right {
-  flex: 2;
-  background-color: lightblue;
+  padding: 25px;
   height: 100vh;
 }
 
@@ -548,19 +554,18 @@ h3 p {
 /* ---------- CLASSDETAIL --------------*/
 /* ---------- HOME --------------*/
 /*
-.split-screen {
-  height: 100vh;
-  overflow: hidden;
-}
 
-.split-left {
-  overlow-y: scroll;
-}
+ <li><a href="/">Search</a></li>
+          {{#if user}}
+            <a href="/profile">{{user.name}}'s Profile</a>
+            <form class="form-button" action="/authentication/sign-out" method="POST">
+              <button>Sign Out</button>
+            </form>
+        {{else}}
+          <li><a href="/authentication/sign-in">Sign In</a></li>
+          <li><a href="/authentication/sign-up">Sign Up</a></li>
+       {{/if}}
 
-.split-left,
-#google-maps {
-  width: 50 %;
-}
-*/
+       */
 
 /*# sourceMappingURL=style.css.map */

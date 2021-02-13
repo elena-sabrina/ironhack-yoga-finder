@@ -75,10 +75,13 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .split-screen-left {
-  flex: 1.25;
+  max-width: 450px;
+  overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
   h2 {
     color: #fee6c6;
@@ -107,7 +110,6 @@ img {
 }*/
 
 .split-screen-right {
-  flex: 2;
-  background-color: lightblue;
+  padding: 25px;
   height: 100vh;
 }

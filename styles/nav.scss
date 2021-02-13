@@ -1,21 +1,36 @@
+.nav-links ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 600px;
+  list-style-type: none;
+}
 
-#line {
+nav {
+  display: flex;
+  background-color: white;
+  margin: 0px;
+  box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14),
+    0px 8px 16px rgba(4, 7, 31, 0.14);
+}
+
+@media screen and (min-width: 1px) {
+  .line {
     width: 25px;
     height: 1.5px;
     background: black;
     margin: 6px;
   }
-  
   nav {
     position: relative;
   }
-  /*
-  #hamburger {
+  .hamburger {
     position: absolute;
     cursor: pointer;
+    background-color: red;
+    z-index: 2;
   }
-  
-  #nav-links {
+  .nav-links {
     position: fixed;
     background: blue;
     height: 100vh;
@@ -26,41 +41,28 @@
     -webkit-clip-path: circle(10px at 0% -1%);
     transition: all 1s ease-out;
   }
-  #nav-links.open {
+  .nav-links.open {
     clip-path: circle(800px at 50% -1%);
     -webkit-clip-path: circle(800px at 50% -1%);
   }
-  */
-  
-  #nav-links ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 600px;
-    list-style-type: none;
-  }
-  
-  nav {
-    display: flex;
-    background-color: white;
-    margin: 0px;
-    box-shadow: 0px 4px 8px rgba(4, 7, 31, 0.14),
-      0px 8px 16px rgba(4, 7, 31, 0.14);
-  }
-  
-  nav a,
-  nav button {
-    padding: 1em 0;
-    border: 0;
-    margin: 0px 20px;
-  }
-  
-  nav a:not(:last-child),
-  nav button:not(:last-child) {
-    margin-right: 1em;
-  }
-  
-  nav a:first-child,
-  nav button:first-child {
-    margin-right: auto;
-  }
+}
+
+/*
+
+nav a,
+nav button {
+  padding: 1em 0;
+  border: 0;
+  margin: 0px 20px;
+}
+
+nav a:not(:last-child),
+nav button:not(:last-child) {
+  margin-right: 1em;
+}
+
+nav a:first-child,
+nav button:first-child {
+  margin-right: auto;
+}
+*/
