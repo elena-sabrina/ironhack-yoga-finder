@@ -59,13 +59,20 @@ Class.find({
         $maxDistance: 5000
       }
     }
-  })
+  }):
 )*/
 
 router.get('/search', (req, res, next) => {
   const latitude = req.query.latitude;
   const longitude = req.query.latitude;
   const distance = req.query.latitude;
+  /*for (classlisting of classes) {
+    var rawstartdate = classlisting.startdate;
+    var starttime = moment(rawstartdate, "ddd MMM Do YYYY HH:mm:SS").format('HH:mm');
+
+  }*/
+
+  req.session.location = { latitude, longitude };
 
   Class.find()
     .where('location')
@@ -94,7 +101,7 @@ router.get('/search', (req, res, next) => {
 
 //Display one class
 
-router.get('/class:id', (req, res, next) => {
+router.get('/class/:id', (req, res, next) => {
   const id = req.params.id;
 
   Class.findById(id)
@@ -117,7 +124,7 @@ router.get('/class:id', (req, res, next) => {
 
 // Edit classes
 
-router.get('/class:id/edit', routeGuard, (req, res, next) => {
+router.get('/class/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
 
   Class.findById(id)
@@ -131,7 +138,7 @@ router.get('/class:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
-router.post('/class:id', (req, res, next) => {
+router.post('/class/:id', (req, res, next) => {
   const id = req.params.id;
   // const data = req.body;
   Class.findByIdAndUpdate(id, {
@@ -147,7 +154,7 @@ router.post('/class:id', (req, res, next) => {
   })
     .then((classes) => {
       console.log('Class edited');
-      res.redirect(`/yoga/class${resource._id}`);
+      res.redirect(`/yoga/class/${id}`);
     })
     .catch((err) => {
       next(err);

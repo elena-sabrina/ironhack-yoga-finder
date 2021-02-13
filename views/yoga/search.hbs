@@ -22,7 +22,7 @@
                 <img src="/images/filter.png" alt="filter-cion">
             </div>
             {{#each classes}}
-            <a href="/yoga/class{{_id}}" >
+            <a href="/yoga/class/{{_id}}" >
                 <div class="yoga-class-preview ">
                     <div class="preview-box-left">
                         <h3>{{ name }}</h3>
@@ -30,7 +30,7 @@
                         <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
                     </div>
                     <div class="preview-box-right">
-                        <p> {{date }} </p>
+                        <p id="startdateid"> {{startdate }} - {{enddate}}</p>
                         <p> {{ level }} </p>
                         <p>{{ teacher }}</p>
                         <p>{{ category }}</p>
@@ -49,6 +49,7 @@
 
 <script>
 
+
   //Access latitude and longitude via inputs
   //const latitudeInput = document.getElementById('input-latitude');
   //const longitudeInput = document.getElementById('input-longitude');
@@ -59,6 +60,8 @@
   
 
   //Talk to browser
+
+
   function initMap () {
     const mapElement = document.getElementById('google-map');
 
@@ -74,6 +77,7 @@
 
     const classes = {{{ json classes }}};
 
+    console.log(classes);
 
     for (let classlisting of classes) {
       const marker = new google.maps.Marker({
@@ -88,6 +92,7 @@
         window.location = `/yoga/class${classlisting._id}`;
       });
     }
+
     const image =
     "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
     const mylocationmarker = new google.maps.Marker({

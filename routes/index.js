@@ -12,7 +12,15 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/locate', (req, res, next) => {
-  res.render('notifications/locate');
+  if (req.session.location) {
+    const longitude = req.session.location.longitude;
+    const latitude = req.session.location.latitude;
+    res.redirect(
+      `/yoga/search?longitude=${longitude}&latitude=${latitude}&distance=10000`
+    );
+  } else {
+    res.render('notifications/locate');
+  }
 });
 
 module.exports = router;

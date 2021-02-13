@@ -22,6 +22,7 @@
     "hbs-json": "^0.1.1",
     "http-errors": "^1.8.0",
     "material-components-web": "^10.0.0",
+    "moment": "^2.29.1",
     "mongoose": "^5.6.13",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",

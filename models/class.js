@@ -38,7 +38,13 @@ const classSchema = new mongoose.Schema({
     enum: ['Hatha', 'Vinyasa', 'Yin', 'Other'],
     default: 'Other'
   },
-  date: {
+  startdate: {
+    type: Date,
+    min: Date.now(),
+    max: '2022-01-01',
+    default: Date.now()
+  },
+  enddate: {
     type: Date,
     min: Date.now(),
     max: '2022-01-01',
