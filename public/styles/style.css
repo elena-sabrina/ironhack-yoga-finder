@@ -89,7 +89,7 @@ img {
 }
 
 .split-screen-left .split-screen-upper-left {
-  padding: 25px;
+  padding: 50px 0px 0px 25px;
 }
 
 .split-screen-left .split-screen-lower-left {
@@ -212,7 +212,7 @@ nav {
   .line {
     width: 25px;
     height: 1.5px;
-    background: black;
+    background: white;
     margin: 6px;
   }
   nav {
@@ -222,21 +222,22 @@ nav {
     position: absolute;
     cursor: pointer;
     z-index: 3;
+    margin: 22px;
   }
   .nav-links {
     background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
-    color: white;
+    color: #fee6c6;
     position: fixed;
     height: 100vh;
     width: 100%;
-    clip-path: circle(10px at 0% -1%);
-    -webkit-clip-path: circle(10px at 0% -1%);
-    transition: all 0.3s ease-out;
+    clip-path: circle(10px at 0% -10%);
+    -webkit-clip-path: circle(10px at 0% -10%);
+    transition: all 0.2s ease-out;
     z-index: 2;
   }
   .nav-links.open {
-    clip-path: circle(1000px at 50% -1%);
-    -webkit-clip-path: circle(1000px at 50% -1%);
+    clip-path: circle(1000px at 50% 50%);
+    -webkit-clip-path: circle(1000px at 50% 50%);
     pointer-events: all;
   }
   .nav-links.open ul {
@@ -249,16 +250,22 @@ nav {
     width: 80vh;
     height: 80vh;
     display: flex;
-    text-align: center;
+    text-align: left;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     align-content: space-between;
     z-index: 2;
   }
   .nav-links.open ul a {
     font-size: 40px;
-    margin: 80px;
+    margin: 0;
+  }
+  .nav-links.open ul .nav-image {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    z-index: 2;
   }
 }
 
@@ -468,7 +475,7 @@ img {
 }
 
 .split-screen-left .split-screen-upper-left {
-  padding: 25px;
+  padding: 50px 0px 0px 25px;
 }
 
 .split-screen-left .split-screen-lower-left {

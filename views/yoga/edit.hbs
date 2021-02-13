@@ -1,0 +1,110 @@
+<div class="hero background-white">
+
+
+  <div class="hero-box ">
+    <h1>Edit your Class</h1>
+    <form method="POST">
+
+
+      <div class="form-styling">
+        <label for="input-name">Name</label>
+        <input type="text" id="input-name" name="name" value=" {{classes.name}}" />
+      </div>
+
+      <div class="form-styling">    
+        <label for="input-teacher">Teacher</label>
+        <input id="input-teacher" type="text" name="teacher" value="{{ user.name}}">
+      </div>
+
+      <div class="form-styling">
+        <label for="input-image"Add an image></label>
+        <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
+      </div>
+
+  
+    <div class="form-styling">
+        <label for="input-level">Level</label>
+        <select id="input-level" name="level">
+            <option value="{{classes.level}}">{{classes.level}}</option> <!-- Display empty placeholder value-->
+            <option value="beginner">beginner</option>
+            <option value="advanced">advanced</option>
+            <option value="proficient">proficient</option>
+            <option value="any">any</option>
+        </select>
+      </div>
+
+      <div class="form-styling">
+        <label for="input-category">Category</label>
+        <select id="input-category" name="category">
+            <option value="{{classes.category}}">{{classes.category}}</option> <!-- Display empty placeholder value-->
+            <option value="Hatha">Hatha</option>
+            <option value="Vinyasa">Vinyasa</option>
+            <option value="Yin">Yin</option>
+            <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-styling">
+        <label for="input-startdate">Date & Time</label>
+        <input type="datetime-local" id="input-startdate" name="startdate" value="{{classes.startdate}}">
+    
+        <label for="input-enddate"></label>
+        <input type="datetime-local" id="input-enddate" name="enddate" value="{{classes.enddate}}">
+      </div>
+
+      <label for="input-latitude"></label>
+      <input type="hidden {{!number}}" id="input-latitude" name="latitude" min="-90" max="90" step="any" value="{{classes.latitude}}"/>
+      <label for="input-longitude"></label>
+      <input type="hidden {{!number}}" id="input-longitude" name="longitude" min="-180" max="180" step="any" value="{{classes.longitude}}"/>
+      
+          
+      <div class="center">
+        <button class="secondary-button button-styling">edit class</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+</div>
+
+<div id="google-map"></div>
+
+<script>
+  function initMap () {
+    const mapElement = document.getElementById('google-map');
+    const latitudeInput = document.getElementById('input-latitude');
+    const longitudeInput = document.getElementById('input-longitude');
+    const map = new google.maps.Map(mapElement, {
+      center: {
+        lat: -8.8,
+        lng: 115.15
+      },
+      zoom: 12
+    });
+    
+    let marker;
+
+    map.addListener('click', (position) => {
+      const latitude = position.latLng.lat();
+      const longitude = position.latLng.lng();
+
+      latitudeInput.value = latitude.toFixed(5);
+      longitudeInput.value = longitude.toFixed(5);
+
+      if (marker) {
+        marker.setMap(null);
+      }
+      marker = new google.maps.Marker({
+        position: {
+          lat: latitude,
+          lng: longitude
+        },
+        map
+      });
+    })
+  }
+</script>
+
+
+{{> scriptgooglemaps}}
+
+

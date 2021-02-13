@@ -113,4 +113,43 @@ router.get('/class:id', (req, res, next) => {
     });
 });
 
+// Edit or delete classes
+
+router.get('/class:id/edit', routeGuard, (req, res, next) => {
+  const id = req.params.id;
+
+  Class.findById(id)
+    .then((classes) => {
+      console.log('start editing your class');
+      res.render('yoga/edit', { classes });
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
+});
+
+router.post('/class:id', (req, res, next) => {
+  const id = req.params.id;
+  // const data = req.body;
+  Class.findByIdAndUpdate(id, {
+    // name: data.name,
+    // image: data.image,
+    // teacher: data.teacher,
+    // location: {
+    //   coordinates: [data.longitude, data.latitude]
+    // },
+    // level: data.level,
+    // category: data.category,
+    // date: data.date
+  })
+    .then((classes) => {
+      console.log('Class edited');
+      res.redirect(`/yoga/class${resource._id}`);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
 module.exports = router;

@@ -15,17 +15,32 @@
       </div>
       <div class="nav-links">
         <ul>
-          <li><a href="/">Search</a></li>
+          <li><a href="/">
+          Search </br>
+          <span class="light-font">Yoga Classes</span>
+          </a></li>
           {{#if user}}
-            <a href="/profile">{{user.name}}'s Profile</a>
+          <li>
+            <a href="/profile"> {{user.name}}'s </br> 
+            <span class="light-font">Profile</span>
+            </a>
+         </li>
+         <li>
             <form class="form-button" action="/authentication/sign-out" method="POST">
               <button>Sign Out</button>
             </form>
+          </li>
         {{else}}
-          <li><a href="/authentication/sign-in">Sign In</a></li>
-          <li><a href="/authentication/sign-up">Sign Up</a></li>
+          <li><a href="/authentication/sign-in">
+          Sign In </br>
+          <span class="light-font"> as Teacher </span>
+          </a></li>
+    
        {{/if}}
         </ul>
+        <div class="nav-image">
+        <p>image</p>
+        </div>
       </div>
     </nav> 
       <main>
@@ -36,8 +51,6 @@
 </html>
 
 
-
-//HAMBURGER
 
 <script>
   const hamburger = document.querySelector('.hamburger');
