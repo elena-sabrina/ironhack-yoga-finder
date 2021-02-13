@@ -113,7 +113,7 @@ router.get('/class:id', (req, res, next) => {
     });
 });
 
-// Edit or delete classes
+// Edit classes
 
 router.get('/class:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
@@ -149,6 +149,19 @@ router.post('/class:id', (req, res, next) => {
     })
     .catch((err) => {
       next(err);
+    });
+});
+
+// Delete classes
+
+router.post('/class:id/delete', (req, res, next) => {
+  const id = req.params.id;
+  Class.findByIdAndRemove(id)
+    .then(() => {
+      res.redirect('/yoga/classes');
+    })
+    .catch((error) => {
+      next(error);
     });
 });
 

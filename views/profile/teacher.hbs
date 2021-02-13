@@ -36,8 +36,13 @@
                         <p> {{ level }} </p>
                         <p>{{ teacher }}</p>
                         <p>{{ category }}</p>
-                        <a href="/yoga/class{{_id}}/edit" >Edit</a>
+                        
                     </div>   
+                    <a href="/yoga/class{{_id}}/edit" >Edit</a>
+                    <form method= "POST" action="/places/{{_id}}/delete">
+                    <label for="delete-places" hidden>Delete Place</label>
+                     <button>Delete</button>
+                    </form>
                 </div>  
             </a>
             {{/each}}
