@@ -20,6 +20,7 @@
     "express-session": "^1.17.1",
     "hbs": "^4.1.1",
     "hbs-json": "^0.1.1",
+    "helper-date": "^1.0.1",
     "http-errors": "^1.8.0",
     "material-components-web": "^10.0.0",
     "moment": "^2.29.1",

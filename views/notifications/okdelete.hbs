@@ -1,0 +1,32 @@
+<div class="hero background-blue">
+    <div class="hero-box">
+
+        <h1>Are you sure
+          you want to delete this class. </h1>
+          
+        <div class="yoga-class-preview ">
+            <div class="preview-box-left">
+                <h3>{{ name }}</h3>
+                <p> at {{ location }}</p> 
+                <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
+            </div>
+            <div class="preview-box-right">
+                <p id="startdateid"> {{startdate }} - {{enddate}}</p>
+                <p> {{ level }} </p>
+                <p>{{ teacher }}</p>
+                <p>{{ category }}</p>
+              
+            </div>   
+        </div>  
+
+
+        <form method= "POST" action="/yoga/class/{{classes._id}}/delete">
+            <label for="delete-class" hidden>Delete Class</label>
+            <button>Delete</button> 
+        </form>
+
+        <a href="/profile"> Go back</a>
+
+        
+    </div>
+</div>

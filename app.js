@@ -23,6 +23,11 @@ const hbsJson = require('hbs-json');
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('json', hbsJson);
 
+//Datehelper
+
+var handlebars = require('handlebars');
+handlebars.registerHelper('date', require('helper-date'));
+
 const app = express();
 
 //app.locals.googleMapsKey = process.env.GOOGLE_MAPS_KEY;

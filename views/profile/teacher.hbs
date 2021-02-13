@@ -38,11 +38,8 @@
                         <p>{{ category }}</p>
                         
                     </div>   
-                    <a href="/yoga/class{{_id}}/edit" >Edit</a>
-                    <form method= "POST" action="/places/{{_id}}/delete">
-                    <label for="delete-places" hidden>Delete Place</label>
-                     <button>Delete</button>
-                    </form>
+                    <a href="/yoga/class/{{_id}}/edit" >Edit</a>
+                    <a href="/yoga/class/{{_id}}/confirm-deletion" >Delete</a>
                 </div>  
             </a>
             {{/each}}

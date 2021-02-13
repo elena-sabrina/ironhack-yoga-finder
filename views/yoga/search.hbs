@@ -34,6 +34,7 @@
                         <p> {{ level }} </p>
                         <p>{{ teacher }}</p>
                         <p>{{ category }}</p>
+                      
                     </div>   
                 </div>  
             </a>
@@ -89,7 +90,7 @@
       })
 
       marker.addListener('click', () => {
-        window.location = `/yoga/class${classlisting._id}`;
+        window.location = `/yoga/class/${classlisting._id}`;
       });
     }
 

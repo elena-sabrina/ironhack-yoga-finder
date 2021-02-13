@@ -163,11 +163,25 @@ router.post('/class/:id', (req, res, next) => {
 
 // Delete classes
 
-router.post('/class:id/delete', (req, res, next) => {
+router.get('/class/:id/confirm-deletion', routeGuard, (req, res, next) => {
+  const id = req.params.id;
+
+  Class.findById(id)
+    .then((classes) => {
+      console.log('loading deletion approval page');
+      res.render('notifications/okdelete', { classes });
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
+});
+
+router.post('/class/:id/delete', (req, res, next) => {
   const id = req.params.id;
   Class.findByIdAndRemove(id)
     .then(() => {
-      res.redirect('/yoga/classes');
+      res.redirect('/profile');
     })
     .catch((error) => {
       next(error);
