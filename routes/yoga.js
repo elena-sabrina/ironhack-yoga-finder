@@ -57,13 +57,17 @@ router.get('/search', (req, res, next) => {
   const longitude = req.query.latitude;
   const distance = req.query.latitude;
 
+  //Convert Date into ISO String
+
   const datenow = Date.now();
   const dateevent = new Date(datenow);
-  const datenowpretty = dateevent.toISOString();
+  const datenowiso = dateevent.toISOString();
+  const daynowiso = dateevent.toISOString().substring(0, 10);
 
   console.log('datenow:');
   console.log(datenow);
-  console.log(datenowpretty);
+  console.log(datenowiso);
+  console.log(daynowiso);
 
   //req.session.location = { latitude, longitude };
   //console.log(req.session.location);
@@ -81,6 +85,8 @@ router.get('/search', (req, res, next) => {
       radius: 100000,
       unique: true
     })
+    .where({ startdate: daynowiso })
+
     //.filter({ startdate: { $gte: datenowpretty /*, "$lt": end*/ } })
     .sort({ startdate: 1 })
     .sort({ location: -1 })
