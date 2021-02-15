@@ -50,7 +50,7 @@ router.post(
   }
 );
 
-//Display all classes
+//Display all classes Today
 
 router.get('/search', (req, res, next) => {
   // Setting the Dates
@@ -91,19 +91,6 @@ router.get('/search', (req, res, next) => {
   console.log(starttimeTomorrow);
   console.log(endtimeTomorrow);
 
-  //Prep filter today or tomorrow
-  /*
-  let starttime;
-  let endtime;
-
-  if (feld = today) {
-    starttime = starttimeToday;
-    endtime = endtimeToday;
-  } else if (feld = tomorrow ){
-    starttime = starttimeTomorrow;
-    endtime = endtimeTomorrow;
-  }*/
-
   const latitude = req.query.latitude;
   const longitude = req.query.latitude;
   const distance = req.query.latitude;
@@ -119,32 +106,67 @@ router.get('/search', (req, res, next) => {
     longitude = 115.09;
   }*/
 
-  Class.find()
-    .where('location')
-    .within()
-    .circle({
-      center: [longitude, latitude],
-      radius: 100000,
-      unique: true
-    })
-    .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
+  const dayindication = req.query.dayindication;
+  console.log('dayindication');
+  console.log(dayindication);
 
-    .sort({ startdate: 1 })
-    .sort({ location: -1 })
+  if (dayindication == today) {
+    Class.find()
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
+      .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
+      //.where({ startdate: { $gte: starttime, $lt: endtime } })
 
-    .then((classes) => {
-      //console.log('location');
-      //console.log(latitude, longitude);
-      res.render('yoga/search', {
-        classes,
-        latitude: latitude,
-        longitude: longitude
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
       });
-    })
-    .catch((error) => {
-      console.log(error);
-      next(error);
-    });
+  } else {
+    console.log('dayindication not equal today');
+
+    Class.find()
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
+      .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
+      //.where({ startdate: { $gte: starttime, $lt: endtime } })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  }
 });
 
 //Display one class
