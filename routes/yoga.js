@@ -59,15 +59,46 @@ router.get('/search', (req, res, next) => {
 
   //Convert Date into ISO String
 
-  const datenow = Date.now();
-  const dateevent = new Date(datenow);
-  const datenowiso = dateevent.toISOString();
-  const daynowiso = dateevent.toISOString().substring(0, 10);
+  // New Trial
 
-  console.log('datenow:');
-  console.log(datenow);
-  console.log(datenowiso);
-  console.log(daynowiso);
+  // Setting the Dates
+
+  //Today Endtime
+  const today = new Date(Date.now());
+  const todaydateandtimenow = today.toISOString().substring(0, 23);
+  const todaydate = today.toISOString().substring(0, 11);
+  const starttimeToday = todaydateandtimenow + '+00:00';
+  const endtimeToday = todaydate + '23:59:59.999+00:00';
+
+  console.log('today');
+  console.log(starttimeToday);
+  console.log(endtimeToday);
+
+  //Tomorrow Endtime
+  const tomorrow = new Date(Date.now());
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const starttimeTomorrow =
+    tomorrow.getFullYear() +
+    '-' +
+    ((tomorrow.getMonth() < 10 ? '0' : '') + tomorrow.getMonth()) +
+    '-' +
+    ((tomorrow.getDate() < 10 ? '0' : '') + tomorrow.getDate()) +
+    'T' +
+    '00:00:00.000+00:00';
+
+  const endtimeTomorrow =
+    tomorrow.getFullYear() +
+    '-' +
+    ((tomorrow.getMonth() < 10 ? '0' : '') + tomorrow.getMonth()) +
+    '-' +
+    ((tomorrow.getDate() < 10 ? '0' : '') + tomorrow.getDate()) +
+    'T' +
+    '23:59:59.999+00:00';
+
+  console.log('tomorrow');
+  console.log(starttimeTomorrow);
+  console.log(endtimeTomorrow);
 
   //req.session.location = { latitude, longitude };
   //console.log(req.session.location);
@@ -85,9 +116,8 @@ router.get('/search', (req, res, next) => {
       radius: 100000,
       unique: true
     })
-    .where({ startdate: daynowiso })
+    .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
 
-    //.filter({ startdate: { $gte: datenowpretty /*, "$lt": end*/ } })
     .sort({ startdate: 1 })
     .sort({ location: -1 })
 
