@@ -1,92 +1,70 @@
-
-<div class="hero background-white">
-
-  
-
-  <div class="hero-box ">
-    <h1>Creat Yoga Class</h1>
-    <form method="POST" action="">
+<div class="split-screen ">
+  <div class="split-screen-left">
+    <div class=" split-screen-upper-left"> 
+      <h2>Creat Yoga Class</h2>
+    </div>
+    <div class="background-white split-screen-lower-left">
+      <form method="POST" action="/yoga/create">
       
-
-      <div class="form-styling">
-        <label for="input-name">Class Name</label>
-        <input type="text" id="input-name" name="name" placeholder="" />
-      </div>
-
-      <div class="form-styling">    
-        <label for="input-teacher">Teacher</label>
-        <input id="input-teacher" type="text" name="teacher" placeholder="{{ user.name}}">
-      </div>
-
-      <div class="form-styling">
-        <label for="input-image"Add an image></label>
-        <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
-      </div>
-
-  
-    <div class="form-styling">
-        <label for="input-level">Level</label>
-        <select id="input-level" name="level">
-            <option value="Choose class level" selected disabled>Level</option> <!-- Display empty placeholder value-->
-            <option value="beginner">beginner</option>
-            <option value="advanced">advanced</option>
-            <option value="proficient">proficient</option>
-            <option value="any">any</option>
-        </select>
-      </div>
-
-      <div class="form-styling">
-        <label for="input-category">Category</label>
-        <select id="input-category" name="category">
-            <option value="Choose yoga type" selected disabled>Category</option> <!-- Display empty placeholder value-->
-            <option value="Hatha">Hatha</option>
-            <option value="Vinyasa">Vinyasa</option>
-            <option value="Yin">Yin</option>
-            <option value="Other">Other</option>
-        </select>
-      </div>
-      
-      <div class="form-styling">
-        <label for="input-startdate">Date & Time</label>
-        <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
+        <div class="form-styling">
+          <label for="input-name">Title</label>
+          <input type="text" id="input-name" name="name" placeholder="" />
+        </div>
     
-        <label for="input-enddate"></label>
-        <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
-      </div>
-      
+        <div class="form-styling">
+          <label for="input-image"Add an image></label>
+          <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
+        </div>
+        <div class="form-styling">
+          <label for="input-level">Level</label>
+          <select id="input-level" name="level">
+              <option value="Choose class level" selected disabled>Level</option> <!-- Display empty placeholder value-->
+              <option value="beginner">beginner</option>
+              <option value="advanced">advanced</option>
+              <option value="proficient">proficient</option>
+              <option value="any">any</option>
+          </select>
+        </div>
+        <div class="form-styling">
+          <label for="input-category">Category</label>
+          <select id="input-category" name="category">
+              <option value="Choose yoga type" selected disabled>Category</option> <!-- Display empty placeholder value-->
+              <option value="Hatha">Hatha</option>
+              <option value="Vinyasa">Vinyasa</option>
+              <option value="Yin">Yin</option>
+              <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-styling">
+          <label for="input-startdate">From</label>
+          <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
+        </div>
+        <div class="form-styling">
+          <label for="input-enddate">To</label>
+          <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
+        </div>
 
-      {{!
 
-      <div class="form-styling">
-        <label for="input-date">Date</label>
-        <input type="date-local" id="input-date" name="date" placeholder="date">
-      </div>
+        {{!Hidden Fields}}
+        <div class="form-styling">
 
-      <div class="form-styling">
-        <label for="input-startdate">Time</label>
-        <input type="time-local" id="input-time" name="time" placeholder="time">
-      </div>
-
-      }}
-
-
-
-      <label for="input-latitude"></label>
-      <input type="hidden {{!number}}" id="input-latitude" name="latitude" min="-90" max="90" step="any" />
-      <label for="input-longitude"></label>
-      <input type="hidden {{!number}}" id="input-longitude" name="longitude" min="-180" max="180" step="any"/>
-      
-          
-      <div class="center">
-        <button class="secondary-button button-styling">create class</button>
-      </div>
-    </form>
+        <label for="input-teacher"></label>
+          <input id="input-teacher" type="hidden" name="teacher" value="{{ user.name }}">
+        <label for="input-latitude"></label>
+          <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" />
+        <label for="input-longitude"></label>
+          <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any"/>
+          </div>
+        <div class="center">
+          <button class="secondary-button button-styling">create class</button>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
 
+  <div id="google-map"></div>
 </div>
-
-<div id="google-map"></div>
 
 <script>
   function initMap () {

@@ -21,6 +21,7 @@ router.post(
   uploadMiddleware.single('image'),
   (req, res, next) => {
     const data = req.body;
+    console.log(req.body);
     let image;
     if (req.file) {
       image = req.file.path;
@@ -34,12 +35,13 @@ router.post(
       },
       level: data.level,
       category: data.category,
-      date: data.date
+      startdate: data.startdate,
+      enddate: data.enddate
     });
     classes
       .save()
       .then((classes) => {
-        res.render('yoga/search');
+        res.redirect('/locate');
         //res.render('yoga/${class._id}');
       })
       .catch((error) => {
@@ -50,30 +52,27 @@ router.post(
 
 //Display all classes
 
-/* LOCATION NEAR TRY FAILED
-Class.find({
-    location: {
-      $near: {
-        $geometry: { type: 'Point', coordinates: [115.0849, -8.82914] },
-        $minDistance: 1000,
-        $maxDistance: 5000
-      }
-    }
-  }):
-)*/
-
 router.get('/search', (req, res, next) => {
   const latitude = req.query.latitude;
   const longitude = req.query.latitude;
   const distance = req.query.latitude;
-  /*for (classlisting of classes) {
-    var rawstartdate = classlisting.startdate;
-    var starttime = moment(rawstartdate, "ddd MMM Do YYYY HH:mm:SS").format('HH:mm');
 
+  const datenow = Date.now();
+  const dateevent = new Date(datenow);
+  const datenowpretty = dateevent.toISOString();
+
+  console.log('datenow:');
+  console.log(datenow);
+  console.log(datenowpretty);
+
+  //req.session.location = { latitude, longitude };
+  //console.log(req.session.location);
+
+  /*if (typeof latitiude != 'undefined') {
+    console.log('unable to locate you. Using default location');
+    latitiude = -8.83;
+    longitude = 115.09;
   }*/
-
-  req.session.location = { latitude, longitude };
-
   Class.find()
     .where('location')
     .within()
@@ -82,11 +81,13 @@ router.get('/search', (req, res, next) => {
       radius: 100000,
       unique: true
     })
-    .sort({ date: 1 })
+    //.filter({ startdate: { $gte: datenowpretty /*, "$lt": end*/ } })
+    .sort({ startdate: 1 })
     .sort({ location: -1 })
+
     .then((classes) => {
-      console.log('location');
-      console.log(latitude, longitude);
+      //console.log('location');
+      //console.log(latitude, longitude);
       res.render('yoga/search', {
         classes,
         latitude: latitude,
@@ -150,7 +151,8 @@ router.post('/class/:id', (req, res, next) => {
     // },
     // level: data.level,
     // category: data.category,
-    // date: data.date
+    // startdate: data.startdate,
+    // enddate: data.enddate
   })
     .then((classes) => {
       console.log('Class edited');
