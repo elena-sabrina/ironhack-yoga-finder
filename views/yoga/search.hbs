@@ -30,7 +30,11 @@
                         <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
                     </div>
                     <div class="preview-box-right">
-                        <p id="startdateid"> {{startdate }} - {{enddate}}</p>
+                         <p> {{{ date startdate "dddd, MMM Do YYYY" }}} </p>
+                        <p> {{{ date startdate "h:mm a" }}} </p>
+                        <p> {{{ date enddate "h:mm a" }}} </p>
+
+                
                         <p> {{ level }} </p>
                         <p>{{ teacher }}</p>
                         <p>{{ category }}</p>

@@ -24,10 +24,10 @@ router.get('/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
 
   User.findByIdAndUpdate(id, {
-    name
-    email,
-    passwordHashAndSalt: passwordHashAndSalt,
-    picture
+    //name
+    //email,
+    //passwordHashAndSalt: passwordHashAndSalt,
+    //picture
   })
     .then((users) => {
       res.render('profile/edit');

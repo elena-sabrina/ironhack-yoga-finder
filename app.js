@@ -19,16 +19,15 @@ const profileRouter = require('./routes/profile');
 
 const hbs = require('hbs');
 const hbsJson = require('hbs-json');
+const hbsDateHelper = require('helper-date');
 
 hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('json', hbsJson);
-
-//Datehelper
-
-var handlebars = require('handlebars');
-handlebars.registerHelper('date', require('helper-date'));
+hbs.registerHelper('date', hbsDateHelper);
 
 const app = express();
+
+var handlebars = require('handlebars');
 
 //app.locals.googleMapsKey = process.env.GOOGLE_MAPS_KEY;
 
