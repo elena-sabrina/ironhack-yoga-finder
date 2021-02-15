@@ -53,16 +53,7 @@ router.post(
 //Display all classes
 
 router.get('/search', (req, res, next) => {
-  const latitude = req.query.latitude;
-  const longitude = req.query.latitude;
-  const distance = req.query.latitude;
-
-  //Convert Date into ISO String
-
-  // New Trial
-
   // Setting the Dates
-
   //Today Endtime
   const today = new Date(Date.now());
   const todaydateandtimenow = today.toISOString().substring(0, 23);
@@ -100,14 +91,34 @@ router.get('/search', (req, res, next) => {
   console.log(starttimeTomorrow);
   console.log(endtimeTomorrow);
 
+  //Prep filter today or tomorrow
+  /*
+  let starttime;
+  let endtime;
+
+  if (feld = today) {
+    starttime = starttimeToday;
+    endtime = endtimeToday;
+  } else if (feld = tomorrow ){
+    starttime = starttimeTomorrow;
+    endtime = endtimeTomorrow;
+  }*/
+
+  const latitude = req.query.latitude;
+  const longitude = req.query.latitude;
+  const distance = req.query.latitude;
+
+  //Save Location in session cookie
   //req.session.location = { latitude, longitude };
   //console.log(req.session.location);
 
+  //What if session cookie location is not defined
   /*if (typeof latitiude != 'undefined') {
     console.log('unable to locate you. Using default location');
     latitiude = -8.83;
     longitude = 115.09;
   }*/
+
   Class.find()
     .where('location')
     .within()
