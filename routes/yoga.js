@@ -76,7 +76,7 @@ router.get('/search', (req, res, next) => {
     '-' +
     ((tomorrow.getDate() < 10 ? '0' : '') + tomorrow.getDate()) +
     'T' +
-    '00:00:00.000+00:00';
+    '00:00:00.001+00:00';
 
   const endtimeTomorrow =
     tomorrow.getFullYear() +
@@ -110,7 +110,8 @@ router.get('/search', (req, res, next) => {
   console.log('dayindication');
   console.log(dayindication);
 
-  if (dayindication == today) {
+  if (dayindication == 'today') {
+    console.log('dayindication is today');
     Class.find()
       .where('location')
       .within()
@@ -137,8 +138,8 @@ router.get('/search', (req, res, next) => {
         console.log(error);
         next(error);
       });
-  } else {
-    console.log('dayindication not equal today');
+  } else if (dayindication == 'tomorrow') {
+    console.log('dayindication is tomorrow');
 
     Class.find()
       .where('location')
@@ -148,7 +149,36 @@ router.get('/search', (req, res, next) => {
         radius: 100000,
         unique: true
       })
-      .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
+      .where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
+      //.where({ startdate: { $gte: starttime, $lt: endtime } })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  } else {
+    console.log('no dayindication');
+
+    Class.find()
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
+      .where({ startdate: { $gte: starttimeToday } })
       //.where({ startdate: { $gte: starttime, $lt: endtime } })
 
       .sort({ startdate: 1 })
