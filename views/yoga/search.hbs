@@ -28,7 +28,13 @@
                 </form>
                 <img src="/images/filter.png" alt="filter-cion">
             </div>
+
+            <h1>{{setdayfilter}}</h1>
+
+
+        
             {{#each classes}}
+            <h3>{{{ date startdate "dddd, MMM Do YYYY" }}}</h3>
             <a href="/yoga/class/{{_id}}" >
                 <div class="yoga-class-preview ">
                     <div class="preview-box-left">

@@ -112,6 +112,7 @@ router.get('/search', (req, res, next) => {
 
   if (dayindication == 'today') {
     console.log('dayindication is today');
+    const setdayfilter = starttimeToday;
     Class.find()
       .where('location')
       .within()
@@ -131,7 +132,8 @@ router.get('/search', (req, res, next) => {
         res.render('yoga/search', {
           classes,
           latitude: latitude,
-          longitude: longitude
+          longitude: longitude,
+          setdayfilter
         });
       })
       .catch((error) => {
@@ -140,6 +142,7 @@ router.get('/search', (req, res, next) => {
       });
   } else if (dayindication == 'tomorrow') {
     console.log('dayindication is tomorrow');
+    const setdayfilter = starttimeTomorrow;
 
     Class.find()
       .where('location')
@@ -160,7 +163,8 @@ router.get('/search', (req, res, next) => {
         res.render('yoga/search', {
           classes,
           latitude: latitude,
-          longitude: longitude
+          longitude: longitude,
+          setdayfilter
         });
       })
       .catch((error) => {
@@ -169,6 +173,7 @@ router.get('/search', (req, res, next) => {
       });
   } else {
     console.log('no dayindication');
+    const setdayfilter = 'All dates';
 
     Class.find()
       .where('location')
@@ -189,7 +194,8 @@ router.get('/search', (req, res, next) => {
         res.render('yoga/search', {
           classes,
           latitude: latitude,
-          longitude: longitude
+          longitude: longitude,
+          setdayfilter
         });
       })
       .catch((error) => {
@@ -288,8 +294,6 @@ router.post('/class/:id/delete', (req, res, next) => {
       next(error);
     });
 });
-
-
 
 router.get('/filter', (req, res, next) => {
   res.render('yoga/filter');
