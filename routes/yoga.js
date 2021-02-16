@@ -111,6 +111,7 @@ router.get('/search', (req, res, next) => {
 
   if (dayindication == 'today') {
     console.log('dayindication is today');
+    console.log(categoryindication);
     const setdayfilter = starttimeToday;
 
     Class.find()
@@ -122,7 +123,7 @@ router.get('/search', (req, res, next) => {
         unique: true
       })
       .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
-      .where({ category: 'categoryindication' })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -142,6 +143,7 @@ router.get('/search', (req, res, next) => {
       });
   } else if (dayindication == 'tomorrow') {
     console.log('dayindication is tomorrow');
+    console.log(categoryindication);
     const setdayfilter = starttimeTomorrow;
 
     Class.find()
@@ -153,7 +155,7 @@ router.get('/search', (req, res, next) => {
         unique: true
       })
       .where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
-      .where({ category: 'categoryindication' })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -173,6 +175,7 @@ router.get('/search', (req, res, next) => {
       });
   } else {
     console.log('no dayindication');
+    console.log(categoryindication);
     const setdayfilter = 'All dates';
 
     Class.find()
@@ -184,7 +187,7 @@ router.get('/search', (req, res, next) => {
         unique: true
       })
       .where({ startdate: { $gte: starttimeToday } })
-      .where({ category: 'categoryindication' })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })

@@ -13,25 +13,32 @@
             <span class="light-font"> that fits best to you.</span> 
             </h2>
 
-            <button id="input-dayindicationtoday"> Today </button>
-            <button id="input-dayindicationtomorrow"> Tomorrow </button>
-            <button id="input-dayindicationany"> Any </button>
-
-            <button id="input-categoryvinyasa"> Vinyasa </button>
-            <button id="input-categoryhatha"> Hatha </button>
-            <button id="input-categoryany"> Any </button>
+  
               
 
         </div>
         <div class="background-white split-screen-lower-left">
-            <div class="search">
-                <img src="/images/search.png" alt="search-icon">
-                <form action="">
-                    <label for="site-search"></label>
-                    <input type="search" id="site-search" name="q" placeholder="search classes">     
-                </form>
-                <img src="/images/filter.png" alt="filter-cion">
-            </div>
+
+          <div class="dayfilter">
+             <button id="input-dayindicationtoday"> Today </button>
+            <button id="input-dayindicationtomorrow"> Tomorrow </button>
+            <button id="input-dayindicationany"> Any </button>
+          </div>
+
+
+
+          <div class="category-filter">
+
+            <button id="input-categoryvinyasa"> Vinyasa </button>
+            <button id="input-categoryhatha"> Hatha </button>
+            <button id="input-categoryany"> Any </button>
+
+
+          </div>
+
+
+           
+            
 
             <h3>{{setdayfilter}}</h3>
 
@@ -47,7 +54,11 @@
                         <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
                     </div>
                     <div class="preview-box-right">
-                    
+                      {{!
+                      {{#if categoryindication == 'any'}}{{!
+                      <p> Display Day </p>
+                       {{/if}}
+                      
                         <p> {{{ date startdate "h:mm a" }}} </p>
                         <p> {{{ date enddate "h:mm a" }}} </p>
 

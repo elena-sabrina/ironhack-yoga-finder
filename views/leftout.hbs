@@ -1,3 +1,22 @@
+     
+     {{! Search Home }}
+
+     
+     <div class="search">
+                <img src="/images/search.png" alt="search-icon">
+                <form action="">
+                    <label for="site-search"></label>
+                    <input type="search" id="site-search" name="q" placeholder="search classes">     
+                </form>
+                <img src="/images/filter.png" alt="filter-cion">
+            </div>
+     
+     
+     
+     {{!Links Home}}
+     
+     
+     
       <a href="/">Home</a>
       {{#if user}}
         <a href="/profile">{{user.name}}'s Profile</a>
@@ -8,3 +27,4 @@
         <a href="/authentication/sign-in">Sign In</a>
         <a href="/authentication/sign-up">Sign Up</a>
       {{/if}}
+
