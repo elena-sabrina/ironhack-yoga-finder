@@ -107,12 +107,12 @@ router.get('/search', (req, res, next) => {
   }*/
 
   const dayindication = req.query.dayindication;
-  console.log('dayindication');
-  console.log(dayindication);
+  const categoryindication = req.query.categoryindication;
 
   if (dayindication == 'today') {
     console.log('dayindication is today');
     const setdayfilter = starttimeToday;
+
     Class.find()
       .where('location')
       .within()
@@ -122,7 +122,7 @@ router.get('/search', (req, res, next) => {
         unique: true
       })
       .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
-      //.where({ startdate: { $gte: starttime, $lt: endtime } })
+      .where({ category: 'categoryindication' })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -153,7 +153,7 @@ router.get('/search', (req, res, next) => {
         unique: true
       })
       .where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
-      //.where({ startdate: { $gte: starttime, $lt: endtime } })
+      .where({ category: 'categoryindication' })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -184,7 +184,7 @@ router.get('/search', (req, res, next) => {
         unique: true
       })
       .where({ startdate: { $gte: starttimeToday } })
-      //.where({ startdate: { $gte: starttime, $lt: endtime } })
+      .where({ category: 'categoryindication' })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })

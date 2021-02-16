@@ -23,6 +23,9 @@
           <label for="input-dayindication">Today</label>
           <input id="input-dayindication" type="text" name="dayindication" value="today"/>
 
+          <label for="input-categoryindication">Category</label>
+          <input id="input-categoryindication" type="text" name="categoryindication" value="any"/>
+
 {{!
           <button> 
             <a href="/yoga/search">Ok.</a>
@@ -57,7 +60,7 @@
         //const { latitude, longitude } = location.coords;
         latitudeInput.value = latitude;
         longitudeInput.value = longitude;
-        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=today`
+        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=today&categoryindication=any`
       })
       .catch(error => {
         console.log('There was an error locating the user.');
