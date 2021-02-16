@@ -6,8 +6,6 @@
 
 
         <button id="locate-me" class="primary-button button-styling"> 
-          {{!First action: locate-me. Second action href. Can I make that work?}}
-          {{!<a href="/yoga/search">Sure locate me .</a>}}
           Sure locate me.
         </button>
 
@@ -59,7 +57,7 @@
         //const { latitude, longitude } = location.coords;
         latitudeInput.value = latitude;
         longitudeInput.value = longitude;
-        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000`
+        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=today`
       })
       .catch(error => {
         console.log('There was an error locating the user.');

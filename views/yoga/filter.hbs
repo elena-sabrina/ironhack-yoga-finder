@@ -1,16 +1,23 @@
- <h1>Change your filters:</h1>
- 
+ <h1>When do you want to work out?</h1>
  
  <form action="">
-                <label for="input-daysearch"></label>
-              
-              <select id="input-daysearch" name="daysearch">  
-              <option value="today" selected disabled>Today</option> <!-- Display empty placeholder value-->
-              <option value="today">Today</option>
-              <option value="tomorrow">Tomorrow</option>
-              <option value="any">any</option>
-          </select>
-          <button>Go</button>
+  <label for="input-dayindication"></label>
+  <input id="input-dayindication" type="hidden" name="dayindication" value="today"/>
+  <button>Today</button>
+</form>
+
+ <form action="">
+  <label for="input-dayindication"></label>
+  <input id="input-dayindication" type="hidden" name="dayindication" value="tomorrow"/>
+  <button>Tomorrow</button>
+</form>
 
 
-              </form>
+ <form action="">
+  <label for="input-dayindication"></label>
+  <input id="input-dayindication" type="hidden" name="dayindication" value="any"/>
+  <button>Any</button>
+</form>
+
+ 
+
