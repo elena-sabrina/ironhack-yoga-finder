@@ -1,8 +1,9 @@
-<div class="hero background-white">
-
-
-  <div class="hero-box ">
-    <h1>Edit your Class</h1>
+<div class="split-screen ">
+  <div class="split-screen-left">
+    <div class=" split-screen-upper-left"> 
+      <h2>Edit Yoga Class</h2>
+    </div>
+    <div class="background-white split-screen-lower-left">
     <form method="POST" action="/yoga/class/{{classes._id}}">
 
 
@@ -11,10 +12,6 @@
         <input type="text" id="input-name" name="name" value=" {{classes.name}}" />
       </div>
 
-      <div class="form-styling">    
-        <label for="input-teacher">Teacher</label>
-        <input id="input-teacher" type="text" name="teacher" value="{{user.name}}">
-      </div>
 
       <div class="form-styling">
         <label for="input-image"Add an image></label>
@@ -37,41 +34,40 @@
         <label for="input-category">Category</label>
         <select id="input-category" name="category">
             <option value="{{classes.category}}">{{classes.category}}</option> <!-- Display empty placeholder value-->
-            <option value="Hatha">Hatha</option>
-            <option value="Vinyasa">Vinyasa</option>
-            <option value="Yin">Yin</option>
-            <option value="Other">Other</option>
+            <option value="hatha">Hatha</option>
+              <option value="vinyasa">Vinyasa</option>
+              <option value="yin">Yin</option>
+              <option value="astanga">Astanga</option>
+              <option value="bikram">Bikram</option>
+              <option value="other">Other</option>
         </select>
       </div>
 
       <div class="form-styling">
-        <label for="input-date">Date</label>
-        <input type="date" id="input-date" name="date" placeholder="date">
+          <label for="input-startdate">From</label>
+          <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
+        </div>
+        <div class="form-styling">
+          <label for="input-enddate">To</label>
+          <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
+        </div>
+
+      <div class="center">
+        <button class="secondary-button button-styling">edit class</button>
       </div>
 
-      <div class="form-styling">
-        <label for="input-starttime">From</label>
-        <input type="time" id="input-starttime" name="starttime" placeholder="Indonesian Timezone">
-      </div>
+      {{!Hidden Fields}}
 
-      <div class="form-styling">
-        <label for="input-endtime">To</label>
-        <input type="time" id="input-endtime" name="endtime" placeholder="Indonesian Timezon">
-      </div>
-
+      <label for="input-teacher"></label>
+      <input id="input-teacher" type="hidden" name="teacher" value="{{ user.name }}">
       <label for="input-latitude"></label>
       <input type="hidden {{!number}}" id="input-latitude" name="latitude" min="-90" max="90" step="any" value="{{classes.latitude}}"/>
       <label for="input-longitude"></label>
       <input type="hidden {{!number}}" id="input-longitude" name="longitude" min="-180" max="180" step="any" value="{{classes.longitude}}"/>
-      
           
-      <div class="center">
-        <button class="secondary-button button-styling">edit class</button>
-      </div>
+  
     </form>
   </div>
-</div>
-
 </div>
 
 <div id="google-map"></div>

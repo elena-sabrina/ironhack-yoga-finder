@@ -18,13 +18,19 @@
             <button id="input-dayindicationany"> Any </button>
             </span> 
             </h2> 
-
-        
-  
               
 
         </div>
         <div class="background-white split-screen-lower-left">
+
+           {{!<div class="search">
+                <img src="/images/search.png" alt="search-icon">
+                <form action="">
+                    <label for="input-classnamesearch"></label>
+                    <input type="text" id="input-classnamesearch" name="classnamesearch" placeholder="Search class name">     
+                </form>
+            </div>
+            }}
 
           
 
@@ -157,7 +163,29 @@
 
 
 
+// CLASS NAME SEARCH
+/*
+  const classnamesearchInput = document.getElementById('input-classnamesearch');
 
+  button.addEventListener('click', () => {
+        const category = value;
+        //console.log('eventlistenerdaysearch:');
+        //console.log (dayindication);
+        const latitude = getQueryVariable("latitude");
+        const longitude = getQueryVariable("longitude");
+        const dayindication = getQueryVariable("dayindication");
+        const category = getQueryVariable("category");
+
+        console.log(latitude);
+         console.log(dayindication);
+          console.log(category);
+        //console.log(latitude);
+        //const urlsplit = window.location.search.split('/');
+        //console.log(urlsplit);
+        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=${dayindication}&categoryindication=${category}`
+      });
+
+*/
 
 
 
