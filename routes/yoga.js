@@ -289,4 +289,10 @@ router.post('/class/:id/delete', (req, res, next) => {
     });
 });
 
+
+
+router.get('/filter', (req, res, next) => {
+  res.render('yoga/filter');
+});
+
 module.exports = router;
