@@ -14,34 +14,39 @@
         <div class="line"></div>
       </div>
       <div class="nav-links">
-        <ul>
-          <li><a href="/">
-          Home</a></li>
-          <li><a href="/locate">
-          Search </br>
-          <span class="light-font">Yoga Classes</span>
-          </a></li>
-          {{#if user}}
-          <li>
-            <a href="/profile"> {{user.name}}'s </br> 
-            <span class="light-font">Profile</span>
-            </a>
-         </li>
-         <li>
-            <form class="form-button" action="/authentication/sign-out" method="POST">
-              <button>Sign Out</button>
-            </form>
-          </li>
-        {{else}}
-          <li><a href="/authentication/sign-in">
-          Sign In </br>
-          <span class="light-font"> as Teacher </span>
-          </a></li>
-    
-       {{/if}}
-        </ul>
-        <div class="nav-image">
-        <p>image</p>
+        <div class="nav-wrapper">
+
+            
+          <ul>
+              <div class="nav-left">
+                <li><a href="/">Home</a></li>
+                <li><a href="/locate">Search </br>
+                    <span class="light-font">Yoga Classes</span></a></li>
+                {{#if user}}
+                <li><a href="/profile"> {{user.name}}'s </br> 
+                     <span class="light-font">Profile</span></a></li>
+                <li><form class="form-button" action="/authentication/sign-out" method="POST">
+                      <button>Sign Out</button></form> </li>
+                {{else}}
+                <li><a href="/authentication/sign-in">Sign In </br>
+                    <span class="light-font"> as Teacher </span></a></li>
+                {{/if}}
+              </div>
+              <div class="nav-right">
+              <div class="nav-image">
+                <img id="homeimage"src="/images/illunew.jpeg" alt="yoga-image">
+              </div>
+
+          </ul>
+            
+        
+        </div>
+      </div>
+                    
+
+         </div>
+
+
         </div>
       </div>
     </nav> 
