@@ -169,14 +169,14 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeToday;
 
     Class.find()
-      /*.where('location')
+      /* .where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
       })*/
-      //.where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
+      .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
       //.where({ category: categoryindication })
 
       .sort({ startdate: 1 })
@@ -201,14 +201,194 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeTomorrow;
 
     Class.find()
-      .where('location')
+      /*.where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
+      })*/
+      .where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
+      //.where({ category: categoryindication })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude,
+          setdayfilter
+        });
       })
-      //.where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  } else if (dayindication == 'tomorrowandone') {
+    console.log('dayindication is tomorrowandone');
+    console.log(categoryindication);
+    const setdayfilter = starttimeTomorrowAndone;
+
+    Class.find()
+      /*.where('location')
+        .within()
+        .circle({
+          center: [longitude, latitude],
+          radius: 100000,
+          unique: true
+        })*/
+      .where({
+        startdate: { $gte: starttimeTomorrowAndone, $lt: endtimeTomorrowAndone }
+      })
+      //.where({ category: categoryindication })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude,
+          setdayfilter
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  } else if (dayindication == 'tomorrowandtwo') {
+    console.log('dayindication is tomorrowandtwo');
+    console.log(categoryindication);
+    const setdayfilter = starttimeTomorrowAndtwo;
+
+    Class.find()
+      /*.where('location')
+          .within()
+          .circle({
+            center: [longitude, latitude],
+            radius: 100000,
+            unique: true
+          })*/
+      .where({
+        startdate: { $gte: starttimeTomorrowAndtwo, $lt: endtimeTomorrowAndtwo }
+      })
+      //.where({ category: categoryindication })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude,
+          setdayfilter
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  } else if (dayindication == 'tomorrowandthree') {
+    console.log('dayindication is tomorrowandthree');
+    console.log(categoryindication);
+    const setdayfilter = starttimeTomorrowAndthree;
+
+    Class.find()
+      /*.where('location')
+            .within()
+            .circle({
+              center: [longitude, latitude],
+              radius: 100000,
+              unique: true
+            })*/
+      .where({
+        startdate: {
+          $gte: starttimeTomorrowAndthree,
+          $lt: endtimeTomorrowAndthree
+        }
+      })
+      //.where({ category: categoryindication })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude,
+          setdayfilter
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  } else if (dayindication == 'tomorrowandfour') {
+    console.log('dayindication is tomorrowandfour');
+    console.log(categoryindication);
+    const setdayfilter = starttimeTomorrowAndfour;
+
+    Class.find()
+      /*.where('location')
+              .within()
+              .circle({
+                center: [longitude, latitude],
+                radius: 100000,
+                unique: true
+              })*/
+      .where({
+        startdate: {
+          $gte: starttimeTomorrowAndfour,
+          $lt: endtimeTomorrowAndfour
+        }
+      })
+      //.where({ category: categoryindication })
+
+      .sort({ startdate: 1 })
+      .sort({ location: -1 })
+      .then((classes) => {
+        //console.log('location');
+        //console.log(latitude, longitude);
+        res.render('yoga/search', {
+          classes,
+          latitude: latitude,
+          longitude: longitude,
+          setdayfilter
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  } else if (dayindication == 'tomorrowandfive') {
+    console.log('dayindication is tomorrowandfive');
+    console.log(categoryindication);
+    const setdayfilter = starttimeTomorrowAndfive;
+    console.log(setdayfilter);
+
+    Class.find()
+      /*.where('location')
+                .within()
+                .circle({
+                  center: [longitude, latitude],
+                  radius: 100000,
+                  unique: true
+                })*/
+      .where({
+        startdate: {
+          $gte: starttimeTomorrowAndfive,
+          $lt: endtimeTomorrowAndfive
+        }
+      })
       //.where({ category: categoryindication })
 
       .sort({ startdate: 1 })
@@ -233,14 +413,14 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = 'All dates';
 
     Class.find()
-      .where('location')
+      /* .where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
-      })
-      //.where({ startdate: { $gte: starttimeToday } })
+      })*/
+      .where({ startdate: { $gte: starttimeToday } })
       //.where({ category: categoryindication })
 
       .sort({ startdate: 1 })

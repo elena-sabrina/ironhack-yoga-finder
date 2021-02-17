@@ -13,8 +13,15 @@
             <span class="light-font"> for 
               
     
-             <button id="input-dayindicationtoday"> Today </button>
+            <button id="input-dayindicationtoday"> Today </button>
             <button id="input-dayindicationtomorrow"> Tomorrow </button>
+            <button id="input-dayindicationtomorrowAndone"> {{ date setdayfilter 'ddd'}} </button>
+            <button id="input-dayindicationtomorrowAndtwo"> {{ date setdayfilter 'ddd'}} </button>
+            <button id="input-dayindicationtomorrowAndthree"> {{ date setdayfilter 'ddd'}} </button>
+            <button id="input-dayindicationtomorrowAndfour"> {{ date setdayfilter 'ddd'}} </button>
+            <button id="input-dayindicationtomorrowAndfive"> {{ date setdayfilter 'ddd'}} </button>
+
+
             <button id="input-dayindicationany"> All </button>
             </span> 
             </h2> 
@@ -126,13 +133,25 @@
 
     const daysearchtodayInput = document.getElementById('input-dayindicationtoday');
     const daysearchtomorrowInput = document.getElementById('input-dayindicationtomorrow');
+    const daysearchtomorrowAndoneInput = document.getElementById('input-dayindicationtomorrowAndone');
+    const daysearchtomorrowAndtwoInput = document.getElementById('input-dayindicationtomorrowAndtwo');
+    const daysearchtomorrowAndthreeInput = document.getElementById('input-dayindicationtomorrowAndthree');
+    const daysearchtomorrowAndfourInput = document.getElementById('input-dayindicationtomorrowAndfour');
+    const daysearchtomorrowAndfiveInput = document.getElementById('input-dayindicationtomorrowAndfive');
+
     const daysearchanyInput = document.getElementById('input-dayindicationany');
 
     getdayoutofdaysearchInput(daysearchtodayInput, 'today');
     getdayoutofdaysearchInput(daysearchtomorrowInput, 'tomorrow');
+    getdayoutofdaysearchInput(daysearchtomorrowAndoneInput, 'tomorrowandone');
+    getdayoutofdaysearchInput(daysearchtomorrowAndtwoInput, 'tomorrowandtwo');
+    getdayoutofdaysearchInput(daysearchtomorrowAndthreeInput, 'tomorrowandthree');
+    getdayoutofdaysearchInput(daysearchtomorrowAndfourInput, 'tomorrowandfour');
+    getdayoutofdaysearchInput(daysearchtomorrowAndfiveInput, 'tomorrowandfive');
+    
     getdayoutofdaysearchInput(daysearchanyInput, 'any');
 
-
+ 
   //CATEGORYSEARCH  
 
   function getcategoryforsearchInput (button, value) {
