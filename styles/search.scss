@@ -15,8 +15,6 @@
     height: 20px;
     width: 20px;
   }
-  form {
-  }
 }
 .yoga-class-preview {
   box-shadow: 3px 5px 20px rgba(182, 182, 182, 0.15);
@@ -73,5 +71,55 @@
     color: #ebebeb;
     border-radius: 21px;
     padding: 5px 10px;
+  }
+}
+
+#align-hl-with-dayfilter {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal-scroll-wrapper-days {
+  width: 400px;
+  height: 32px;
+  margin: 0 5px 20px 5px;
+  //overflow-y: auto;
+  overflow-y: hidden;
+  button {
+    margin: 5px 1px 1px 1px;
+  }
+}
+
+.horizontal-scroll-wrapper-category {
+  width: 400px;
+  height: 110px;
+  margin: 0 5px 20px 5px;
+  //overflow-y: auto;
+  overflow-y: hidden;
+  button {
+    margin: 5px 1px 1px 1px;
+  }
+}
+
+#hl-before-sub-special {
+  margin: 20px 0 5px 0;
+}
+
+.category-filter {
+  img {
+    height: 80px;
+    width: auto;
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-size: 11px;
+      color: #3f414e;
+    }
   }
 }

@@ -9,9 +9,12 @@
 <div class="split-screen ">
     <div class="split-screen-left">
         <div class=" split-screen-upper-left"> 
-            <h2>Choose your practice </br>
-              <span class="light-font"> for 
-                <div class="dayfilter">
+          
+            <h2 id="hl-before-sub-special">Choose your practice </br>
+            </h2>
+            <div id="align-hl-with-dayfilter">
+              <sub id="sub-special" class="light-font"> for </sub> 
+                <div class="dayfilter horizontal-scroll-wrapper-days">
                   <button id="input-dayindicationtoday"> Today </button>
                   <button id="input-dayindicationtomorrow"> Tomorrow </button>
                   <button id="input-dayindicationtomorrowAndone"> {{ date setdayfilter 'dddd'}} </button>
@@ -20,8 +23,9 @@
                   <button id="input-dayindicationtomorrowAndfour"> {{ date setdayfilter 'dddd'}} </button>
                   <button id="input-dayindicationtomorrowAndfive"> {{ date setdayfilter 'dddd'}} </button>
                   </div>
-              </span> 
+              
             </h2> 
+          </div>
         </div>
         <div class="background-white split-screen-lower-left">
 
@@ -36,14 +40,44 @@
 
           
 
-          <div class="category-filter">
+          <div class="category-filter horizontal-scroll-wrapper-category">
 
-            <button id="input-categoryvinyasa"> Vinyasa </button>
-            <button id="input-categoryhatha"> Hatha </button>
-            <button id="input-categoryyin"> Yin </button>
-            <button id="input-categoryastanga"> Astanga </button>
-            <button id="input-categorybikram"> Bikram </button>
-            <button id="input-categoryother"> Other </button>
+            <button id="input-categoryvinyasa"> 
+              <div>
+                <img src="/images/buttonimage.png" alt="vinyasa">
+                Vinyasa 
+              </div>
+            </button>
+            <button id="input-categoryhatha"> 
+              <div>
+                <img src="/images/buttonimage.png" alt="hatha">
+                Hatha 
+              </div> 
+            </button>
+            <button id="input-categoryyin"> 
+              <div>
+                <img src="/images/buttonimage.png" alt="yin">
+                Yin 
+              </div> 
+            </button>
+            <button id="input-categoryastanga"> 
+              <div>
+                <img src="/images/buttonimage.png" alt="astanga">
+                Astanga 
+              </div> 
+            </button>
+            <button id="input-categorybikram"> 
+              <div>
+                <img src="/images/buttonimage.png" alt="bikram">
+                Bikram 
+              </div>
+            </button>
+            <button id="input-categoryother">
+              <div>
+                <img src="/images/buttonimage.png" alt="other">
+                 Other 
+                </div> 
+            </button>
 
           </div>
 

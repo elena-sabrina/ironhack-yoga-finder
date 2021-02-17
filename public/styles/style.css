@@ -41,6 +41,16 @@ h1 {
   font-family: Open Sans;
 }
 
+h2 {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 p {
   font-size: 20px;
   font-weight: 200;
@@ -68,6 +78,11 @@ img {
 .light-font {
   font-weight: 200;
   letter-spacing: 0em;
+}
+
+#sub-special {
+  font-size: 24px;
+  color: #fee6c6;
 }
 
 .split-screen {
@@ -369,6 +384,56 @@ nav button:first-child {
   padding: 5px 10px;
 }
 
+#align-hl-with-dayfilter {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal-scroll-wrapper-days {
+  width: 400px;
+  height: 32px;
+  margin: 0 5px 20px 5px;
+  overflow-y: hidden;
+}
+
+.horizontal-scroll-wrapper-days button {
+  margin: 5px 1px 1px 1px;
+}
+
+.horizontal-scroll-wrapper-category {
+  width: 400px;
+  height: 110px;
+  margin: 0 5px 20px 5px;
+  overflow-y: hidden;
+}
+
+.horizontal-scroll-wrapper-category button {
+  margin: 5px 1px 1px 1px;
+}
+
+#hl-before-sub-special {
+  margin: 20px 0 5px 0;
+}
+
+.category-filter img {
+  height: 80px;
+  width: auto;
+}
+
+.category-filter button {
+  background-color: transparent;
+  border: none;
+}
+
+.category-filter button div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 11px;
+  color: #3f414e;
+}
+
 .yoga-class-detail {
   align-items: flex-start;
   padding: 15px 20px;
@@ -435,6 +500,16 @@ h1 {
   font-family: Open Sans;
 }
 
+h2 {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+h3 {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
 p {
   font-size: 20px;
   font-weight: 200;
@@ -462,6 +537,11 @@ img {
 .light-font {
   font-weight: 200;
   letter-spacing: 0em;
+}
+
+#sub-special {
+  font-size: 24px;
+  color: #fee6c6;
 }
 
 .split-screen {
