@@ -65,3 +65,13 @@
   height: 100vh;
   background-color: red;
 }
+
+.dayfilter {
+  button {
+    background-color: transparent;
+    border: 0.01px solid #ebebeb;
+    color: #ebebeb;
+    border-radius: 21px;
+    padding: 5px 10px;
+  }
+}

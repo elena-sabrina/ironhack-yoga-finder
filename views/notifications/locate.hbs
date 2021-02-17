@@ -1,43 +1,35 @@
 <div class="hero background-blue">
     <div class="hero-box">
-        <h1>We are going to locate you now
-          to find nearby classes. </h1>
-
-
-
-        <button id="locate-me" class="primary-button button-styling"> 
-          Sure locate me.
-        </button>
-
-        <form method="GET" action="/yoga/search">
-
-          <label for="input-latitude"></label>
-          <input id="input-latitude" type="number" name="latitude" required min="-90" max="90" step="any" value="-8.83"/>
-
-          <label for="input-longitude"></label>
-          <input id="input-longitude" type="number" name="longitude" required min="-180" max="180" step="any" value="115.09"/>
-
-          <label for="input-longitude"></label>
-          <input id="input-distance" type="hidden" name="distance" min="0" max="100000" step="1000"/>
-
-          <label for="input-dayindication">Today</label>
-          <input id="input-dayindication" type="text" name="dayindication" value="today"/>
-
-          <label for="input-categoryindication">Category</label>
-          <input id="input-categoryindication" type="text" name="categoryindication" value="any"/>
-
-{{!
-          <button> 
-            <a href="/yoga/search">Ok.</a>
+        <h1>Can we locate you </br>
+        <span class="light-font"> to find nearby classes? </span></h1>
+        <p>Allow us to access your geolocationor use the holy Uluwatu temple as your default location.</p>
+        <div class="two-aligned-buttons">
+          <button id="locate-me" class="primary-button button-styling"> 
+            Sure locate me
           </button>
-}}
 
 
-          <div class="center">
-            <button class="primary-button button-styling">Don't locate me. Use default location</button>
-          </div>
-        </form>
-        
+          <form method="GET" action="/yoga/search">
+            <div class="center">
+              <button class="primary-button button-styling">Use default location</button>
+            </div>
+
+            <label for="input-latitude"></label>
+            <input id="input-latitude" type="hidden" name="latitude" required min="-90" max="90" step="any" value="-8.83"/>
+
+            <label for="input-longitude"></label>
+            <input id="input-longitude" type="hidden" name="longitude" required min="-180" max="180" step="any" value="115.09"/>
+
+            <label for="input-longitude"></label>
+            <input id="input-distance" type="hidden" name="distance" min="0" max="100000" step="1000"/>
+
+            <label for="input-dayindication"></label>
+            <input id="input-dayindication" type="hidden" name="dayindication" value="today"/>
+
+            <label for="input-categoryindication"></label>
+            <input id="input-categoryindication" type="hidden" name="categoryindication" value="any"/>  
+          </form>
+        </div>
     </div>
 </div>
 
