@@ -55,9 +55,9 @@
 
            
             <h3> {{ date setdayfilter 'DD MMM'}} </h3>
-         
 
-        
+            {{#if classes}}
+         
             {{#each classes}}
     
             <a href="/yoga/class/{{_id}}" >
@@ -84,7 +84,13 @@
                     </div>   
                 </div>  
             </a>
+  
             {{/each}}
+
+            {{else}}
+
+            <p>There are no classes on this date.</p>
+            {{/if}}
           </div>
       </div>
       

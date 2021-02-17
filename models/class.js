@@ -10,6 +10,10 @@ const classSchema = new mongoose.Schema({
   image: {
     type: String
   },
+  teacherid: {
+    type: String,
+    trim: true
+  },
   teacher: {
     type: String,
     trim: true

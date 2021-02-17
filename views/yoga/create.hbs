@@ -53,7 +53,9 @@
         
         {{!Hidden Fields}}
       
-        <label for="input-teacher"></label>
+        <label for="input-teacherid"></label>
+          <input id="input-teacherid" type="hidden" name="teacherid" value="{{ user._id }}">
+          <label for="input-teacher"></label>
           <input id="input-teacher" type="hidden" name="teacher" value="{{ user.name }}">
         <label for="input-latitude"></label>
           <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" />

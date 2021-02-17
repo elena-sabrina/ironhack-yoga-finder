@@ -29,6 +29,7 @@ router.post(
     const classes = new Class({
       name: data.name,
       image: data.image,
+      teacherid: data.teacherid,
       teacher: data.teacher,
       location: {
         coordinates: [data.longitude, data.latitude]
@@ -446,6 +447,7 @@ router.post('/class/:id', (req, res, next) => {
   Class.findByIdAndUpdate(id, {
     // name: data.name,
     // image: data.image,
+    // teacherid: data.teacherid,
     // teacher: data.teacher,
     // location: {
     //   coordinates: [data.longitude, data.latitude]
