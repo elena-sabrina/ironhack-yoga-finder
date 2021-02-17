@@ -65,39 +65,93 @@ router.get('/search', (req, res, next) => {
   console.log(starttimeToday);
   console.log(endtimeToday);
 
-  //Tomorrow Endtime
-  const tomorrow = new Date(Date.now());
-  tomorrow.setDate(tomorrow.getDate() + 1);
+  const year = today.toISOString().substring(0, 4);
+  const month = today.toISOString().substring(5, 7);
+  const todayasstring = today.toISOString().substring(8, 10);
+
+  function addxvaluetoday(todayasstring, valuetoadd) {
+    const todayasanumber = parseInt(todayasstring);
+    const newdayasanumber = todayasanumber + valuetoadd;
+    const newday = newdayasanumber.toString();
+    return newday;
+  }
+
+  const tomorrowday = addxvaluetoday(todayasstring, 1);
+  const tomorrowdayAndone = addxvaluetoday(todayasstring, 2);
+  const tomorrowdayAndtwo = addxvaluetoday(todayasstring, 3);
+  const tomorrowdayAndthree = addxvaluetoday(todayasstring, 4);
+  const tomorrowdayAndfour = addxvaluetoday(todayasstring, 5);
+  const tomorrowdayAndfive = addxvaluetoday(todayasstring, 6);
+
+  console.log(tomorrowday);
 
   const starttimeTomorrow =
-    tomorrow.getFullYear() +
-    '-' +
-    ((tomorrow.getMonth() < 10 ? '0' : '') + tomorrow.getMonth()) +
-    '-' +
-    ((tomorrow.getDate() < 10 ? '0' : '') + tomorrow.getDate()) +
-    'T' +
-    '00:00:00.001+00:00';
+    year + '-' + month + '-' + tomorrowday + 'T' + '00:00:01.000+00:00';
 
   const endtimeTomorrow =
-    tomorrow.getFullYear() +
-    '-' +
-    ((tomorrow.getMonth() < 10 ? '0' : '') + tomorrow.getMonth()) +
-    '-' +
-    ((tomorrow.getDate() < 10 ? '0' : '') + tomorrow.getDate()) +
-    'T' +
-    '23:59:59.999+00:00';
+    year + '-' + month + '-' + tomorrowday + 'T' + '23:59:59.999+00:00';
 
   console.log('tomorrow');
   console.log(starttimeTomorrow);
   console.log(endtimeTomorrow);
+
+  const starttimeTomorrowAndone =
+    year + '-' + month + '-' + tomorrowdayAndone + 'T' + '00:00:01.000+00:00';
+
+  const endtimeTomorrowAndone =
+    year + '-' + month + '-' + tomorrowdayAndone + 'T' + '23:59:59.999+00:00';
+
+  console.log('tomorrow + 1');
+  console.log(starttimeTomorrowAndone);
+  console.log(endtimeTomorrowAndone);
+
+  const starttimeTomorrowAndtwo =
+    year + '-' + month + '-' + tomorrowdayAndtwo + 'T' + '00:00:01.000+00:00';
+
+  const endtimeTomorrowAndtwo =
+    year + '-' + month + '-' + tomorrowdayAndtwo + 'T' + '23:59:59.999+00:00';
+
+  console.log('tomorrow + 2');
+  console.log(starttimeTomorrowAndtwo);
+  console.log(endtimeTomorrowAndtwo);
+
+  const starttimeTomorrowAndthree =
+    year + '-' + month + '-' + tomorrowdayAndthree + 'T' + '00:00:01.000+00:00';
+
+  const endtimeTomorrowAndthree =
+    year + '-' + month + '-' + tomorrowdayAndthree + 'T' + '23:59:59.999+00:00';
+
+  console.log('tomorrow + 3');
+  console.log(starttimeTomorrowAndthree);
+  console.log(endtimeTomorrowAndthree);
+
+  const starttimeTomorrowAndfour =
+    year + '-' + month + '-' + tomorrowdayAndfour + 'T' + '00:00:01.000+00:00';
+
+  const endtimeTomorrowAndfour =
+    year + '-' + month + '-' + tomorrowdayAndfour + 'T' + '23:59:59.999+00:00';
+
+  console.log('tomorrow + 4');
+  console.log(starttimeTomorrowAndfour);
+  console.log(endtimeTomorrowAndfour);
+
+  const starttimeTomorrowAndfive =
+    year + '-' + month + '-' + tomorrowdayAndfive + 'T' + '00:00:01.000+00:00';
+
+  const endtimeTomorrowAndfive =
+    year + '-' + month + '-' + tomorrowdayAndfive + 'T' + '23:59:59.999+00:00';
+
+  console.log('tomorrow + 5');
+  console.log(starttimeTomorrowAndfive);
+  console.log(endtimeTomorrowAndfive);
 
   const latitude = req.query.latitude;
   const longitude = req.query.latitude;
   const distance = req.query.latitude;
 
   //Save Location in session cookie
-  //req.session.location = { latitude, longitude };
-  //console.log(req.session.location);
+  req.session.location = { latitude, longitude };
+  console.log(req.session.location);
 
   //What if session cookie location is not defined
   /*if (typeof latitiude != 'undefined') {
@@ -115,15 +169,15 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeToday;
 
     Class.find()
-      .where('location')
+      /*.where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
-      })
-      .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
-      .where({ category: categoryindication })
+      })*/
+      //.where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
+      //.where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -154,8 +208,8 @@ router.get('/search', (req, res, next) => {
         radius: 100000,
         unique: true
       })
-      .where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
-      .where({ category: categoryindication })
+      //.where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
+      //.where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -186,8 +240,8 @@ router.get('/search', (req, res, next) => {
         radius: 100000,
         unique: true
       })
-      .where({ startdate: { $gte: starttimeToday } })
-      .where({ category: categoryindication })
+      //.where({ startdate: { $gte: starttimeToday } })
+      //.where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })

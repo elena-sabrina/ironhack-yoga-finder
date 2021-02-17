@@ -35,7 +35,7 @@ const classSchema = new mongoose.Schema({
   },
   category: {
     type: String,
-    enum: ['Hatha', 'Vinyasa', 'Yin', 'Other'],
+    enum: ['hatha', 'vinyasa', 'yin', 'astanga', 'bikram', 'other'],
     default: 'Other'
   },
   startdate: {

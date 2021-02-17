@@ -60,6 +60,9 @@
         //const { latitude, longitude } = location.coords;
         latitudeInput.value = latitude;
         longitudeInput.value = longitude;
+        //if (latitude && longitude) {
+        //} else {}
+
         window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=today&categoryindication=any`
       })
       .catch(error => {

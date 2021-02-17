@@ -15,7 +15,7 @@
     
              <button id="input-dayindicationtoday"> Today </button>
             <button id="input-dayindicationtomorrow"> Tomorrow </button>
-            <button id="input-dayindicationany"> Any </button>
+            <button id="input-dayindicationany"> All </button>
             </span> 
             </h2> 
               
@@ -34,14 +34,14 @@
 
           
 
-
-
           <div class="category-filter">
 
             <button id="input-categoryvinyasa"> Vinyasa </button>
             <button id="input-categoryhatha"> Hatha </button>
-            <button id="input-categoryany"> Any </button>
-
+            <button id="input-categoryyin"> Yin </button>
+            <button id="input-categoryastanga"> Astanga </button>
+            <button id="input-categorybikram"> Bikram </button>
+            <button id="input-categoryother"> Other </button>
 
           </div>
 
@@ -49,8 +49,9 @@
            
             
 
-            <h3>{{setdayfilter}}</h3>
-
+           
+            <h3> {{ date setdayfilter 'DD MMM'}} </h3>
+         
 
         
             {{#each classes}}
@@ -59,7 +60,7 @@
                 <div class="yoga-class-preview ">
                     <div class="preview-box-left">
                         <h3>{{ name }}</h3>
-                        <p> at {{ location }}</p> 
+                        <p> {{ date startdate 'YYYY-MM-DD HH:mm:ss'}} </p>
                         <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
                     </div>
                     <div class="preview-box-right">
@@ -155,11 +156,22 @@
 
   const categoryInputvinyasa = document.getElementById('input-categoryvinyasa');
   const categoryInputhatha = document.getElementById('input-categoryhatha');
-  const categoryInputany = document.getElementById('input-categoryany');
+  const categoryInputyin = document.getElementById('input-categoryyin');
+  const categoryInputastanga = document.getElementById('input-categoryastanga');
+  const categoryInputbikram = document.getElementById('input-categorybikram');
+  const categoryInputother = document.getElementById('input-categoryother');
+
+
+
 
   getcategoryforsearchInput(categoryInputvinyasa, 'vinyasa');
   getcategoryforsearchInput(categoryInputhatha, 'hatha');
-  getcategoryforsearchInput(categoryInputany, 'any');
+  getcategoryforsearchInput(categoryInputyin, 'yin');
+  getcategoryforsearchInput(categoryInputastanga, 'astanga');
+  getcategoryforsearchInput(categoryInputbikram, 'bikram');
+  getcategoryforsearchInput(categoryInputother, 'other');
+  
+
 
 
 
