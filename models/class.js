@@ -53,6 +53,9 @@ const classSchema = new mongoose.Schema({
     min: Date.now(),
     max: '2022-01-01',
     default: Date.now()
+  },
+  description: {
+    type: String
   }
 });
 

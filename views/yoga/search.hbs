@@ -82,11 +82,10 @@
           </div>
 
 
-           
-            
-
-           
-            <h3> {{ date setdayfilter 'DD MMM'}} </h3>
+          {{!<div class="dayfilter-wrapper">
+            <div id="dayfilter"> {{ date setdayfilter 'DD MMMM'}} {{! </div> 
+            <hr id="search-hr">  </hr> 
+          </div>}}
 
             {{#if classes}}
          
@@ -104,14 +103,18 @@
                       {{#if categoryindication == 'any'}}{{!
                       <p> Display Day </p>
                        {{/if}}
-                      
-                        <p> {{{ date startdate "h:mm a" }}} </p>
-                        <p> {{{ date enddate "h:mm a" }}} </p>
-
-                
-                        <p> {{ level }} </p>
-                        <p>{{ teacher }}</p>
-                        <p>{{ category }}</p>
+                      <div class="icon-copy-wrapper" id="extra-space">
+                        <img src="/images/time-icon.png" alt="time">
+                        <p> {{{ date startdate "h:mm" }}} - {{{ date enddate "h:mm a" }}}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/level-icon.png" alt="level">
+                        <p> Level: {{ level }}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/teacher-icon.png" alt="teacher">
+                        <p> With: {{ teacher }}</p>
+                      </div>
                       
                     </div>   
                 </div>  

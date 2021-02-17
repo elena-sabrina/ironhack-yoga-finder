@@ -25,7 +25,6 @@
   padding: 15px 20px;
   margin: 0 0 20px 0;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   h3 {
     color: #3f414e;
@@ -47,13 +46,16 @@
 
 .preview-box-left {
   //background-color: rgb(255, 177, 177);
-  flex: 3;
+  flex: 2.4;
   height: 70px;
 }
 .preview-box-right {
   //background-color: rgb(204, 250, 204);
   flex: 1;
   height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #google-map {
@@ -92,13 +94,14 @@
 
 .horizontal-scroll-wrapper-category {
   width: 400px;
-  height: 110px;
-  margin: 0 5px 20px 5px;
+  height: 100px;
+  margin: 0 5px 0px 5px;
   //overflow-y: auto;
   overflow-y: hidden;
   button {
     margin: 5px 1px 1px 1px;
   }
+  margin-bottom: 25px;
 }
 
 #hl-before-sub-special {
@@ -122,4 +125,34 @@
       color: #3f414e;
     }
   }
+}
+
+.icon-copy-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  img {
+    height: 12px;
+    width: auto;
+    margin-right: 10px;
+  }
+}
+
+#extra-space {
+  margin-top: 12px;
+}
+
+#dayfilter {
+  font-size: 10px;
+  color: #3f414e5e;
+  font-weight: 300;
+  margin: 0px;
+  text-align: right;
+}
+
+#search-hr {
+  border-top: 0.1em dashed #3f414e;
+  border-left: 0.1em dashed #faf9f9;
+  border-right: 0.1em dashed #faf9f9;
+  border-top: 0.1em dashed #faf9f9;
+  margin: 0px 0px 1em 0px;
 }

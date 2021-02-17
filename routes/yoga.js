@@ -37,7 +37,8 @@ router.post(
       level: data.level,
       category: data.category,
       startdate: data.startdate,
-      enddate: data.enddate
+      enddate: data.enddate,
+      description: data.description
     });
     classes
       .save()
