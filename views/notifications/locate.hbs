@@ -60,10 +60,11 @@
         //const { latitude, longitude } = location.coords;
         latitudeInput.value = latitude;
         longitudeInput.value = longitude;
-        //if (latitude && longitude) {
-        //} else {}
-
-        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=today&categoryindication=any`
+        if (latitude && longitude) { 
+          window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=today&categoryindication=any`
+        } else {
+          window.location = `/yoga/search?latitude=${-8.83}&longitude=${115.09}&distance=10000&dayindication=today&categoryindication=any`
+        }
       })
       .catch(error => {
         console.log('There was an error locating the user.');

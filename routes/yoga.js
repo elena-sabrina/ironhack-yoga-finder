@@ -61,10 +61,6 @@ router.get('/search', (req, res, next) => {
   const starttimeToday = todaydateandtimenow + '+00:00';
   const endtimeToday = todaydate + '23:59:59.999+00:00';
 
-  console.log('today');
-  console.log(starttimeToday);
-  console.log(endtimeToday);
-
   const year = today.toISOString().substring(0, 4);
   const month = today.toISOString().substring(5, 7);
   const todayasstring = today.toISOString().substring(8, 10);
@@ -83,67 +79,30 @@ router.get('/search', (req, res, next) => {
   const tomorrowdayAndfour = addxvaluetoday(todayasstring, 5);
   const tomorrowdayAndfive = addxvaluetoday(todayasstring, 6);
 
-  console.log(tomorrowday);
-
   const starttimeTomorrow =
     year + '-' + month + '-' + tomorrowday + 'T' + '00:00:01.000+00:00';
-
   const endtimeTomorrow =
     year + '-' + month + '-' + tomorrowday + 'T' + '23:59:59.999+00:00';
-
-  console.log('tomorrow');
-  console.log(starttimeTomorrow);
-  console.log(endtimeTomorrow);
-
   const starttimeTomorrowAndone =
     year + '-' + month + '-' + tomorrowdayAndone + 'T' + '00:00:01.000+00:00';
-
   const endtimeTomorrowAndone =
     year + '-' + month + '-' + tomorrowdayAndone + 'T' + '23:59:59.999+00:00';
-
-  console.log('tomorrow + 1');
-  console.log(starttimeTomorrowAndone);
-  console.log(endtimeTomorrowAndone);
-
   const starttimeTomorrowAndtwo =
     year + '-' + month + '-' + tomorrowdayAndtwo + 'T' + '00:00:01.000+00:00';
-
   const endtimeTomorrowAndtwo =
     year + '-' + month + '-' + tomorrowdayAndtwo + 'T' + '23:59:59.999+00:00';
-
-  console.log('tomorrow + 2');
-  console.log(starttimeTomorrowAndtwo);
-  console.log(endtimeTomorrowAndtwo);
-
   const starttimeTomorrowAndthree =
     year + '-' + month + '-' + tomorrowdayAndthree + 'T' + '00:00:01.000+00:00';
-
   const endtimeTomorrowAndthree =
     year + '-' + month + '-' + tomorrowdayAndthree + 'T' + '23:59:59.999+00:00';
-
-  console.log('tomorrow + 3');
-  console.log(starttimeTomorrowAndthree);
-  console.log(endtimeTomorrowAndthree);
-
   const starttimeTomorrowAndfour =
     year + '-' + month + '-' + tomorrowdayAndfour + 'T' + '00:00:01.000+00:00';
-
   const endtimeTomorrowAndfour =
     year + '-' + month + '-' + tomorrowdayAndfour + 'T' + '23:59:59.999+00:00';
-
-  console.log('tomorrow + 4');
-  console.log(starttimeTomorrowAndfour);
-  console.log(endtimeTomorrowAndfour);
-
   const starttimeTomorrowAndfive =
     year + '-' + month + '-' + tomorrowdayAndfive + 'T' + '00:00:01.000+00:00';
-
   const endtimeTomorrowAndfive =
     year + '-' + month + '-' + tomorrowdayAndfive + 'T' + '23:59:59.999+00:00';
-
-  console.log('tomorrow + 5');
-  console.log(starttimeTomorrowAndfive);
-  console.log(endtimeTomorrowAndfive);
 
   const latitude = req.query.latitude;
   const longitude = req.query.latitude;

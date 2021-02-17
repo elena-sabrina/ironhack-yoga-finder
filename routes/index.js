@@ -16,7 +16,7 @@ router.get('/locate', (req, res, next) => {
     const longitude = req.session.location.longitude;
     const latitude = req.session.location.latitude;
     res.redirect(
-      `/yoga/search?longitude=${longitude}&latitude=${latitude}&distance=10000`
+      `/yoga/search?longitude=${longitude}&latitude=${latitude}&distance=10000&dayindication=today&categoryindication=any`
     );
   } else {
     res.render('notifications/locate');
