@@ -10,11 +10,22 @@
           <label for="input-name">Name</label>
           <input type="text" id="input-name" name="name" placeholder="Tirumali Krishnamacharya" />
         </div>
-    
+
         <div class="form-styling">
-          <label for="input-image"Add an image></label>
-          <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
+        <label for="input-url">URL</label>
+        <input type="url" id="input-url" name="locationurl" placeholder="https://yoga.com"/>
         </div>
+
+
+        <div class="form-styling">
+          <label for="input-startdate">From</label>
+          <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
+        </div>
+        <div class="form-styling">
+          <label for="input-enddate">To</label>
+          <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
+        </div>
+      
         <div class="form-styling">
           <label for="input-level"></label>
           <select id="input-level" name="level">
@@ -37,23 +48,12 @@
               <option value="other">Other</option>
           </select>
         </div>
-        <div class="form-styling">
-        <label for="input-description">Description</label>
-        <textarea id="input-description" name="description"
-          rows="5" cols="33">Tell us what makes your class special...</textarea>
-        </div>
+
         
+
         <div class="form-styling">
-          <label for="input-startdate">From</label>
-          <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
-        </div>
-        <div class="form-styling">
-          <label for="input-enddate">To</label>
-          <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
-        </div>
-        <div class="form-styling">
-        <label for="input-url">URL</label>
-        <input type="url" id="input-url" name="locationurl" placeholder="URL"/>
+          <label for="input-image"Add an image></label>
+          <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
         </div>
 
         <div class="form-styling" id="longlat-form">
@@ -63,8 +63,15 @@
           <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any"/>
         </div>
 
+        <div class="form-styling">
+        <label for="input-description">Description</label>
+        <textarea id="input-description" name="description"
+          rows="3" cols="25">Tell us what makes your class special...</textarea>
+        </div>
+      
+
         <div class="center">
-          <button class="secondary-button button-styling">create class</button>
+          <button class="primary-button button-styling">create class</button>
         </div>
         
         
