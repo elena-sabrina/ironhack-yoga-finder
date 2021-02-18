@@ -88,7 +88,6 @@ img {
 .split-screen {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   height: 100vh;
   overflow: hidden;
 }
@@ -292,6 +291,12 @@ textarea {
     height: auto;
     margin: 0 100px 0 0;
   }
+  .nav-links.open ul div div {
+    margin: 3em 0 5em 2.5em;
+    display: flex;
+    flex-direction: center;
+    width: 200px;
+  }
 }
 
 /*
@@ -319,13 +324,38 @@ nav button:first-child {
   justify-content: space-between;
 }
 
+#nav-sub-button {
+  color: #faf9f9;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+}
+
+#nav-sub-link {
+  color: #faf9f9;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  width: aut;
+}
+
 /*aside {
     height: 100vh;
     width: 200px;
     background-color: green;
   }*/
 /* ---------- SEARCH --------------*/
-.profile-upper-part {
+.profile-left {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -333,7 +363,7 @@ nav button:first-child {
   text-align: center;
 }
 
-.profile-upper-part img {
+.profile-left img {
   margin-top: 100px;
   height: 140px;
   width: auto;
@@ -341,8 +371,53 @@ nav button:first-child {
   border: 1px solid #ebebeb;
 }
 
+.profile-left h1 {
+  color: #fee6c6;
+  font-size: 50px;
+}
+
+.profile-left p {
+  color: #faf9f9;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 100px 0;
+  padding: 0;
+}
+
 .profile-lower-part {
   text-align: center;
+}
+
+#split-screen-right {
+  width: auot;
+  height: 100vh;
+  background-color: #fee6c6;
+}
+
+#delete-button {
+  padding: 10px;
+}
+
+#delete-button img {
+  height: 20px;
+  width: auto;
+  box-shadow: 4px -4px 7px rgba(64, 65, 75, 0.14);
+  border-radius: 50%;
+  margin-top: 10px;
+  background-color: white;
+}
+
+#edit-button {
+  padding: 10px;
+}
+
+#edit-button img {
+  height: 20px;
+  width: auto;
+  box-shadow: 4px -4px 7px rgba(64, 65, 75, 0.14);
+  border-radius: 50%;
+  margin-top: 10px;
+  background-color: white;
 }
 
 .search {
@@ -641,7 +716,6 @@ img {
 .split-screen {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   height: 100vh;
   overflow: hidden;
 }

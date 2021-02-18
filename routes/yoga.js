@@ -31,6 +31,7 @@ router.post(
       image: data.image,
       teacherid: data.teacherid,
       teacher: data.teacher,
+      locationlink: data.locationlink,
       location: {
         coordinates: [data.longitude, data.latitude]
       },

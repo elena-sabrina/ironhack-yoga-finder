@@ -1,5 +1,6 @@
 'use strict';
 
+const { urlencoded } = require('express');
 const mongoose = require('mongoose');
 
 const classSchema = new mongoose.Schema({
@@ -17,6 +18,9 @@ const classSchema = new mongoose.Schema({
   teacher: {
     type: String,
     trim: true
+  },
+  locationlink: {
+    type: urlencoded
   },
   location: {
     coordinates: [

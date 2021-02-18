@@ -25,6 +25,13 @@
                 {{#if user}}
                 <li><a href="/profile"> Visit </br> 
                      <span class="light-font">your Profile</span></a></li>
+                <div>
+                     <form action="/authentication/sign-out" method="POST">
+                      <button id="nav-sub-button">Sign Out</button></form>
+                <a id="nav-sub-link" href="/yoga/create">Create a Yoga class</a>
+                </div> 
+
+
                 {{else}}
                 <li><a href="/authentication/sign-in">Sign In </br>
                     <span class="light-font"> as Teacher </span></a></li>

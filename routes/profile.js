@@ -11,7 +11,7 @@ router.get('/', routeGuard, (req, res, next) => {
   const userId = req.session.userId;
 
   Class.find()
-    .where({ teacher: userId })
+    .where({ teacherid: userId })
 
     .then((classes) => {
       console.log('hello classes');

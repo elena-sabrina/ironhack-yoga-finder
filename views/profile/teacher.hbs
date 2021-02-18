@@ -2,11 +2,10 @@
 <div class="split-screen .background-white">
     <div class="split-screen-left">
         <div class=" split-screen-upper-left"> 
-            <div class="profile-upper-part">
+            <div class="profile-left">
                 <img src="/images/default-profile.png" alt="profile-default-image">
         
-            <h1>Profile </br>
-            <span class="light-font"> Span </span></h1>
+            <h1>{{user.name}}</h1>
             
        
       
@@ -14,53 +13,76 @@
              <img src="{{user.picture}}" alt="{{user.name}}"/>
             {{/if}}
     
-            <span><strong>Name</strong>: {{user.name}}</span>
-            <br />
-            <span><strong>Email</strong>: {{user.email}}</span>
-        
-    
-            <a href="/profile/{{userId}}/edit">Edit Profile</a>
+            <p>Email: {{user.email}}</br>
+            Password: **** </p>
 
-            <form class="form-button" action="/authentication/sign-out" method="POST">
-                      <button>Sign Out</button></form>
+            <button class="primary-button-link button-styling">
+                 <a href="/profile/{{userId}}/edit">Edit Profile</a>
+            </button>
+
+            
             </div>
 
 
         </div>
   
     </div>
-    <aside class="split-screen-right">
+    <div class="split-screen-right">
 
         <h2>My upcoming classes</h2>
 
         {{#each classes}}
-            <a href="/yoga/class{{_id}}" >
-                <div class="yoga-class-preview ">
+            
+                <div class="yoga-class-preview">
                     <div class="preview-box-left">
                         <h3>{{ name }}</h3>
-                       
+                        <p> {{ locationlink }} </p>
+                        <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
+                        <div>
+                            <a id="delete-button" href="/yoga/class/{{_id}}/edit" >
+                                <img src="/images/edit-button.png" alt="edit">
+                            </a>
+
+                            <a id="edit-button"href="/yoga/class/{{_id}}/confirm-deletion">
+                                <img src="/images/delete-button.png" alt="delete">
+                            </a> 
+                        </div>
                     </div>
                     <div class="preview-box-right">
-                        <p> {{date }} </p>
-                        <p> {{ level }} </p>
-                        <p>{{ teacher }}</p>
-                        <p>{{ category }}</p>
-                        <p> {{{ date startdate "h:mm a" }}} </p>
-                        
-                    </div>   
-                    <a href="/yoga/class/{{_id}}/edit" >Edit</a>
-                    <a href="/yoga/class/{{_id}}/confirm-deletion" >Delete</a>
-                </div>  
-            </a>
+                      {{!
+                      {{#if categoryindication == 'any'}}{{!
+                      <p> Display Day </p>
+                       {{/if}}
+                      <div class="icon-copy-wrapper" id="extra-space">
+                        <img src="/images/time-icon.png" alt="time">
+                        <p> {{{ date startdate "h:mm" }}} - {{{ date enddate "h:mm a" }}}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/level-icon.png" alt="level">
+                        <p> Level: {{ level }}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/teacher-icon.png" alt="teacher">
+                        <p> With: {{ teacher }}</p>
+                      </div>
+                      
+                    </div> 
+                     
+                </div> 
+                 
+            
             {{/each}}
 
-        <a href="/yoga/create">Create a Yoga class</a>
+
+        <button class="primary-button-link button-styling"> 
+            <a href="/yoga/create">Create a Yoga class</a>
+        </button>
         
         
 
 
 
 
-    </aside>
+    </div>
 </div>
 

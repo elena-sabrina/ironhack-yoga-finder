@@ -6,7 +6,7 @@
   }*/
 /* ---------- SEARCH --------------*/
 
-.profile-upper-part {
+.profile-left {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,10 +19,49 @@
     border-radius: 50%;
     border: 1px solid $white-gold;
   }
+  h1 {
+    color: $gold;
+    font-size: 50px;
+  }
+  p {
+    color: $white;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0 0 100px 0;
+    padding: 0;
+  }
 }
 
 .profile-lower-part {
   text-align: center;
+}
 
-  
+#split-screen-right {
+  width: auot;
+  height: 100vh;
+  background-color: #fee6c6;
+}
+
+#delete-button {
+  padding: 10px;
+  img {
+    height: 20px;
+    width: auto;
+    box-shadow: $box-shadow;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-color: white;
+  }
+}
+
+#edit-button {
+  padding: 10px;
+  img {
+    height: 20px;
+    width: auto;
+    box-shadow: $box-shadow;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-color: white;
+  }
 }
