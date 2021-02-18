@@ -1,65 +1,65 @@
 @import 'colors';
 
 form {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    width: 50vh;
-  }
-  
-  .form-styling {
-    background: #ffffff;
-    border: 0.3px solid #cecece;
-    box-sizing: border-box;
-    border-radius: 15px;
-  
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    margin: 0 0 20px 0;
-    padding: 10px 0 10px 0;
-  }
-  
-  label {
-    text-align: left;
-    font-size: 5px;
-    margin: 0px 0px 0px 15px !important;
-    font-size: 12px;
-    line-height: 12px;
-    color: #3f414e;
-    font-weight: 400;
-  }
-  
-  input {
-    background-color: transparent;
-    border: none;
-    margin: 0px 0px 0px 15px;
-    font-size: 14px;
-    line-height: 16px;
-    font-weight: 400 !important;
-    font-family: 'Open Sans';
-    letter-spacing: 0.01em;
-  }
-  
-  input::placeholder {
-    color: #c5c5c5;
-    font-weight: 300 !important;
-    font-family: 'Open Sans';
-    letter-spacing: 0.01em;
-    font-size: 12px;
-    line-height: 16px;
-    margin: 0px 0px 0px 15px;
-  }
-  
-  input:focus {
-    outline: none;
-  }
-  
-  .form-button {
-    width: auto;
-  }
-  
-  /*input:not([type='checkbox']),
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 50vh;
+}
+
+.form-styling {
+  background: #ffffff;
+  border: 0.3px solid #cecece;
+  box-sizing: border-box;
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 0 20px 0;
+  padding: 10px 0 10px 0;
+}
+
+label {
+  text-align: left;
+  font-size: 5px;
+  margin: 0px 0px 0px 15px !important;
+  font-size: 12px;
+  line-height: 12px;
+  color: #3f414e;
+  font-weight: 400;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  margin: 0px 0px 0px 15px;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400 !important;
+  font-family: 'Open Sans';
+  letter-spacing: 0.01em;
+}
+
+input::placeholder {
+  color: #c5c5c5;
+  font-weight: 300 !important;
+  font-family: 'Open Sans';
+  letter-spacing: 0.01em;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 0px 0px 0px 15px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.form-button {
+  width: auto;
+}
+
+/*input:not([type='checkbox']),
   input:not([type='radio']),
   input:not([type='range']),
   textarea,
@@ -74,13 +74,45 @@ form {
     color: inherit;
     background-color: transparent;
   }*/
-  
-  textarea {
-    min-height: 8em;
-    resize: vertical;
-  }
-  
-  /*label {
+
+textarea {
+  min-height: 8em;
+  resize: vertical;
+}
+
+/*label {
     margin-bottom: 0.5em;
   }*/
-  
+
+// Select Form Field
+.input-category {
+  text-align: left;
+  font-size: 5px;
+
+  color: #3f414e;
+  font-weight: 400;
+
+  font-size: 12px;
+  line-height: 16px;
+}
+
+select {
+  padding: 0 0 0 15px;
+  border: none;
+  outline: none;
+  width: 95%;
+  margin: 0;
+  color: #3f414e;
+  select:active {
+    border: none;
+    outline: none;
+  }
+}
+
+textarea {
+  border: none;
+  outline: none;
+  margin: 15px;
+  font-family: $font-family;
+  color: #c5c5c5;
+}

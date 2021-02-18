@@ -8,7 +8,7 @@
       
         <div class="form-styling">
           <label for="input-name">Name</label>
-          <input type="text" id="input-name" name="name" placeholder="" />
+          <input type="text" id="input-name" name="name" placeholder="Tirumali Krishnamacharya" />
         </div>
     
         <div class="form-styling">
@@ -16,9 +16,9 @@
           <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
         </div>
         <div class="form-styling">
-          <label for="input-level">Level</label>
+          <label for="input-level"></label>
           <select id="input-level" name="level">
-              <option value="Choose class level" selected disabled>Level</option> <!-- Display empty placeholder value-->
+              <option value="Choose class level" selected disabled class="select">Level</option> <!-- Display empty placeholder value-->
               <option value="beginner">beginner</option>
               <option value="advanced">advanced</option>
               <option value="proficient">proficient</option>
@@ -26,9 +26,9 @@
           </select>
         </div>
         <div class="form-styling">
-          <label for="input-category">Category</label>
+          <label for="input-category"></label>
           <select id="input-category" name="category">
-              <option value="Choose yoga type" selected disabled>Category</option> <!-- Display empty placeholder value-->
+              <option value="Choose yoga type" selected disabled class="select">Category</option> <!-- Display empty placeholder value-->
               <option value="hatha">Hatha</option>
               <option value="vinyasa">Vinyasa</option>
               <option value="yin">Yin</option>
@@ -51,10 +51,22 @@
           <label for="input-enddate">To</label>
           <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
         </div>
+        <div class="form-styling">
+        <label for="input-url">URL</label>
+        <input type="url" id="input-url" name="locationurl" placeholder="URL"/>
+        </div>
+
+        <div class="form-styling" id="longlat-form">
+        <label for="input-latitude"></label>
+          <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" placeholder="Select location on the map" />
+        <label for="input-longitude"></label>
+          <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any"/>
+        </div>
 
         <div class="center">
           <button class="secondary-button button-styling">create class</button>
         </div>
+        
         
         {{!Hidden Fields}}
       
@@ -62,10 +74,7 @@
           <input id="input-teacherid" type="hidden" name="teacherid" value="{{ user._id }}">
           <label for="input-teacher"></label>
           <input id="input-teacher" type="hidden" name="teacher" value="{{ user.name }}">
-        <label for="input-latitude"></label>
-          <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" />
-        <label for="input-longitude"></label>
-          <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any"/>
+        
         
         
       </form>

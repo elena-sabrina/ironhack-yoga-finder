@@ -20,7 +20,7 @@ const classSchema = new mongoose.Schema({
     trim: true
   },
   locationlink: {
-    type: urlencoded
+    type: String
   },
   location: {
     coordinates: [
