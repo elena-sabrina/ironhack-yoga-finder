@@ -93,25 +93,34 @@ img {
   overflow: hidden;
 }
 
-.split-screen-left {
+.split-screen-left-scroll {
   max-width: 550px;
   overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
 
-.split-screen-left h2 {
+.split-screen-left-scroll h2 {
   color: #fee6c6;
 }
 
-.split-screen-left .split-screen-upper-left {
+.split-screen-upper-left {
   padding: 50px 0px 0px 25px;
 }
 
-.split-screen-left .split-screen-lower-left {
+.split-screen-lower-left {
   padding: 25px;
   border-radius: 25px 25px 0px 0px;
   box-shadow: 4px -4px 7px rgba(64, 65, 75, 0.14), 6px 2px 17px 11px rgba(64, 65, 75, 0.14);
   min-height: 700px;
+}
+
+.split-screen-left {
+  max-width: 550px;
+  background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
+}
+
+.split-screen-left h2 {
+  color: #fee6c6;
 }
 
 /*.sidebar-upper-blue {
@@ -316,6 +325,26 @@ nav button:first-child {
     background-color: green;
   }*/
 /* ---------- SEARCH --------------*/
+.profile-upper-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 500px;
+  text-align: center;
+}
+
+.profile-upper-part img {
+  margin-top: 100px;
+  height: 140px;
+  width: auto;
+  border-radius: 50%;
+  border: 1px solid #ebebeb;
+}
+
+.profile-lower-part {
+  text-align: center;
+}
+
 .search {
   display: flex;
   flex-direction: row;
@@ -409,6 +438,12 @@ nav button:first-child {
   margin: 5px 1px 1px 1px;
 }
 
+.horizontal-scroll-wrapper-days button:focus {
+  outline: none !important;
+  background-color: #ebebeb;
+  color: black;
+}
+
 .horizontal-scroll-wrapper-category {
   width: 400px;
   height: 100px;
@@ -455,7 +490,6 @@ nav button:first-child {
 }
 
 .category-filter button:focus {
-  border: none;
   outline: none !important;
 }
 
@@ -612,25 +646,34 @@ img {
   overflow: hidden;
 }
 
-.split-screen-left {
+.split-screen-left-scroll {
   max-width: 550px;
   overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
 
-.split-screen-left h2 {
+.split-screen-left-scroll h2 {
   color: #fee6c6;
 }
 
-.split-screen-left .split-screen-upper-left {
+.split-screen-upper-left {
   padding: 50px 0px 0px 25px;
 }
 
-.split-screen-left .split-screen-lower-left {
+.split-screen-lower-left {
   padding: 25px;
   border-radius: 25px 25px 0px 0px;
   box-shadow: 4px -4px 7px rgba(64, 65, 75, 0.14), 6px 2px 17px 11px rgba(64, 65, 75, 0.14);
   min-height: 700px;
+}
+
+.split-screen-left {
+  max-width: 550px;
+  background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
+}
+
+.split-screen-left h2 {
+  color: #fee6c6;
 }
 
 /*.sidebar-upper-blue {

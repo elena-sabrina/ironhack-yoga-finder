@@ -91,6 +91,11 @@
   button {
     margin: 5px 1px 1px 1px;
   }
+  button:focus {
+    outline: none !important;
+    background-color: #ebebeb;
+    color: black;
+  }
 }
 
 .horizontal-scroll-wrapper-category {
@@ -141,7 +146,6 @@
     }
   }
   button:focus {
-    border: none;
     outline: none !important;
     div {
       box-shadow: $box-shadow;
