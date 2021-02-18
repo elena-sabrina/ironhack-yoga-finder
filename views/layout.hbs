@@ -18,23 +18,21 @@
 
             
           <ul>
-              <div class="nav-left">
-                <li><a href="/">Home</a></li>
+              <div>
+                
                 <li><a href="/locate">Search </br>
                     <span class="light-font">Yoga Classes</span></a></li>
                 {{#if user}}
-                <li><a href="/profile"> {{user.name}}'s </br> 
-                     <span class="light-font">Profile</span></a></li>
-                <li><form class="form-button" action="/authentication/sign-out" method="POST">
-                      <button>Sign Out</button></form> </li>
+                <li><a href="/profile"> Visit </br> 
+                     <span class="light-font">your Profile</span></a></li>
                 {{else}}
                 <li><a href="/authentication/sign-in">Sign In </br>
                     <span class="light-font"> as Teacher </span></a></li>
                 {{/if}}
               </div>
-              <div class="nav-right">
+              <div>
               <div class="nav-image">
-                <img id="homeimage"src="/images/illunew.jpeg" alt="yoga-image">
+                <img src="/images/homeimage.svg" alt="yoga-image">
               </div>
 
           </ul>

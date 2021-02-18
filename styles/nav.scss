@@ -37,7 +37,15 @@
     clip-path: circle(1000px at 50% 50%);
     -webkit-clip-path: circle(1000px at 50% 50%);
     pointer-events: all;
+    height: 100vh;
     ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 1200px;
+      margin: 0;
+      height: 100vh;
+
       /*
       position: absolute;
       margin: auto;
@@ -55,14 +63,14 @@
       align-items: flex-start;
       align-content: space-between;
       z-index: 2;*/
-      a {
-        font-size: 40px;
-        margin: 0;
+      li {
+        font-size: 32px;
+        margin: 3em 0 3em 2.5em;
       }
       .nav-image {
-        width: 100px;
-        height: 100px;
-        background-color: red;
+        width: 400px;
+        height: auto;
+        margin: 0 100px 0 0;
       }
     }
   }
@@ -91,5 +99,5 @@ nav button:first-child {
 .nav-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
 }
