@@ -1,3 +1,4 @@
+@import 'colors';
 .search {
   display: flex;
   flex-direction: row;
@@ -63,7 +64,7 @@
   //height: 100vh;
   width: 70%;
   height: 100vh;
-  background-color: red;
+  background-color: #fee6c6;
 }
 
 .dayfilter {
@@ -112,7 +113,11 @@
   img {
     height: 80px;
     width: auto;
+    //@if < button: focus> {
+    //opacity: 0.5;
+    // }
   }
+
   button {
     background-color: transparent;
     border: none;
@@ -123,6 +128,23 @@
       flex-direction: column;
       font-size: 11px;
       color: #3f414e;
+      background: $blue-gradient-small;
+      border-radius: 21px;
+      width: 75px;
+      height: 75px;
+      margin-bottom: 5px;
+
+      img {
+        height: 50px;
+        width: auto;
+      }
+    }
+  }
+  button:focus {
+    border: none;
+    outline: none !important;
+    div {
+      box-shadow: $box-shadow;
     }
   }
 }

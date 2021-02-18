@@ -382,7 +382,7 @@ nav button:first-child {
 #google-map {
   width: 70%;
   height: 100vh;
-  background-color: red;
+  background-color: #fee6c6;
 }
 
 .dayfilter button {
@@ -442,6 +442,25 @@ nav button:first-child {
   flex-direction: column;
   font-size: 11px;
   color: #3f414e;
+  background: linear-gradient(172.63deg, #717cff 20%, #b2b8ff 160%);
+  border-radius: 21px;
+  width: 75px;
+  height: 75px;
+  margin-bottom: 5px;
+}
+
+.category-filter button div img {
+  height: 50px;
+  width: auto;
+}
+
+.category-filter button:focus {
+  border: none;
+  outline: none !important;
+}
+
+.category-filter button:focus div {
+  box-shadow: 4px -4px 7px rgba(64, 65, 75, 0.14);
 }
 
 .icon-copy-wrapper {
