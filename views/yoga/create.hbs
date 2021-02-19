@@ -13,7 +13,7 @@
 
         <div class="form-styling">
         <label for="input-url">URL</label>
-        <input type="url" id="input-url" name="url" placeholder="https://yoga.com"/>
+        <input type="url" id="input-url" name="url" placeholder="https://yoga.com"/ onblur="checkURL(this)">
         </div>
 
 
@@ -92,6 +92,19 @@
 </div>
 
 <script>
+
+  // CHECK URL
+
+  function checkURL (abc) {
+  var string = abc.value;
+  if (!~string.indexOf("http")) {
+    string = "http://" + string;
+  }
+  abc.value = string;
+  return abc
+}
+
+  //MAP
   function initMap () {
     const mapElement = document.getElementById('google-map');
     const latitudeInput = document.getElementById('input-latitude');
