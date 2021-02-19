@@ -14,16 +14,16 @@
 
       <div class="form-styling">
         <label for="input-url">URL</label>
-        <input type="url" id="input-url" name="url" value="{{classes.url}}"/>
+        <input type="url" id="input-url" name="url" value="{{classes.url}}" onblur="checkURL(this)" />
       </div>
 
       <div class="form-styling">
           <label for="input-startdate">From</label>
-          <input type="datetime-local" id="input-startdate" name="startdate" value="startdate">
+          <input type="datetime-local" id="input-startdate" name="startdate" value="{{classes.startdate}}">
         </div>
         <div class="form-styling">
           <label for="input-enddate">To</label>
-          <input type="datetime-local" id="input-enddate" name="enddate" value="enddate">
+          <input type="datetime-local" id="input-enddate" name="enddate" value="{{classes.enddate}}">
         </div>
 
       <div class="form-styling">
@@ -58,9 +58,9 @@
 
       <div class="form-styling" id="longlat-form">
         <label for="input-latitude"></label>
-        <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" placeholder="" />
+        <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" value="{{classes.location.coordinates.[1]}}" />
         <label for="input-longitude"></label>
-        <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any" placeholder=""/>
+        <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any" value="{{classes.location.coordinates.[0]}}"/>
       </div>
 
       <div class="center">
@@ -81,9 +81,25 @@
   </div>
 </div>
 
+
+
 <div id="google-map"></div>
 
 <script>
+
+  // CHECK URL
+
+  function checkURL (abc) {
+  var string = abc.value;
+  if (!~string.indexOf("http")) {
+    string = "http://" + string;
+  }
+  abc.value = string;
+  return abc
+}
+
+
+//MAP
   function initMap () {
     const mapElement = document.getElementById('google-map');
     const latitudeInput = document.getElementById('input-latitude');

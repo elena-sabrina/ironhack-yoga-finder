@@ -1,33 +1,51 @@
 <div class="hero background-blue">
     <div class="hero-box">
 
-        <h1>Are you sure
-          you want to delete this class. </h1>
+        <h1>Sure you wanna delete this class? </h1>
           
-        <div class="yoga-class-preview ">
-            <div class="preview-box-left">
-                <h3>{{ name }}</h3>
-                <p> at {{ location }}</p> 
-                <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
-            </div>
-            <div class="preview-box-right">
-                <p id="startdateid"> {{startdate }} - {{enddate}}</p>
-                <p> {{ level }} </p>
-                <p>{{ teacher }}</p>
-                <p>{{ category }}</p>
-                <p>{{ userId }}/</p>
-              
-            </div>   
-        </div>  
+        <div class="yoga-class-preview">
+                    <div class="preview-box-left profile-class-sizing">
+                        <h3>{{ classes.name }}</h3>
+                        <p> {{ classes.url }} </p>
+                        <p> {{ classes.description }} </p>
+                    </div>
+                    <div class="preview-box-right">
+                      {{!
+                      {{#if categoryindication == 'any'}}{{!
+                      <p> Display Day </p>
+                       {{/if}}
+                      <div class="icon-copy-wrapper" id="extra-space">
+                        <img src="/images/time-icon.png" alt="time">
+                        <p> {{{ date startdate "DD MMM" }}} {{{ date startdate "h:mm" }}} - {{{ date enddate "h:mm a" }}}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/level-icon.png" alt="level">
+                        <p> Level: {{ classes.level }}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/teacher-icon.png" alt="teacher">
+                        <p> With: {{ classes.teacher }}</p>
+                      </div>
+                      
+                    </div> 
+                 
+                     
 
-
-        <form method= "POST" action="/yoga/class/{{classes._id}}/delete">
-            <label for="delete-class" hidden>Delete Class</label>
-            <button>Delete</button> 
-        </form>
-
-        <a href="/profile"> Go back</a>
+        
 
         
     </div>
+
+    <div class="two-buttons">
+        <form method= "POST" action="/yoga/class/{{classes._id}}/delete">
+            <label for="delete-class" hidden>Delete Class</label>
+            <button class="primary-button-link button-styling">Delete</button> 
+        </form>
+
+        <button class="primary-button-link button-styling"> 
+            <a href="/profile"> Go back</a>
+        </button>
+    </div>
+
+
 </div>

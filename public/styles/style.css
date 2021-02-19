@@ -454,6 +454,23 @@ nav button:first-child {
   background-color: white;
 }
 
+.profile-class-sizing {
+  width: 400px;
+}
+
+.profile-class-sizing h3 {
+  text-align: left;
+}
+
+.profile-class-sizing p {
+  text-align: left;
+}
+
+.two-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
 .search {
   display: flex;
   flex-direction: row;
@@ -484,6 +501,7 @@ nav button:first-child {
   margin: 0 0 20px 0;
   display: flex;
   align-items: flex-start;
+  background-color: white;
   display: flex;
   flex-direction: row;
 }

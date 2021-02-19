@@ -69,3 +69,18 @@
     background-color: white;
   }
 }
+
+.profile-class-sizing {
+  width: 400px;
+  h3 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
+}
+
+.two-buttons {
+  display: flex;
+  justify-content: space-around;
+}

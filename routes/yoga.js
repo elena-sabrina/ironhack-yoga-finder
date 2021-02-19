@@ -12,7 +12,11 @@ const uploadMiddleware = require('./../middleware/file-upload');
 
 // Create new classes
 router.get('/create', routeGuard, (req, res, next) => {
-  res.render('yoga/create');
+  const now = new Date(Date.now());
+  const nowinstring = now.toISOString().substring(0, 19);
+
+  console.log(now);
+  res.render('yoga/create', { nowinstring });
 });
 
 router.post(
@@ -22,6 +26,7 @@ router.post(
   (req, res, next) => {
     const data = req.body;
     console.log(req.body);
+
     let image;
     if (req.file) {
       image = req.file.path;
@@ -431,10 +436,8 @@ router.get('/class/:id', (req, res, next) => {
 
 router.get('/class/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
-
   Class.findById(id)
     .then((classes) => {
-      console.log('start editing your class');
       res.render('yoga/edit', { classes });
     })
     .catch((error) => {
@@ -503,5 +506,3 @@ router.get('/filter', (req, res, next) => {
 });
 
 module.exports = router;
-
-
