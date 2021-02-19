@@ -28,6 +28,7 @@
   display: flex;
   align-items: flex-start;
   background-color: white;
+  width: 450px;
   h3 {
     color: #3f414e;
     font-size: 16px;
@@ -58,6 +59,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  p {
+    padding: 0;
+  }
 }
 
 #google-map {

@@ -93,7 +93,7 @@ img {
 }
 
 .split-screen-left-scroll {
-  max-width: 550px;
+  max-width: 502px;
   overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
@@ -104,6 +104,7 @@ img {
 
 .split-screen-upper-left {
   padding: 50px 0px 0px 25px;
+  width: 800px;
 }
 
 .split-screen-lower-left {
@@ -502,6 +503,7 @@ nav button:first-child {
   display: flex;
   align-items: flex-start;
   background-color: white;
+  width: 450px;
   display: flex;
   flex-direction: row;
 }
@@ -533,6 +535,10 @@ nav button:first-child {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.preview-box-right p {
+  padding: 0;
 }
 
 #google-map {
@@ -773,7 +779,7 @@ img {
 }
 
 .split-screen-left-scroll {
-  max-width: 550px;
+  max-width: 502px;
   overflow-x: scroll;
   background: linear-gradient(172.63deg, #717cff 5.73%, #b2b8ff 80.16%);
 }
@@ -784,6 +790,7 @@ img {
 
 .split-screen-upper-left {
   padding: 50px 0px 0px 25px;
+  width: 800px;
 }
 
 .split-screen-lower-left {
