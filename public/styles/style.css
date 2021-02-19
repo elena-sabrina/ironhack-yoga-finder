@@ -411,8 +411,11 @@ nav button:first-child {
   color: #faf9f9;
   font-size: 14px;
   line-height: 20px;
-  margin: 0 0 100px 0;
   padding: 0;
+}
+
+.profile-left a img {
+  margin: 0 0 60px 0;
 }
 
 .profile-lower-part {

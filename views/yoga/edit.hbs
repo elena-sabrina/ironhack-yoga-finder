@@ -1,5 +1,5 @@
 <div class="split-screen ">
-  <div class="split-screen-left">
+  <div class="split-screen-left-scroll">
     <div class=" split-screen-upper-left"> 
       <h2>Edit Yoga Class</h2>
     </div>
@@ -9,17 +9,24 @@
 
       <div class="form-styling">
         <label for="input-name">Name</label>
-        <input type="text" id="input-name" name="name" value=" {{classes.name}}" />
+        <input type="text" id="input-name" name="name" value="{{classes.name}}" />
       </div>
-
 
       <div class="form-styling">
-        <label for="input-image"Add an image></label>
-        <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
+        <label for="input-url">URL</label>
+        <input type="url" id="input-url" name="url" value="{{classes.url}}"/>
       </div>
 
-  
-    <div class="form-styling">
+      <div class="form-styling">
+          <label for="input-startdate">From</label>
+          <input type="datetime-local" id="input-startdate" name="startdate" value="startdate">
+        </div>
+        <div class="form-styling">
+          <label for="input-enddate">To</label>
+          <input type="datetime-local" id="input-enddate" name="enddate" value="enddate">
+        </div>
+
+      <div class="form-styling">
         <label for="input-level">Level</label>
         <select id="input-level" name="level">
             <option value="{{classes.level}}">{{classes.level}}</option> <!-- Display empty placeholder value-->
@@ -43,14 +50,18 @@
         </select>
       </div>
 
+
       <div class="form-styling">
-          <label for="input-startdate">From</label>
-          <input type="datetime-local" id="input-startdate" name="startdate" placeholder="startdate">
-        </div>
-        <div class="form-styling">
-          <label for="input-enddate">To</label>
-          <input type="datetime-local" id="input-enddate" name="enddate" placeholder="enddate">
-        </div>
+        <label for="input-image"Add an image></label>
+        <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
+      </div>
+
+      <div class="form-styling" id="longlat-form">
+        <label for="input-latitude"></label>
+        <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" placeholder="" />
+        <label for="input-longitude"></label>
+        <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any" placeholder=""/>
+      </div>
 
       <div class="center">
         <button class="secondary-button button-styling">edit class</button>
@@ -60,11 +71,11 @@
 
       <label for="input-teacher"></label>
       <input id="input-teacher" type="hidden" name="teacher" value="{{ user.name }}">
-      <label for="input-latitude"></label>
-      <input type="hidden {{!number}}" id="input-latitude" name="latitude" min="-90" max="90" step="any" value="{{classes.latitude}}"/>
-      <label for="input-longitude"></label>
-      <input type="hidden {{!number}}" id="input-longitude" name="longitude" min="-180" max="180" step="any" value="{{classes.longitude}}"/>
-          
+      
+      <label for="input-teacherid"></label>
+      <input id="input-teacherid" type="hidden" name="teacherid" value="{{ user._id }}">
+     
+        
   
     </form>
   </div>

@@ -19,7 +19,7 @@ const classSchema = new mongoose.Schema({
     type: String,
     trim: true
   },
-  locationlink: {
+  url: {
     type: String
   },
   location: {

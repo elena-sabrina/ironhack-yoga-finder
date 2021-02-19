@@ -3,21 +3,21 @@
     <div class="split-screen-left">
         <div class=" split-screen-upper-left"> 
             <div class="profile-left">
+                {{#if user.picture}}
+                <img src="{{user.picture}}" alt="{{user.name}}-image"/>
+                {{else}}
                 <img src="/images/default-profile.png" alt="profile-default-image">
-        
-            <h1>{{user.name}}</h1>
+                {{/if}}
             
-       
-      
-            {{#if user.picture}}
-             <img src="{{user.picture}}" alt="{{user.name}}"/>
-            {{/if}}
-    
-            <p>Email: {{user.email}}</br>
-            Password: **** </p>
-
-            <button class="primary-button-link button-styling">
-                 <a href="/profile/{{userId}}/edit">Edit Profile</a>
+                <h1>{{user.name}}</h1>
+                <p>Email: {{user.email}}</br>
+                Password: **** </p>
+                <a id="edit-button" href="/profile/{{userId}}/edit" >
+                    <img src="/images/edit-button.png" alt="edit">
+                </a>
+            
+            <button class="primary-button-link button-styling"> 
+                 <a href="/yoga/create">Create a Yoga class</a>
             </button>
 
             
@@ -55,7 +55,7 @@
                        {{/if}}
                       <div class="icon-copy-wrapper" id="extra-space">
                         <img src="/images/time-icon.png" alt="time">
-                        <p> {{{ date startdate "h:mm" }}} - {{{ date enddate "h:mm a" }}}</p>
+                        <p> {{{ date startdate "DD MMM" }}} {{{ date startdate "h:mm" }}} - {{{ date enddate "h:mm a" }}}</p>
                       </div>
                       <div class="icon-copy-wrapper">
                         <img src="/images/level-icon.png" alt="level">
@@ -73,10 +73,6 @@
             
             {{/each}}
 
-
-        <button class="primary-button-link button-styling"> 
-            <a href="/yoga/create">Create a Yoga class</a>
-        </button>
         
         
 

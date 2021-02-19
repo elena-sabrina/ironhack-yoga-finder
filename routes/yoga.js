@@ -31,7 +31,7 @@ router.post(
       image: data.image,
       teacherid: data.teacherid,
       teacher: data.teacher,
-      locationlink: data.locationlink,
+      url: data.url,
       location: {
         coordinates: [data.longitude, data.latitude]
       },
@@ -445,19 +445,22 @@ router.get('/class/:id/edit', routeGuard, (req, res, next) => {
 
 router.post('/class/:id', (req, res, next) => {
   const id = req.params.id;
+  const data = req.body;
   // const data = req.body;
   Class.findByIdAndUpdate(id, {
-    // name: data.name,
-    // image: data.image,
-    // teacherid: data.teacherid,
-    // teacher: data.teacher,
-    // location: {
-    //   coordinates: [data.longitude, data.latitude]
-    // },
-    // level: data.level,
-    // category: data.category,
-    // startdate: data.startdate,
-    // enddate: data.enddate
+    name: data.name,
+    image: data.image,
+    teacherid: data.teacherid,
+    teacher: data.teacher,
+    url: data.url,
+    location: {
+      coordinates: [data.longitude, data.latitude]
+    },
+    level: data.level,
+    category: data.category,
+    startdate: data.startdate,
+    enddate: data.enddate,
+    description: data.description
   })
     .then((classes) => {
       console.log('Class edited');
@@ -500,3 +503,5 @@ router.get('/filter', (req, res, next) => {
 });
 
 module.exports = router;
+
+
