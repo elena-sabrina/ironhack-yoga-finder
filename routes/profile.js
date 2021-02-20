@@ -3,6 +3,7 @@
 const express = require('express');
 const router = new express.Router();
 const routeGuard = require('../middleware/route-guard');
+const uploadMiddleware = require('./../middleware/file-upload');
 
 const User = require('../models/user');
 const Class = require('../models/class');
@@ -34,23 +35,28 @@ router.get('/:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
-router.post('/:id/edit', routeGuard, (req, res, next) => {
-  const id = req.params.id;
-  const { name, email, password } = req.body;
-  console.log(req.body);
-  User.findByIdAndUpdate(id, {
-    name,
-    email
-    //passwordHashAndSalt: passwordHashAndSalt,
-    //picture: picture
-  })
-    .then((users) => {
-      res.redirect('/profile');
+router.post(
+  '/:id/edit',
+  routeGuard,
+  uploadMiddleware.single('picture'),
+  (req, res, next) => {
+    const userId = req.session.userId;
+    const data = req.body;
+    console.log(req.body);
+    User.findByIdAndUpdate(userId, {
+      name: data.name,
+      email: data.email
+      //passwordHashAndSalt: passwordHashAndSalt,
+      //picture: picture
     })
-    .catch((error) => {
-      console.log(error);
-      next(error);
-    });
-});
+      .then((users) => {
+        res.redirect('/profile');
+      })
+      .catch((error) => {
+        console.log(error);
+        next(error);
+      });
+  }
+);
 
 module.exports = router;

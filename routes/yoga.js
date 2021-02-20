@@ -200,17 +200,17 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeTomorrowAndone;
 
     Class.find()
-      /*.where('location')
-        .within()
-        .circle({
-          center: [longitude, latitude],
-          radius: 100000,
-          unique: true
-        })*/
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
       .where({
         startdate: { $gte: starttimeTomorrowAndone, $lt: endtimeTomorrowAndone }
       })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -234,17 +234,17 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeTomorrowAndtwo;
 
     Class.find()
-      /*.where('location')
-          .within()
-          .circle({
-            center: [longitude, latitude],
-            radius: 100000,
-            unique: true
-          })*/
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
       .where({
         startdate: { $gte: starttimeTomorrowAndtwo, $lt: endtimeTomorrowAndtwo }
       })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -268,20 +268,20 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeTomorrowAndthree;
 
     Class.find()
-      /*.where('location')
-            .within()
-            .circle({
-              center: [longitude, latitude],
-              radius: 100000,
-              unique: true
-            })*/
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
       .where({
         startdate: {
           $gte: starttimeTomorrowAndthree,
           $lt: endtimeTomorrowAndthree
         }
       })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -305,20 +305,20 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeTomorrowAndfour;
 
     Class.find()
-      /*.where('location')
-              .within()
-              .circle({
-                center: [longitude, latitude],
-                radius: 100000,
-                unique: true
-              })*/
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
       .where({
         startdate: {
           $gte: starttimeTomorrowAndfour,
           $lt: endtimeTomorrowAndfour
         }
       })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -343,20 +343,20 @@ router.get('/search', (req, res, next) => {
     console.log(setdayfilter);
 
     Class.find()
-      /*.where('location')
-                .within()
-                .circle({
-                  center: [longitude, latitude],
-                  radius: 100000,
-                  unique: true
-                })*/
+      .where('location')
+      .within()
+      .circle({
+        center: [longitude, latitude],
+        radius: 100000,
+        unique: true
+      })
       .where({
         startdate: {
           $gte: starttimeTomorrowAndfive,
           $lt: endtimeTomorrowAndfive
         }
       })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -377,18 +377,18 @@ router.get('/search', (req, res, next) => {
   } else {
     console.log('no dayindication');
     console.log(categoryindication);
-    const setdayfilter = 'All dates';
+    const setdayfilter = 'any';
 
     Class.find()
-      /* .where('location')
+      .where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
-      })*/
+      })
       .where({ startdate: { $gte: starttimeToday } })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
