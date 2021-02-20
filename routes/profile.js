@@ -24,15 +24,28 @@ router.get('/', routeGuard, (req, res, next) => {
 
 router.get('/:id/edit', routeGuard, (req, res, next) => {
   const id = req.params.id;
+  User.findById(id)
+    .then((users) => {
+      res.render('profile/edit', { users });
+    })
+    .catch((error) => {
+      console.log(error);
+      next(error);
+    });
+});
 
+router.post('/:id/edit', routeGuard, (req, res, next) => {
+  const id = req.params.id;
+  const { name, email, password } = req.body;
+  console.log(req.body);
   User.findByIdAndUpdate(id, {
-    //name
-    //email,
-    //passwordHashAndSalt: passwordHashAndSalt,
-    //picture
+    name,
+    email,
+    passwordHashAndSalt: passwordHashAndSalt,
+    picture: picture
   })
     .then((users) => {
-      res.render('profile/edit');
+      res.redirect('/profile');
     })
     .catch((error) => {
       console.log(error);

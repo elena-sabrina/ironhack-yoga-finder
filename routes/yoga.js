@@ -1,14 +1,12 @@
 //'use strict';
 
 const express = require('express');
-const router = new express.Router();
 const routeGuard = require('./../middleware/route-guard');
-
-const User = require('./../models/user');
 const Class = require('./../models/class');
 
 //STORAGE CLOUDINARY
 const uploadMiddleware = require('./../middleware/file-upload');
+const router = new express.Router();
 
 // Create new classes
 router.get('/create', routeGuard, (req, res, next) => {
@@ -26,6 +24,8 @@ router.post(
   (req, res, next) => {
     const data = req.body;
     console.log(req.body);
+    console.log(req.file);
+    console.log(req.file.path);
 
     let image;
     if (req.file) {
@@ -33,7 +33,7 @@ router.post(
     }
     const classes = new Class({
       name: data.name,
-      image: data.image,
+      image: image,
       teacherid: data.teacherid,
       teacher: data.teacher,
       url: data.url,

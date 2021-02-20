@@ -26,6 +26,9 @@
                         <img src="/images/teacher-icon.png" alt="teacher">
                         <p> With: {{ classes.teacher }}</p>
                       </div>
+                      {{#if classes.image}}
+                        <img src="{{classes.image}}" alt="{{classes.name}}">
+                      {{/if}}
                       
              
             

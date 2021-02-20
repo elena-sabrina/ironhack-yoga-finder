@@ -5,10 +5,10 @@ const { Router } = require('express');
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
 
-const router = new Router();
-
 //STORAGE CLOUDINARY
 const uploadMiddleware = require('./../middleware/file-upload');
+
+const router = new Router();
 
 //ROUTES
 
@@ -21,6 +21,11 @@ router.post(
   uploadMiddleware.single('picture'),
   (req, res, next) => {
     const { name, email, password } = req.body;
+    let picture;
+    if (req.file) {
+      picture = req.file.path;
+    }
+
     User.findOne({
       email: email
     })

@@ -4,7 +4,7 @@
       <h2>Creat Yoga Class</h2>
     </div>
     <div class="background-white split-screen-lower-left">
-      <form method="POST" action="/yoga/create">
+      <form method="POST" action="/yoga/create" enctype="multipart/form-data">
       
         <div class="form-styling">
           <label for="input-name">Name</label>
@@ -51,10 +51,10 @@
 
         
 
-        <div class="form-styling">
+        {{!<div class="form-styling">
           <label for="input-image"Add an image></label>
           <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
-        </div>
+        </div>}}
 
         <div class="form-styling" id="longlat-form">
         <label for="input-latitude"></label>
