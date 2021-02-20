@@ -29,7 +29,7 @@ const app = express();
 
 var handlebars = require('handlebars');
 
-//app.locals.googleMapsKey = process.env.GOOGLE_MAPS_KEY;
+app.locals.GooglemapsKey = process.env.GOOGLE_MAPS_KEY;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
