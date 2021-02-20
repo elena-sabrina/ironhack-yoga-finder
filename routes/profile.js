@@ -40,9 +40,9 @@ router.post('/:id/edit', routeGuard, (req, res, next) => {
   console.log(req.body);
   User.findByIdAndUpdate(id, {
     name,
-    email,
-    passwordHashAndSalt: passwordHashAndSalt,
-    picture: picture
+    email
+    //passwordHashAndSalt: passwordHashAndSalt,
+    //picture: picture
   })
     .then((users) => {
       res.redirect('/profile');

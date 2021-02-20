@@ -136,15 +136,15 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeToday;
 
     Class.find()
-      /* .where('location')
+      .where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
-      })*/
+      })
       .where({ startdate: { $gte: starttimeToday, $lt: endtimeToday } })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
@@ -168,15 +168,15 @@ router.get('/search', (req, res, next) => {
     const setdayfilter = starttimeTomorrow;
 
     Class.find()
-      /*.where('location')
+      .where('location')
       .within()
       .circle({
         center: [longitude, latitude],
         radius: 100000,
         unique: true
-      })*/
+      })
       .where({ startdate: { $gte: starttimeTomorrow, $lt: endtimeTomorrow } })
-      //.where({ category: categoryindication })
+      .where({ category: categoryindication })
 
       .sort({ startdate: 1 })
       .sort({ location: -1 })
