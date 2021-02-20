@@ -6,6 +6,7 @@ const Class = require('./../models/class');
 
 //STORAGE CLOUDINARY
 const uploadMiddleware = require('./../middleware/file-upload');
+
 const router = new express.Router();
 
 // Create new classes
@@ -23,10 +24,6 @@ router.post(
   uploadMiddleware.single('image'),
   (req, res, next) => {
     const data = req.body;
-    console.log(req.body);
-    console.log(req.file);
-    console.log(req.file.path);
-
     let image;
     if (req.file) {
       image = req.file.path;
@@ -446,33 +443,40 @@ router.get('/class/:id/edit', routeGuard, (req, res, next) => {
     });
 });
 
-router.post('/class/:id', (req, res, next) => {
-  const id = req.params.id;
-  const data = req.body;
-  // const data = req.body;
-  Class.findByIdAndUpdate(id, {
-    name: data.name,
-    image: data.image,
-    teacherid: data.teacherid,
-    teacher: data.teacher,
-    url: data.url,
-    location: {
-      coordinates: [data.longitude, data.latitude]
-    },
-    level: data.level,
-    category: data.category,
-    startdate: data.startdate,
-    enddate: data.enddate,
-    description: data.description
-  })
-    .then((classes) => {
-      console.log('Class edited');
-      res.redirect(`/yoga/class/${id}`);
+router.post(
+  '/class/:id',
+  uploadMiddleware.single('image'),
+  (req, res, next) => {
+    const id = req.params.id;
+    const data = req.body;
+    let image;
+    if (req.file) {
+      image = req.file.path;
+    }
+    Class.findByIdAndUpdate(id, {
+      name: data.name,
+      image: image,
+      teacherid: data.teacherid,
+      teacher: data.teacher,
+      url: data.url,
+      location: {
+        coordinates: [data.longitude, data.latitude]
+      },
+      level: data.level,
+      category: data.category,
+      startdate: data.startdate,
+      enddate: data.enddate,
+      description: data.description
     })
-    .catch((err) => {
-      next(err);
-    });
-});
+      .then((classes) => {
+        console.log('Class edited');
+        res.redirect(`/yoga/class/${id}`);
+      })
+      .catch((err) => {
+        next(err);
+      });
+  }
+);
 
 // Delete classes
 

@@ -43,11 +43,15 @@ router.post(
     const userId = req.session.userId;
     const data = req.body;
     console.log(req.body);
+    let picture;
+    if (req.file) {
+      picture = req.file.path;
+    }
     User.findByIdAndUpdate(userId, {
       name: data.name,
-      email: data.email
+      email: data.email,
       //passwordHashAndSalt: passwordHashAndSalt,
-      //picture: picture
+      picture: picture
     })
       .then((users) => {
         res.redirect('/profile');

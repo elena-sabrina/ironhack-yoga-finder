@@ -4,7 +4,7 @@
       <h2>Edit Yoga Class</h2>
     </div>
     <div class="background-white split-screen-lower-left">
-    <form method="POST" action="/yoga/class/{{classes._id}}">
+    <form method="POST" action="/yoga/class/{{classes._id}}" enctype="multipart/form-data">
 
 
       <div class="form-styling">
@@ -51,10 +51,10 @@
       </div>
 
 
-      {{!<div class="form-styling">
-        <label for="input-image"Add an image></label>
+      <div class="form-styling">
+        <label for="input-image"Edit image></label>
         <input id="input-image" type="file" name="image" accept="image/jpeg, image/png">
-      </div>}}
+      </div>
 
       <div class="form-styling" id="longlat-form">
         <label for="input-latitude"></label>
