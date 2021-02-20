@@ -8,7 +8,7 @@ const User = require('./../models/user');
 const Class = require('./../models/class');
 
 router.get('/', (req, res, next) => {
-  res.render('home', { title: 'Hello World!' });
+  res.render('home', { subtitle: 'Home' });
 });
 
 router.get('/locate', (req, res, next) => {

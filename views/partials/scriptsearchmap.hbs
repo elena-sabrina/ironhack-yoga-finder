@@ -1,0 +1,48 @@
+
+<script>
+
+function initMap () {
+    const mapElement = document.getElementById('google-map');
+
+    const map = new google.maps.Map (mapElement, {
+      center: {
+        lat: -8.8,
+        lng: 115.15
+      },
+      zoom: 12
+    });
+
+    //Import database Info
+
+    const classes = {{{ json classes }}};
+
+    console.log(classes);
+
+    for (let classlisting of classes) {
+      const marker = new google.maps.Marker({
+        position: {
+          lat: classlisting.location.coordinates[1],
+          lng: classlisting.location.coordinates[0]
+        },
+        map:map
+      })
+
+      marker.addListener('click', () => {
+        window.location = `/yoga/class/${classlisting._id}`;
+      });
+    }
+
+    const image =
+    "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+    const mylocationmarker = new google.maps.Marker({
+        position: {
+          lat: {{latitude}},
+          lng: {{longitude}}
+        },
+        map:map,
+        icon: image,
+      })
+}
+
+</script>
+

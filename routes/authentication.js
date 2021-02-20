@@ -4,7 +4,6 @@ const { Router } = require('express');
 
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
-const Class = require('./../models/class');
 
 const router = new Router();
 
@@ -29,7 +28,7 @@ router.post(
         if (user) {
           throw new Error('There is already a user with this email');
         } else {
-          return bcryptjs.hash(password, 10);
+          return bcryptjs.hash(password, 12);
         }
       })
       .then((passwordHashAndSalt) => {
@@ -43,13 +42,11 @@ router.post(
           name,
           email,
           passwordHashAndSalt: passwordHashAndSalt,
-          picture
+          picture: picture
         });
       })
       .then((user) => {
         req.session.userId = user._id;
-
-
         res.redirect('/profile');
       })
       .catch((error) => {
@@ -80,7 +77,9 @@ router.post('/sign-in', (req, res, next) => {
 
         res.redirect('/profile');
       } else {
-        return Promise.reject(new Error('Wrong password.'));
+        return Promise.reject(
+          new Error("Your password and email don't match.")
+        );
       }
     })
     .catch((error) => {

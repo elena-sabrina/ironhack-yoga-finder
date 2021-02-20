@@ -8,7 +8,7 @@
       
         <div class="form-styling">
           <label for="input-name">Name</label>
-          <input type="text" id="input-name" name="name" placeholder="Tirumali Krishnamacharya" />
+          <input type="text" id="input-name" name="name" placeholder="Tirumali Krishnamacharya" required/>
         </div>
 
         <div class="form-styling">
@@ -19,16 +19,16 @@
 
         <div class="form-styling">
           <label for="input-startdate">From</label>
-          <input type="datetime-local" id="input-startdate" name="startdate" value="{{nowinstring}}">
+          <input type="datetime-local" id="input-startdate" name="startdate" placeholder="{{nowinstring}}"required/>
         </div>
         <div class="form-styling">
           <label for="input-enddate">To</label>
-          <input type="datetime-local" id="input-enddate" name="enddate" value="{{nowinstring}}">
+          <input type="datetime-local" id="input-enddate" name="enddate" placeholder="{{nowinstring}}"required/>
         </div>
       
         <div class="form-styling">
           <label for="input-level"></label>
-          <select id="input-level" name="level">
+          <select id="input-level" name="level" required>
               <option value="Choose class level" selected disabled class="select">Level</option> <!-- Display empty placeholder value-->
               <option value="beginner">beginner</option>
               <option value="advanced">advanced</option>
@@ -38,7 +38,7 @@
         </div>
         <div class="form-styling">
           <label for="input-category"></label>
-          <select id="input-category" name="category">
+          <select id="input-category" name="category" required>
               <option value="Choose yoga type" selected disabled class="select">Category</option> <!-- Display empty placeholder value-->
               <option value="hatha">Hatha</option>
               <option value="vinyasa">Vinyasa</option>
@@ -58,7 +58,7 @@
 
         <div class="form-styling" id="longlat-form">
         <label for="input-latitude"></label>
-          <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" placeholder="Select location on the map" />
+          <input type="number" id="input-latitude" name="latitude" min="-90" max="90" step="any" placeholder="Select location on the map" required/>
         <label for="input-longitude"></label>
           <input type="number" id="input-longitude" name="longitude" min="-180" max="180" step="any"/>
         </div>

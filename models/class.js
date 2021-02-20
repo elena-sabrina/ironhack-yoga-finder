@@ -6,14 +6,16 @@ const mongoose = require('mongoose');
 const classSchema = new mongoose.Schema({
   name: {
     type: String,
-    trim: true
+    trim: true,
+    required: true
   },
   image: {
     type: String
   },
   teacherid: {
     type: String,
-    trim: true
+    trim: true,
+    required: true
   },
   teacher: {
     type: String,
@@ -44,17 +46,17 @@ const classSchema = new mongoose.Schema({
   category: {
     type: String,
     enum: ['hatha', 'vinyasa', 'yin', 'astanga', 'bikram', 'other'],
-    default: 'Other'
+    default: 'other'
   },
   startdate: {
     type: Date,
-    min: Date.now(),
+    min: '2021-01-01',
     max: '2022-01-01',
     default: Date.now()
   },
   enddate: {
     type: Date,
-    min: Date.now(),
+    min: '2021-01-01',
     max: '2022-01-01',
     default: Date.now()
   },

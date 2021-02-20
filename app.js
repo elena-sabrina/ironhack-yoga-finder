@@ -21,7 +21,6 @@ const hbs = require('hbs');
 const hbsJson = require('hbs-json');
 const hbsDateHelper = require('helper-date');
 
-hbs.registerPartials(__dirname + '/views/partials');
 hbs.registerHelper('json', hbsJson);
 hbs.registerHelper('date', hbsDateHelper);
 
@@ -29,7 +28,7 @@ const app = express();
 
 var handlebars = require('handlebars');
 
-app.locals.GooglemapsKey = process.env.GOOGLE_MAPS_KEY;
+app.locals.GooglemapsKey = process.env.GOOGLE_KEY;
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -71,6 +70,8 @@ app.use('/', baseRouter);
 app.use('/authentication', authenticationRouter);
 app.use('/yoga', yogaRouter);
 app.use('/profile', profileRouter);
+
+hbs.registerPartials(__dirname + '/views/partials');
 
 // Catch missing routes and forward to error handler
 app.use((req, res, next) => {

@@ -1,0 +1,92 @@
+<script>
+ function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i=0;i<vars.length;i++) {
+              var pair = vars[i].split("=");
+              if(pair[0] == variable){return pair[1];}
+      }
+      return(false);
+    }
+
+
+  //DAYSEARCH  
+
+
+    function getdayoutofdaysearchInput (object, value) {
+      object.addEventListener('click', () => {
+        const dayindication = value;
+        //console.log('eventlistenerdaysearch:');
+        //console.log (dayindication);
+        const latitude = getQueryVariable("latitude");
+        const longitude = getQueryVariable("longitude");
+        const category = getQueryVariable("categoryindication");
+        console.log('category' + category);
+        
+        //console.log(latitude);
+        //const urlsplit = window.location.search.split('/');
+        //console.log(urlsplit);
+        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=${dayindication}&categoryindication=${category}`
+      });
+    }
+
+    const daysearchtodayInput = document.getElementById('input-dayindicationtoday');
+    const daysearchtomorrowInput = document.getElementById('input-dayindicationtomorrow');
+    const daysearchtomorrowAndoneInput = document.getElementById('input-dayindicationtomorrowAndone');
+    const daysearchtomorrowAndtwoInput = document.getElementById('input-dayindicationtomorrowAndtwo');
+    const daysearchtomorrowAndthreeInput = document.getElementById('input-dayindicationtomorrowAndthree');
+    const daysearchtomorrowAndfourInput = document.getElementById('input-dayindicationtomorrowAndfour');
+    const daysearchtomorrowAndfiveInput = document.getElementById('input-dayindicationtomorrowAndfive');
+
+    const daysearchanyInput = document.getElementById('input-dayindicationany');
+
+    getdayoutofdaysearchInput(daysearchtodayInput, 'today');
+    getdayoutofdaysearchInput(daysearchtomorrowInput, 'tomorrow');
+    getdayoutofdaysearchInput(daysearchtomorrowAndoneInput, 'tomorrowandone');
+    getdayoutofdaysearchInput(daysearchtomorrowAndtwoInput, 'tomorrowandtwo');
+    getdayoutofdaysearchInput(daysearchtomorrowAndthreeInput, 'tomorrowandthree');
+    getdayoutofdaysearchInput(daysearchtomorrowAndfourInput, 'tomorrowandfour');
+    getdayoutofdaysearchInput(daysearchtomorrowAndfiveInput, 'tomorrowandfive');
+    
+    getdayoutofdaysearchInput(daysearchanyInput, 'any');
+
+ 
+  //CATEGORYSEARCH  
+
+  function getcategoryforsearchInput (button, value) {
+      button.addEventListener('click', () => {
+        const category = value;
+        //console.log('eventlistenerdaysearch:');
+        //console.log (dayindication);
+        const latitude = getQueryVariable("latitude");
+        const longitude = getQueryVariable("longitude");
+        const dayindication = getQueryVariable("dayindication");
+
+        console.log(latitude);
+         console.log(dayindication);
+          console.log(category);
+        //console.log(latitude);
+        //const urlsplit = window.location.search.split('/');
+        //console.log(urlsplit);
+        window.location = `/yoga/search?latitude=${latitude}&longitude=${longitude}&distance=10000&dayindication=${dayindication}&categoryindication=${category}`
+      });
+    }
+
+  const categoryInputvinyasa = document.getElementById('input-categoryvinyasa');
+  const categoryInputhatha = document.getElementById('input-categoryhatha');
+  const categoryInputyin = document.getElementById('input-categoryyin');
+  const categoryInputastanga = document.getElementById('input-categoryastanga');
+  const categoryInputbikram = document.getElementById('input-categorybikram');
+  const categoryInputother = document.getElementById('input-categoryother');
+
+
+
+
+  getcategoryforsearchInput(categoryInputvinyasa, 'vinyasa');
+  getcategoryforsearchInput(categoryInputhatha, 'hatha');
+  getcategoryforsearchInput(categoryInputyin, 'yin');
+  getcategoryforsearchInput(categoryInputastanga, 'astanga');
+  getcategoryforsearchInput(categoryInputbikram, 'bikram');
+  getcategoryforsearchInput(categoryInputother, 'other');
+</script>
+

@@ -1,0 +1,28 @@
+<a href="/yoga/class/{{_id}}" >
+                <div class="yoga-class-preview ">
+                    <div class="preview-box-left">
+                        <h3>{{ name }}</h3>
+                        <p> {{ locationlink}} </p>
+                        <p> Hatha is a general category that includes most yoga styles. It includes the practice of asanas and pranayama.</p> 
+                    </div>
+                    <div class="preview-box-right">
+                      {{!
+                      {{#if categoryindication == 'any'}}{{!
+                      <p> Display Day </p>
+                       {{/if}}
+                      <div class="icon-copy-wrapper" id="extra-space">
+                        <img src="/images/time-icon.png" alt="time">
+                        <p> {{{ date startdate "h:mm" }}} - {{{ date enddate "h:mm a" }}}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/level-icon.png" alt="level">
+                        <p> Level: {{ level }}</p>
+                      </div>
+                      <div class="icon-copy-wrapper">
+                        <img src="/images/teacher-icon.png" alt="teacher">
+                        <p> With: {{ teacher }}</p>
+                      </div>
+                      
+                    </div>   
+                </div>  
+            </a>
